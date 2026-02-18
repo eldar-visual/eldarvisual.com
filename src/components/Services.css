@@ -1,0 +1,434 @@
+/* === Services.css - גרסה מדויקת וסופית (Pixel Perfect) === */
+
+#services {
+  position: relative;
+  background-color: #020617; /* רקע שחור עמוק כמו בדוגמה */
+  padding: 7rem 0;
+  overflow: hidden;
+}
+
+/* זוהר כחול בשולי האתר */
+/* #services::before,
+#services::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 150px;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.25;
+  filter: blur(90px);
+}
+#services::before { left: -200px; background: radial-gradient(circle, #3b82f6 0%, transparent 70%); }
+#services::after { right: -200px; background: radial-gradient(circle, #3b82f6 0%, transparent 70%); } */
+
+.services-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* תמונת רקע - צד ימין */
+.services-bg-pattern img {
+  position: absolute;
+  right: -0.5%;
+  top: 55%;
+  transform: translateY(-50%);
+  width: 55%;
+  opacity: 0.12;
+  mix-blend-mode: lighten;
+  -webkit-mask-image: linear-gradient(to left, black 20%, transparent 90%);
+}
+
+.services-header {
+  text-align: center;
+  margin-bottom: 5.5rem;
+  color: #5897e7;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* === הגרדיינט של SCALE - לבן בוהק לכחול-סגול === */
+.services-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: white;
+  letter-spacing: -0.02em;
+}
+
+.services-title-gradient {
+  background: linear-gradient(to right, #99c3fd 50%, #bfb7fd 70%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 4rem;
+}
+
+/* === כרטיסייה - עם מסגרת זוהרת כחולה === */
+.service-card {
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  padding: 2.25rem;
+  height: 195px;
+  transition: transform 0.1s ease-out, box-shadow 0.1s ease-out, background 0.1s;  
+  position: relative;
+  overflow: hidden;
+  text-decoration: none !important;
+  will-change: transform, box-shadow;
+  /* מסגרת כחולה עם זוהר */
+  border: 1px solid transparent;
+  background-clip: padding-box;
+}
+
+/* יצירת מסגרת גרדיינט זוהרת עם ::before */
+.service-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 1rem;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(59, 130, 246, 0.15) 0%,
+    rgba(139, 92, 246, 0.08) 50%,
+    rgba(59, 130, 246, 0.15) 100%
+  );
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0.4;
+  transition: all 0.5s ease;
+}
+
+.service-card:hover {
+  background: rgba(23, 37, 84, 0.5);
+  transform: translateY(-7px) scale(1.01);
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+              box-shadow 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+              background 0.3s ease;
+  
+  /* זוהר כחול חזק */
+  box-shadow: 
+   0 0 15px rgba(59, 130, 246, 0.15), /* הורדנו אטימות ומרחק */
+  0 10px 30px rgba(0, 0, 0, 0.5);    /* דגש על צל שחור לקונטרסט */
+}
+
+/* הגברת הזוהר של המסגרת ב-hover */
+.service-card:hover::before {
+  opacity: 1;
+  background: linear-gradient(
+    135deg,
+    rgba(59, 130, 246, 0.5) 0%,
+    rgba(139, 92, 246, 0.3) 50%,
+    rgba(59, 130, 246, 0.5) 100%
+  );
+}
+
+/* === אייקון - זוהר (Glowing Gradient) ב-Hover === */
+.service-icon-box {
+  width: 2.8rem;
+  height: 2.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.65rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #60a5fa;
+  margin-bottom: 1.5rem;
+  transition: all 0.4s ease;
+}
+
+.service-card:hover .service-icon-box {
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  color: #ffffff;
+  border-color: transparent;
+  box-shadow: 0 0 25px rgba(59, 130, 246, 0.6);
+  transform: scale(1.05);
+}
+
+.service-card-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.service-card-desc {
+  font-size: 0.88rem;
+  color: #94a3b8;
+  line-height: 1.5;
+}
+
+.service-card:hover .service-card-title,
+.service-card:hover .service-card-desc {
+  opacity: 0;
+  transform: translateY(-12px);
+}
+
+/* === רשימת פיצ'רים - מרווח נקי מהאייקון === */
+.service-features {
+  position: absolute;
+  top: 6.8rem; /* הורדה למטה למניעת צפיפות עם האייקון */
+  left: 2.25rem;
+  right: 2.25rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.4s ease;
+}
+
+.service-card:hover .service-features {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.service-features-title {
+  color: #60a5fa;
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.8rem;
+  padding-bottom: 0.4rem;
+  width: auto;
+}
+
+.service-features-title::after {
+  content: "";
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.service-features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+
+
+.service-features-list li {
+  color: #f1f5f9;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  transition: transform 0.4s ease;
+}
+
+.service-features-list li::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  background: #3b82f6;
+  border-radius: 50%;
+  box-shadow: 0 0 4px rgba(59, 130, 246, 0.8); /* הוספת זוהר קטן לנקודה */
+  flex-shrink: 0;
+}
+
+/* === כפתור - קטן וקומפקטי === */
+.services-cta { text-align: center; margin-top: 3.5rem; }
+
+.btn-start-project {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.7rem 2.2rem;
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  color: white !important;
+  font-size: 0.88rem;
+  font-weight: 700;
+  border-radius: 9999px;
+  text-decoration: none !important;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+}
+
+.btn-start-project:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.5);
+}
+
+@media (max-width: 768px) {
+    .services-title {
+        font-size: 2.5rem; /* מתאים את עצמו דינמית לרוחב המסך */
+        line-height: 1.1;
+        white-space: nowrap; /* מונע מהטקסט לרדת שורה */
+        letter-spacing: -0.05em;
+        margin-bottom: 2rem;
+    }
+}
+
+/* === Services.css - Premium Mobile Fix === */
+
+/* 1. אפקטים למחשב בלבד (Hover) */
+@media (hover: hover) {
+  .service-card:hover {
+    background: rgba(23, 37, 84, 0.5);
+    transform: translateY(-7px) scale(1.01);
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.15), 0 10px 30px rgba(0, 0, 0, 0.5);
+  }
+
+  .service-card:hover::before {
+    opacity: 1;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.5), rgba(139, 92, 246, 0.3));
+  }
+
+  .service-card:hover .service-card-title,
+  .service-card:hover .service-card-desc {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+
+  .service-card:hover .service-features {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+
+/* 2. הגדרות מובייל (Click Based) */@media screen and (max-width: 768px) {
+  /* הסרת padding מהקונטיינר למרכוז נכון */
+  .services-container {
+    padding: 0 1rem;
+  }
+
+  /* מרכוז הגריד והסרת שוליים מיותרים */
+  .services-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+    margin: 0 auto;
+    gap: 1.25rem;
+  }
+
+  /* כרטיסייה - חזרה לעיצוב המקורי עם תיקון מרכוז */
+  #services .service-card {
+    width: 100%;
+    max-width: 305px; /* הקטנה לגודל נוח יותר */
+    height: 195px; /* הגובה המקורי מהקובץ שלך */
+    margin: 0 auto;
+    position: relative;
+    /* ביטול כל תנועה אלכסונית */
+    transform: none !important; 
+    transition: background 0.3s, border-color 0.3s, box-shadow 0.3s;
+  }
+
+  /* איפוס הזוהר במצב רגיל (לא פעיל) */
+  #services .service-card:not(.active-mobile)::before {
+    opacity: 0.4;
+    background: linear-gradient(
+      135deg,
+      rgba(59, 130, 246, 0.15) 0%,
+      rgba(139, 92, 246, 0.08) 50%,
+      rgba(59, 130, 246, 0.15) 100%
+    );
+  }
+
+  /* ביטול מוחלט של כל אפקטי Hover במובייל */
+  #services .service-card:hover {
+    background: rgba(15, 23, 42, 0.6) !important;
+    transform: none !important;
+    box-shadow: none !important;
+  }
+
+  #services .service-card:hover .service-card-title,
+  #services .service-card:hover .service-card-desc {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  #services .service-card:hover .service-icon-box {
+    background: rgba(255, 255, 255, 0.03) !important;
+    color: #60a5fa !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+    box-shadow: none !important;
+    transform: none !important;
+  }
+
+  /* איפוס מלא למצב התחלתי כשלא פעיל */
+  #services .service-card:not(.active-mobile) {
+    background: rgba(15, 23, 42, 0.6) !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+  }
+
+  /* המצב הרצוי בלחיצה (צילום 3) */
+  #services .service-card.active-mobile {
+    background: rgba(23, 37, 84, 0.5) !important;
+    border-color: rgba(59, 130, 246, 0.5) !important;
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.15), 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+  }
+
+  /* הגברת זוהר המסגרת במצב פעיל */
+  #services .service-card.active-mobile::before {
+    opacity: 1;
+    background: linear-gradient(
+      135deg,
+      rgba(59, 130, 246, 0.5) 0%,
+      rgba(139, 92, 246, 0.3) 50%,
+      rgba(59, 130, 246, 0.5) 100%
+    );
+  }
+
+  /* החלפת תוכן נקייה בלחיצה */
+  #services .service-card.active-mobile .service-card-title,
+  #services .service-card.active-mobile .service-card-desc {
+    opacity: 0 !important;
+    pointer-events: none;
+  }
+
+  /* תיקון הסטייה ימינה של הפיצ'רים */
+  #services .service-card .service-features {
+    position: absolute;
+    top: 6.8rem; /* מרווח נכון מהאייקון */
+    left: 0;
+    right: 0;
+    transform: none;
+    padding: 0 2.25rem;
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+  }
+
+  /* הצגה במצב פעיל - ללא אלכסונים */
+  #services .service-card.active-mobile .service-features {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* האייקון נשאר יציב ומרכזי */
+  #services .service-card.active-mobile .service-icon-box {
+    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+    color: #ffffff;
+    box-shadow: 0 0 25px rgba(59, 130, 246, 0.6);
+  }
+  
+}

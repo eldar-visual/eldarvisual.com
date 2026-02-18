@@ -1,0 +1,396 @@
+/* hero.module.css - גרסה היברידית (מובייל תמונה / דסקטופ אנימציה) */
+
+/* אנימציות */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* @keyframes float {
+  0%, 100% { transform: translateY(0) translateX(3rem); }
+  50% { transform: translateY(-20px) translateX(3rem); }
+} */
+
+/* אנימציה חדשה שמחליפה את float וממורכזת יותר */
+@keyframes floatCentered {
+  0%, 100% { transform: translateY(0) translateX(-1.5rem) rotate(6deg); }
+  50% { transform: translateY(-20px) translateX(-1.5rem) rotate(6deg); }
+}
+
+
+@keyframes scrollVertical {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
+.heroContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 2rem;
+    width: 100%;
+}
+
+/* Section Container */
+.heroSection {
+    position: relative;
+    width: 100%;
+    min-height: 100vh !important;
+    display: flex !important;
+    align-items: center;
+    padding-top: 16px !important;
+    padding-bottom: 2rem !important;
+}
+
+@media (min-width: 768px) {
+  .heroSection {
+    padding-top: 8rem;
+    padding-bottom: 5rem;
+  }
+}
+
+/* Background Gradients */
+.heroBgBlobs {
+  position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: -10;
+}
+.blobBlue {
+  position: absolute; top: -20%; right: -10%; width: 600px; height: 600px;
+  background-color: rgba(37, 99, 235, 0.1); border-radius: 9999px; filter: blur(120px);
+}
+.blobPurple {
+  position: absolute; bottom: -20%; left: -10%; width: 600px; height: 600px;
+  background-color: rgba(147, 51, 234, 0.1); border-radius: 9999px; filter: blur(120px);
+}
+
+/* Code Overlay Background */
+.heroCodeBg {
+  position: absolute; top: 0; right: 0; height: 100%; width: 100vw;
+  overflow: hidden; pointer-events: none; user-select: none; z-index: 0;
+  display: flex; align-items: center; justify-content: flex-end;
+  opacity: 0.25; filter: blur(1px); transform: translateX(0);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 30%, black 70%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 30%, black 70%, transparent 100%);
+}
+
+@media (min-width: 768px) {
+  .heroCodeBg {
+    width: 70vw; opacity: 0.5; transform: translateX(5rem);
+    mask-image: linear-gradient(to right, transparent 10%, black 50%, black 100%), 
+                linear-gradient(to bottom, transparent 0%, black 25%, black 75%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 10%, black 50%, black 100%), 
+                        linear-gradient(to bottom, transparent 0%, black 25%, black 75%, transparent 100%);
+    mask-composite: intersect; -webkit-mask-composite: source-in;
+  }
+}
+
+.codeRotateWrapper { transform: rotate(12deg); width: 100%; }
+
+/* Code Block Styles */
+.codeBlock { margin-bottom: 1rem; opacity: 0.9; padding-left: 1rem; }
+@media (min-width: 768px) { .codeBlock { padding-left: 2.5rem; } }
+
+.codeLine { white-space: pre; font-family: monospace; font-size: 0.8rem; line-height: 1.4rem; }
+@media (min-width: 768px) { .codeLine { font-size: 1rem; line-height: 1.5rem; } }
+
+/* Syntax Tokens */
+.tokenKeyword { color: #F472B6; font-weight: 700; }
+.tokenFunc { color: #93C5FD; }
+.tokenString { color: #6EE7B7; }
+.tokenVar { color: #A5F3FC; }
+.tokenProp { color: #C4B5FD; }
+.tokenPunct { color: #FACC15; }
+.tokenComment { color: #64748B; font-style: italic; }
+
+/* Main Content Grid */
+.heroContent {
+  position: relative; z-index: 10; max-width: 80rem; margin: 0 auto; padding: 0 1.5rem; width: 100%;
+  display: flex; flex-direction: column; /* מובייל: טור */
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .heroContent {
+    display: grid; grid-template-columns: 1fr 1fr; /* דסקטופ: גריד */
+    gap: 3rem; align-items: center;
+  }
+}
+
+/* === Mobile Image Wrapper (החלק החדש) === */
+.mobileImageContainer {
+  display: block;
+  width: 100%;
+  position: relative;
+  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  animation: fadeInUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s forwards;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); 
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+
+.mobileImageContainer img {
+  width: 100%;
+  height: auto;
+  border-radius: 1rem; /* פינות עגולות */
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5); /* צל יפה */
+}
+
+/* הסתרה מוחלטת של התמונה בדסקטופ */
+@media (min-width: 768px) {
+  .mobileImageContainer {
+    display: none;
+  }
+}
+
+/* === Text Side === */
+.heroTextSide {
+  display: flex; 
+  flex-direction: column; 
+  gap: 1.5rem; 
+  position: relative; 
+  z-index: 20;
+  text-align: left; /* מיושר לשמאל גם במובייל */
+  opacity: 0; 
+  animation: fadeInUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.3s forwards;
+}
+
+@media (min-width: 768px) {
+  .heroTextSide 
+  { 
+    margin-top: -2rem; 
+    gap: 2rem; 
+  }
+}
+
+.heroTitle {
+  font-size: 2.2rem; 
+  text-align: center;
+  font-weight: 800; 
+  letter-spacing: -0.01em; 
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+  color: white; 
+  margin: 0;
+}
+@media (min-width: 768px) 
+{ 
+  .heroTitle 
+  { 
+    font-size: 4rem; 
+    line-height: 1.1; 
+    letter-spacing: -0.025em;
+    text-align: left;
+  } 
+}
+
+.heroTitleGradient {
+  color: transparent; 
+  background-clip: text; 
+  -webkit-background-clip: text;
+  background-image: linear-gradient(to right, #60A5FA, #A855F7);
+}
+
+.heroSubtitleGroup { 
+  display: flex; 
+  flex-direction: 
+  column; gap: 0.75rem; 
+}
+
+.heroSubtitle {
+  font-size: 1rem; 
+  color: #E2E8F0; 
+  line-height: 1.6; 
+  font-weight: 500; 
+  max-width: 36rem;
+  text-align: center; /* מירכוז למובייל */
+  margin: 0 auto; /* מרכוז הקונטיינר עצמו */
+}
+@media (min-width: 768px) { 
+  .heroSubtitle { 
+    font-size: 1.125rem; 
+    text-align: left; 
+    margin: 0;
+  } }
+
+.heroActions {
+  display: flex; flex-direction: column; gap: 1rem; align-items: flex-start;
+  margin-bottom: 1.5rem; opacity: 0; animation: fadeInUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.5s forwards;
+}
+@media (min-width: 768px) {
+  .heroActions 
+  { 
+    flex-direction: row; 
+    align-items: center; 
+    width: 100%;
+    gap: 1.5rem; 
+  }
+}
+
+
+
+.btnLink {
+  background: none; border: none; color: #b1e6ff; font-size: 0.9375rem; font-weight: 500;
+  cursor: pointer; padding: 0; transition: color 0.3s; display: flex; align-items: center; gap: 0.5rem;
+}
+@media (min-width: 768px) { .btnLink { font-size: 1rem; } }
+.btnLink:hover { color: white; }
+.btnLink:hover .arrowIcon { transform: translateX(4px); }
+
+.trustLine {
+  font-size: 0.72rem; 
+  color: #94A3B8; 
+  font-weight: 600; 
+  letter-spacing: 0.1em;
+  text-transform: uppercase; 
+  margin-top: 1.5rem;
+  width: 100%;            
+  white-space: normal;   
+  word-wrap: break-word; 
+  line-height: 1.6;
+}
+@media (min-width: 768px) { .trustLine { margin-top: 3rem; } }
+
+
+/* === Desktop Visual Side (האלמנט המקורי שאהבת) === */
+/* הסתרה מוחלטת במובייל */
+.heroVisualSide {
+  display: none; 
+}
+
+/* הצגה רק בדסקטופ - בדיוק כמו שהיה */
+@media (min-width: 768px) {
+  .heroVisualSide {
+    display: flex;
+    height: 650px;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-end;
+    perspective: 2000px;
+    opacity: 0;
+    animation: fadeInUp 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) 0.4s forwards;
+  }
+}
+
+.browserMockup {
+  position: relative; 
+  z-index: 20; 
+  transform: translateX(-1.5rem);
+  animation: float 6s ease-in-out infinite;
+}
+
+.browserWindow {
+  width: 480px; /* רוחב מלא וגדול */
+  background-color: white; 
+  border-radius: 0.75rem;
+  box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.7);
+  overflow: hidden; 
+  border: 1px solid rgba(30, 41, 59, 0.1);
+  transform: rotate(6deg); /* הרוטציה שאהבת */
+  transition: transform 0.7s ease-out;
+}
+
+.browserWindow:hover { transform: rotate(0deg) scale(1.02); }
+
+.browserHeader {
+  background-color: white; border-bottom: 1px solid #F1F5F9; padding: 0.75rem 1rem;
+  display: flex; align-items: center; gap: 1rem; position: relative; z-index: 20;
+}
+.browserDots { display: flex; gap: 0.375rem; }
+.dot { width: 0.625rem; height: 0.625rem; border-radius: 9999px; background-color: #E2E8F0; }
+.browserAddressBar {
+  flex: 1; background-color: #F8FAFC; border: 1px solid #F1F5F9; border-radius: 0.25rem;
+  text-align: center; padding: 0.25rem 0; font-size: 10px; color: #94A3B8; font-weight: 500; letter-spacing: 0.025em;
+}
+.browserContentViewport {
+  position: relative; height: 500px; overflow: hidden; background-color: #F8FAFC; cursor: default;
+}
+.scrollingContent {
+  width: 100%; position: absolute; top: 0; left: 0; animation: scrollVertical 20s linear infinite;
+}
+.browserWindow:hover .scrollingContent { animation-play-state: paused; }
+
+/* Scroll Items Styling (Desktop) */
+.scrollItem {
+  background-color: white; padding: 1rem; margin-bottom: 0.75rem;
+  border-bottom: 1px solid #F1F5F9; transition: background-color 0.3s ease;
+}
+.scrollItem:hover.blueHover { background-color: rgba(239, 246, 255, 0.5); }
+.scrollItem:hover.purpleHover { background-color: rgba(250, 245, 255, 0.5); }
+.scrollItem:hover.greenHover { background-color: rgba(240, 253, 244, 0.5); }
+
+.itemContent { display: flex; gap: 1rem; align-items: center; }
+.itemReverse { flex-direction: row-reverse; }
+
+.imgWrapper {
+  width: 40%; height: 6rem; position: relative; border-radius: 0.5rem; overflow: hidden;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+.imgCover { object-fit: cover; transition: all 0.5s ease; }
+.grayscaleHover { filter: grayscale(100%); } .grayscaleHover:hover { filter: grayscale(0); }
+.hueHover:hover { filter: hue-rotate(90deg); } .zoomHover:hover { transform: scale(1.1); }
+
+.textWrapper { width: 60%; display: flex; flex-direction: column; gap: 0.5rem; }
+.skeletonLine { height: 0.5rem; background-color: #F1F5F9; border-radius: 0.25rem; }
+.itemTitle { color: #1E293B; font-weight: 700; font-size: 0.875rem; line-height: 1.25; }
+
+.miniBtn {
+  margin-top: 0.5rem; display: inline-block; padding: 0.25rem 0.75rem;
+  background-color: #2563EB; color: white; font-size: 9px; font-weight: 700;
+  border-radius: 9999px; border: none; cursor: pointer;
+}
+.miniBtn:hover { background-color: #1D4ED8; }
+
+.webmasterHeader { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 0.5rem; }
+.gridImgs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; }
+.gridImgWrap { height: 4rem; border-radius: 0.25rem; background-color: #F1F5F9; overflow: hidden; position: relative; cursor: pointer; }
+.flashHover img { opacity: 0.8; transition: all 0.3s; } .flashHover:hover img { filter: brightness(1.5); }
+.darkenHover img { opacity: 0.6; filter: hue-rotate(15deg); } .darkenHover:hover img { filter: brightness(0.5); }
+.plusMore {
+  height: 4rem; border-radius: 0.25rem; background-color: #F1F5F9; display: flex;
+  align-items: center; justify-content: center; color: #94A3B8; font-size: 0.75rem; font-weight: 700;
+  cursor: pointer; transition: background-color 0.3s;
+}
+.plusMore:hover { background-color: #E2E8F0; }
+.zoomContainer { position: relative; height: 8rem; width: 100%; overflow: hidden; cursor: pointer; }
+.overlayGrad { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.6), transparent); display: flex; align-items: flex-end; padding: 1rem; z-index: 10; pointer-events: none; }
+.overlayText { color: white; font-weight: 700; font-size: 0.875rem; }
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+.btnPrimary {
+  padding: 0.875rem 1.5rem;
+  /* יצירת הגרדיאנט כרקע דינמי */
+  background: linear-gradient(90deg, #2563EB, #A855F7, #60A5FA, #2563EB) !important;
+  background-size: 300% 100% !important;
+  
+  color: white;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .btnPrimary { width: auto; padding: 1rem 2rem; font-size: 1rem; }
+}
+
+.btnPrimary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 25px -5px rgba(37, 99, 235, 0.4);
+  /* הפעלת האנימציה */
+  animation: gradientFlow 2s linear infinite !important;
+}
