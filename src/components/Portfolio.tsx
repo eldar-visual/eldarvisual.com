@@ -28,7 +28,7 @@ const projects = [
     desc: "Premium jewelry store featuring a seamless shopping experience and luxury branding.",
     tech: ["Next.js", "CSS", "MongoDB"],
     image: "/AdiShoham.png",
-    link: "https://cute-gecko-7ab972.netlify.app/" 
+    link: "https://adi-shoham.netlify.app/" 
   }
 ];
 
@@ -50,7 +50,6 @@ export default function Portfolio() {
               <div className="image-wrapper">
                 <img src={project.image} alt={project.title} className="project-img" />
                 
-                {/* Overlay שמופיע ב-Hover */}
                 <div className="card-overlay">
                   <a 
                     href={project.link} 
