@@ -18,7 +18,7 @@ export default function Footer() {
         </div>
 
         <div className="footer-socials">
-          <a href="https://github.com/avirameldar" className="social-link" aria-label="Github" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/eldar-visual" className="social-link" aria-label="Github" target="_blank" rel="noopener noreferrer">
             <Github size={20} />
           </a>
           
