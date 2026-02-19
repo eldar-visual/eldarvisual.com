@@ -1,44 +1,33 @@
 import React from 'react';
 import './Footer.css';
-import { Github, Linkedin, Instagram, Facebook } from 'lucide-react';
+import { Github, Linkedin } from 'lucide-react';
 
-const Footer = () => {
+export default function Footer() {
   return (
     <footer className="site-footer">
       <div className="footer-container">
         
-        {/* צד שמאל: טקסט זכויות יוצרים */}
-        <div className="footer-copyright">
-          © 2026 EldarVisual Web Studio. All rights reserved.
+        <div className="footer-content" style={{ display: 'flex', flexDirection: 'column' }}>
+          <div className="footer-copyright">
+            © 2026 EldarVisual Web Studio. All rights reserved.
+          </div>
+
+          <div className="concept-disclaimer" style={{ fontSize: '11px', opacity: 0.5, marginTop: '4px', color: '#94A3B8' }}>
+            * This is a concept project for portfolio demonstration purposes only.
+          </div>
         </div>
 
-        {/* צד ימין: אייקונים */}
         <div className="footer-socials">
-          <a href="https://github.com/avirameldar" className="social-link" aria-label="Github">
+          <a href="https://github.com/avirameldar" className="social-link" aria-label="Github" target="_blank" rel="noopener noreferrer">
             <Github size={20} />
           </a>
           
-          <a href="https://www.linkedin.com/in/aviram-eldar/" className="social-link" aria-label="LinkedIn">
+          <a href="https://www.linkedin.com/in/aviram-eldar/" className="social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
             <Linkedin size={20} />
           </a>
-
-          {/* הסתרנו זמנית את אינסטגרם ופייסבוק.
-             כשתרצה להחזיר אותם, פשוט מחק את הסוגריים המסולסלים והכוכביות שמקיפים אותם.
-          */}
-
-          {/* <a href="#" className="social-link" aria-label="Instagram">
-            <Instagram size={20} />
-          </a>
-          <a href="#" className="social-link" aria-label="Facebook">
-            <Facebook size={20} />
-          </a> 
-          */}
-
         </div>
 
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}

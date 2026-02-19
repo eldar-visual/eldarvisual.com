@@ -11,12 +11,12 @@
 }
 
 .footer-container {
-    max-width: 80rem; /* תואם לרוחב ה-Navbar */
+    max-width: 1250px; /* שנה מ-80rem ל-1200px כדי להתאים ל-Navbar הסטנדרטי */
     margin: 0 auto;
-    padding: 0 3rem;
+    padding: 0 2rem; /* צמצום ה-padding מ-3rem כדי להתיישר עם הלוגו למעלה */
     display: flex;
     align-items: center;
-    justify-content: space-between; /* מרחיק את הצדדים לקצוות */
+    justify-content: space-between;
 }
 
 /* טקסט זכויות יוצרים */

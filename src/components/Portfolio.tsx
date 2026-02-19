@@ -6,27 +6,27 @@ const projects = [
   {
     id: 1,
     title: "Aviram Eldar",
-    category: "Web Development",
-    desc: "Professional portfolio showcasing web design, development, and motion design services.",
-    tech: ["HTML", "CSS", "JavaScript"],
+    category: "Official Studio Site", 
+    desc: "My professional digital presence, featuring high-end web design and interactive motion.",
+    tech: ["Next.js", "Tailwind", "Framer Motion"],
     image: "/aviramweb.png",
     link: "https://aviram-eldar.website/#home" 
   },
   {
     id: 2,
     title: "Judith Asher Art",
-    category: "UI/UX Design",
-    desc: "A digital gallery showcasing original paintings with a focus on visual storytelling.",
-    tech: ["Next.js", "CSS"],
+    category: "Concept & UI Demo", 
+    desc: "A digital gallery concept exploring minimalist aesthetics and visual storytelling.",
+    tech: ["Next.js", "CSS Modules"],
     image: "/JudithArtSite.png",
     link: "https://judith-art.netlify.app" 
   },
   {
     id: 3, 
     title: "Adi Shoham",
-    category: "E-commerce",
-    desc: "Premium jewelry store featuring a seamless shopping experience and luxury branding.",
-    tech: ["Next.js", "CSS", "MongoDB"],
+    category: "Full-Stack Concept", 
+    desc: "Premium jewelry store demonstration, integrating MongoDB for dynamic content management.",
+    tech: ["Next.js", "MongoDB", "Node.js"],
     image: "/AdiShoham.png",
     link: "https://adi-shoham.netlify.app/" 
   }
