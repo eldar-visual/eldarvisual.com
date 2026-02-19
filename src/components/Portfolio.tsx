@@ -8,7 +8,7 @@ const projects = [
     title: "Aviram Eldar",
     category: "Official Studio Site", 
     desc: "My professional digital presence, featuring high-end web design and interactive motion.",
-    tech: ["Next.js", "Tailwind", "Framer Motion"],
+    tech: ["JavaScript", "CSS Modules", "After Effects"],
     image: "/aviramweb.png",
     link: "https://aviram-eldar.website/#home" 
   },
@@ -17,7 +17,7 @@ const projects = [
     title: "Judith Asher Art",
     category: "Concept & UI Demo", 
     desc: "A digital gallery concept exploring minimalist aesthetics and visual storytelling.",
-    tech: ["Next.js", "CSS Modules"],
+    tech: ["Next.js", "Tailwind"],
     image: "/JudithArtSite.png",
     link: "https://judith-art.netlify.app" 
   },
@@ -26,7 +26,7 @@ const projects = [
     title: "Adi Shoham",
     category: "Full-Stack Concept", 
     desc: "Premium jewelry store demonstration, integrating MongoDB for dynamic content management.",
-    tech: ["Next.js", "MongoDB", "Node.js"],
+    tech: ["Next.js", "MongoDB", "CSS Modules"],
     image: "/AdiShoham.png",
     link: "https://adi-shoham.netlify.app/" 
   }
