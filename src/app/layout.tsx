@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
   // -- האייקון    ---
   icons: {
-    icon: '/Favicon.ico', 
+    icon: '/favicon.ico', 
     apple: '/f avicon.ico', 
   },
 };
