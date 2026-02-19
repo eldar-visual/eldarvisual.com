@@ -14,12 +14,10 @@ export const metadata: Metadata = {
   // מילות מפתח לחיפוש
   keywords: "web design, web development, react, next.js, ui/ux, portfolio, studio, israel",
 
-  // --- התוספת החדשה: האייקון ---
+  // -- האייקון    ---
   icons: {
-    icon: '/Favicon.ico', // וודא שהקובץ הזה קיים בתיקיית public
-    // אם יש לך קובץ PNG איכותי, עדיף להשתמש בו כך:
-    // icon: '/icon.png', 
-    apple: '/f avicon.ico', // אופציונלי: לאייפונים
+    icon: '/Favicon.ico', 
+    apple: '/f avicon.ico', 
   },
 };
 

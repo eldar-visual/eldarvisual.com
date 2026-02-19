@@ -33,7 +33,6 @@ export default function Home() {
       <Hero />
 
       {/* ================= SERVICES SECTION ================= */}
-      {/* פתרון בטוח: שימוש בתגית IMG כדי להבטיח שהתמונה נטענת פיזית */}
       <section className="relative z-20 bg-slate-950">
          <Services />
      </section>
