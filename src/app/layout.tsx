@@ -5,19 +5,28 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  // הכותרת הראשית שתופיע בגוגל ובטאב
   title: "EldarVisual Web Studio | Premium Web Design & Development",
-  
-  // התיאור שמופיע מתחת לכותרת בתוצאות החיפוש
   description: "Specialized in crafting high-performance, stunning web applications using React, Next.js, and modern UI/UX principles.",
-  
-  // מילות מפתח לחיפוש
   keywords: "web design, web development, react, next.js, ui/ux, portfolio, studio, israel",
-
-  // -- האייקון    ---
   icons: {
     icon: '/favicon.ico', 
-    apple: '/f avicon.ico', 
+    apple: '/favicon.ico', 
+  },
+  openGraph: {
+    title: 'EldarVisual Web Studio | Premium Web Design',
+    description: 'Specialized in crafting high-performance, stunning web applications.',
+    url: 'https://eldarvisual.com',
+    siteName: 'EldarVisual',
+    images: [
+      {
+        url: 'https://eldarvisual.com/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'EldarVisual Studio',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
   },
 };
 
@@ -28,9 +37,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning={true}>
-      <body className={inter.className} suppressHydrationWarning={true}>{children}</body>
+      <body className={inter.className} suppressHydrationWarning={true}>
+        {children}
+      </body>
     </html>
   );
 }
-
-<div id="site-frame"></div>
