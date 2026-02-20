@@ -13,7 +13,7 @@ export default function Footer() {
           </div>
 
           <div className="concept-disclaimer" style={{ fontSize: '11px', opacity: 0.5, marginTop: '4px', color: '#94A3B8' }}>
-            * This is a concept project for portfolio demonstration purposes only.
+            Designed and developed with passion by Eldar Visual.
           </div>
         </div>
 
