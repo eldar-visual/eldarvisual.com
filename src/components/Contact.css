@@ -184,7 +184,7 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  margin-top: 1.6rem;
+  margin-top: 1rem;
 }
 
 .submit-btn:hover:not(:disabled) {
