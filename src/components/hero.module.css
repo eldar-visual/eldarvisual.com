@@ -1,27 +1,32 @@
-/* hero.module.css - גרסה היברידית (מובייל תמונה / דסקטופ אנימציה) */
 
-/* אנימציות */
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* @keyframes float {
-  0%, 100% { transform: translateY(0) translateX(3rem); }
-  50% { transform: translateY(-20px) translateX(3rem); }
-} */
-
-/* אנימציה חדשה שמחליפה את float וממורכזת יותר */
-@keyframes floatCentered {
-  0%, 100% { transform: translateY(0) translateX(-1.5rem) rotate(6deg); }
-  50% { transform: translateY(-20px) translateX(-1.5rem) rotate(6deg); }
+@keyframes floatSmooth {
+  0%, 100% { transform: translateY(0) translateX(-1.5rem); }
+  50% { transform: translateY(-12px) translateX(-1.5rem); }
 }
-
 
 @keyframes scrollVertical {
   0% { transform: translateY(0); }
   100% { transform: translateY(-50%); }
 }
+
+@keyframes blurReveal {
+  0% { 
+    opacity: 0; 
+    transform: translateY(30px); 
+    filter: blur(12px); 
+  }
+  100% { 
+    opacity: 1; 
+    transform: translateY(0); 
+    filter: blur(0); 
+  }
+}
+
 
 .heroContainer {
     max-width: 1200px;
@@ -106,18 +111,18 @@
 /* Main Content Grid */
 .heroContent {
   position: relative; z-index: 10; max-width: 80rem; margin: 0 auto; padding: 0 1.5rem; width: 100%;
-  display: flex; flex-direction: column; /* מובייל: טור */
+  display: flex; flex-direction: column; 
   gap: 2rem;
 }
 
 @media (min-width: 768px) {
   .heroContent {
-    display: grid; grid-template-columns: 1fr 1fr; /* דסקטופ: גריד */
+    display: grid; grid-template-columns: 1fr 1fr; 
     gap: 3rem; align-items: center;
   }
 }
 
-/* === Mobile Image Wrapper (החלק החדש) === */
+/* === Mobile Image Wrapper  === */
 .mobileImageContainer {
   display: block;
   width: 100%;
@@ -128,16 +133,17 @@
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); 
   border-radius: 1.5rem;
   overflow: hidden;
+  opacity: 0;
+  animation: blurReveal 1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s forwards;
 }
 
 .mobileImageContainer img {
   width: 100%;
   height: auto;
-  border-radius: 1rem; /* פינות עגולות */
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5); /* צל יפה */
+  border-radius: 1rem; 
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5); 
 }
 
-/* הסתרה מוחלטת של התמונה בדסקטופ */
 @media (min-width: 768px) {
   .mobileImageContainer {
     display: none;
@@ -151,9 +157,7 @@
   gap: 1.5rem; 
   position: relative; 
   z-index: 20;
-  text-align: left; /* מיושר לשמאל גם במובייל */
-  opacity: 0; 
-  animation: fadeInUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.3s forwards;
+  text-align: left; 
 }
 
 @media (min-width: 768px) {
@@ -173,6 +177,8 @@
   margin-bottom: 0.5rem;
   color: white; 
   margin: 0;
+  opacity: 0;
+  animation: blurReveal 1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.1s forwards;
 }
 @media (min-width: 768px) 
 { 
@@ -194,8 +200,10 @@
 
 .heroSubtitleGroup { 
   display: flex; 
-  flex-direction: 
-  column; gap: 0.75rem; 
+  flex-direction: column; 
+  gap: 0.75rem; 
+  opacity: 0;
+  animation: blurReveal 1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.3s forwards;
 }
 
 .heroSubtitle {
@@ -204,8 +212,8 @@
   line-height: 1.6; 
   font-weight: 500; 
   max-width: 36rem;
-  text-align: center; /* מירכוז למובייל */
-  margin: 0 auto; /* מרכוז הקונטיינר עצמו */
+  text-align:   center; 
+  margin: 0 auto; 
 }
 @media (min-width: 768px) { 
   .heroSubtitle { 
@@ -215,9 +223,15 @@
   } }
 
 .heroActions {
-  display: flex; flex-direction: column; gap: 1rem; align-items: flex-start;
-  margin-bottom: 1.5rem; opacity: 0; animation: fadeInUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.5s forwards;
+  display: flex; 
+  flex-direction: column; 
+  gap: 1rem; 
+  align-items: flex-start;
+  margin-bottom: 1.5rem; 
+  opacity: 0; 
+  animation: blurReveal 1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.5s forwards;
 }
+
 @media (min-width: 768px) {
   .heroActions 
   { 
@@ -249,17 +263,16 @@
   white-space: normal;   
   word-wrap: break-word; 
   line-height: 1.6;
+  opacity: 0;
+  animation: blurReveal 1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.7s forwards;
 }
 @media (min-width: 768px) { .trustLine { margin-top: 3rem; } }
 
 
-/* === Desktop Visual Side (האלמנט המקורי שאהבת) === */
-/* הסתרה מוחלטת במובייל */
+/* === Desktop Visual Side === */
 .heroVisualSide {
   display: none; 
 }
-
-/* הצגה רק בדסקטופ - בדיוק כמו שהיה */
 @media (min-width: 768px) {
   .heroVisualSide {
     display: flex;
@@ -276,22 +289,26 @@
 .browserMockup {
   position: relative; 
   z-index: 20; 
-  transform: translateX(-1.5rem);
-  animation: float 6s ease-in-out infinite;
+ animation: floatSmooth 6s ease-in-out infinite;
 }
 
 .browserWindow {
-  width: 480px; /* רוחב מלא וגדול */
+  width: 480px; 
   background-color: white; 
   border-radius: 0.75rem;
-  box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.6);
   overflow: hidden; 
   border: 1px solid rgba(30, 41, 59, 0.1);
-  transform: rotate(6deg); /* הרוטציה שאהבת */
-  transition: transform 0.7s ease-out;
+  
+  transform: rotate(6deg) scale(1);
+  transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.7s ease;
 }
 
-.browserWindow:hover { transform: rotate(0deg) scale(1.02); }
+.browserWindow:hover { 
+  transform: rotate(0deg) scale(1.02); 
+  box-shadow: 0 60px 110px -15px rgba(0, 0, 0, 0.4);
+  transition: transform 1s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 1s ease;
+}
 
 .browserHeader {
   background-color: white; border-bottom: 1px solid #F1F5F9; padding: 0.75rem 1rem;
@@ -313,12 +330,23 @@
 
 /* Scroll Items Styling (Desktop) */
 .scrollItem {
-  background-color: white; padding: 1rem; margin-bottom: 0.75rem;
-  border-bottom: 1px solid #F1F5F9; transition: background-color 0.3s ease;
+  background-color: white; 
+  padding: 1rem; 
+  margin-bottom: 0.75rem;
+  border-bottom: 1px solid #F1F5F9; 
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.scrollItem:hover.blueHover { background-color: rgba(239, 246, 255, 0.5); }
-.scrollItem:hover.purpleHover { background-color: rgba(250, 245, 255, 0.5); }
-.scrollItem:hover.greenHover { background-color: rgba(240, 253, 244, 0.5); }
+
+.scrollItem:hover {
+  transform: translateY(-5px) scale(1.02); /* קפיצה קטנה למעלה וגדילה קלה */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* צל שנותן עומק */
+  z-index: 10; /* מוודא שהכרטיסייה מעל האחרות בזמן הריחופ */
+}
+
+
+.scrollItem:hover.blueHover { background-color: rgba(247, 250, 255, 0.5); }
+.scrollItem:hover.purpleHover { background-color: rgba(234, 229, 240, 0.5); }
+.scrollItem:hover.greenHover { background-color: rgba(251, 255, 252, 0.5); }
 
 .itemContent { display: flex; gap: 1rem; align-items: center; }
 .itemReverse { flex-direction: row-reverse; }
