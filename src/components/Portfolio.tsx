@@ -1,6 +1,7 @@
 import React from 'react';
 import { ExternalLink, ArrowUpRight } from 'lucide-react';
 import './Portfolio.css';
+import Image from 'next/image';
 
 const projects = [
   {
@@ -48,7 +49,13 @@ export default function Portfolio() {
           {projects.map((project) => (
             <article key={project.id} className="premium-card">
               <div className="image-wrapper">
-                <img src={project.image} alt={project.title} className="project-img" />
+                <Image 
+                src={project.image} 
+                alt={project.title} 
+                className="project-img" 
+                sizes="(max-width: 768px) 100vw, 33vw"
+    quality={75}
+                />
                 
                 <div className="card-overlay">
                   <a 
