@@ -79,6 +79,7 @@ const ScrollContent = () => {
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               quality={85}
               priority
+              loading="eager"
               />
             </div>
             <div className={styles.textWrapper}>
@@ -99,7 +100,7 @@ const ScrollContent = () => {
       {/* ITEM 4 */}
       <div className={styles.scrollItem}>
           <div className={`${styles.zoomContainer} group`}>
-            <Image src="/settings.jpg" alt="Website Management Settings" fill className={`${styles.imgCover} ${styles.zoomHover}`} sizes="(max-width: 768px) 100vw, 33vw" />
+            <Image src="/settings.webp" alt="Website Management Settings" fill className={`${styles.imgCover} ${styles.zoomHover}`} sizes="(max-width: 768px) 100vw, 33vw" />
             <div className={styles.overlayGrad}><h3 className={styles.overlayText}>Website Management</h3></div>
           </div>
       </div>
@@ -127,7 +128,7 @@ export default function Hero() {
 
       <div className={styles.heroCodeBg}>
          <div className={styles.codeRotateWrapper}>
-           {Array.from({ length: 8 }).map((_, i) => (
+           {Array.from({ length: 2 }).map((_, i) => (
              <CodeBlock key={i} />
            ))}
          </div>
