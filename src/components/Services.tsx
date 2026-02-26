@@ -67,7 +67,7 @@ const handleCardClick = (id: number) => {
     <section id="services">
       {/* Background Pattern */}
       <div className="services-bg-pattern">
-        <img src="/services.png" alt="" aria-hidden="true" />
+        <img src="/services.webp" alt="" aria-hidden="true" />
       </div>
 
       <div className="services-container">

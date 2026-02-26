@@ -9,7 +9,7 @@ const projects = [
     category: "Official Studio Site", 
     desc: "My professional digital presence, featuring high-end web design and interactive motion.",
     tech: ["JavaScript", "CSS Modules", "After Effects"],
-    image: "/aviramweb.png",
+    image: "/aviramweb.webp",
     link: "https://aviram-eldar.website/#home" 
   },
   {
@@ -18,7 +18,7 @@ const projects = [
     category: "Concept & UI Demo", 
     desc: "A digital gallery concept exploring minimalist aesthetics and visual storytelling.",
     tech: ["Next.js", "Tailwind"],
-    image: "/JudithArtSite.png",
+    image: "/JudithArtSite.webp",
     link: "https://judith-art.netlify.app" 
   },
   {
@@ -27,7 +27,7 @@ const projects = [
     category: "Full-Stack Concept", 
     desc: "Premium jewelry store demonstration, integrating MongoDB for dynamic content management.",
     tech: ["Next.js", "MongoDB", "CSS Modules"],
-    image: "/AdiShoham.png",
+    image: "/AdiShoham.webp",
     link: "https://adi-shoham.netlify.app/" 
   }
 ];

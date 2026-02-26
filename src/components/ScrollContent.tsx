@@ -18,7 +18,7 @@ const ScrollContent = () => {
         <div className={styles.itemContent}>
             <div className={styles.imgWrapper}>
               <Image 
-                src="/coding.png" 
+                src="/coding.webp" 
                 alt="Clean Architecture Code" 
                 fill 
                 priority // מוריד את ה-LCP של הדסקטופ

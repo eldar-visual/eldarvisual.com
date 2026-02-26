@@ -49,7 +49,7 @@ const Navbar = () => {
           {/* Logo */}
           <a href="#hero" className="navbar-logo" onClick={() => setIsOpen(false)}>
             <div className="logo-image-wrapper">
-               <Image src="/logob.png" alt="EV Logo" width={32} height={32} className="logo-img" />
+               <Image src="/logob.webp" alt="EV Logo" width={32} height={32} className="logo-img" />
             </div>
             <div className="logo-text">
               <span className="brand-name">EldarVisual</span>

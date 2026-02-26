@@ -2,13 +2,8 @@ import React from 'react';
 import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 import styles from './hero.module.css';
-import dynamic from 'next/dynamic';
 
-// טעינה דינמית - זה יוריד את ה-LCP משמעותית כי הדפדפן לא יחכה לזה כדי להציג את הטקסט
-const ScrollContent = dynamic(() => import('./ScrollContent'), {
-  ssr: false, // מכיוון שזה מוקאפ ויזואלי, אין צורך לרנדר אותו בשרת
-  loading: () => <div className={styles.skeletonLoader} /> // אופציונלי: מציג 'טעינה' קלה
-});
+
 
 
 // ... (Helper Components: Keyword, Func, CodeLine, CodeBlock - ללא שינוי מהגרסה הקודמת) ...
@@ -49,6 +44,62 @@ const CodeBlock = () => (
     </div>
 );
 
+// === Scroll Content Items (אותו תוכן, ללא שינוי, רק שימוש ב-Styles) ===
+const ScrollContent = () => {
+    const scrollToProcess = (e: React.MouseEvent) => {
+        e.preventDefault();
+        const element = document.getElementById('process');
+        if (element) {
+             element.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
+    return (
+    <>
+      {/* ITEM 1 */}
+      <div className={`${styles.scrollItem} ${styles.blueHover}`}>
+        <div className={styles.itemContent}>
+            <div className={styles.imgWrapper}>
+              <Image src="/coding.webp" alt="Clean Architecture Code" fill className={`${styles.imgCover} ${styles.grayscaleHover}`} sizes="(max-width: 768px) 100vw, 33vw" />
+            </div>
+            <div className={styles.textWrapper}>
+              <div className={styles.skeletonLine} style={{ width: '33%' }}></div>
+              <h3 className={styles.itemTitle}>Clean Architecture</h3>
+              <div className="space-y-1 pt-1"><div className={styles.skeletonLine} style={{ width: '100%' }}></div></div>
+            </div>
+        </div>
+      </div>
+      {/* ITEM 2 */}
+      <div className={`${styles.scrollItem} ${styles.purpleHover}`}>
+        <div className={`${styles.itemContent} ${styles.itemReverse}`}>
+            <div className={styles.imgWrapper}>
+              <Image src="/uxui.webp" alt="UX/UI Design Interface" fill className={`${styles.imgCover} ${styles.hueHover}`} sizes="(max-width: 768px) 100vw, 33vw" />
+            </div>
+            <div className={styles.textWrapper}>
+              <h3 className={styles.itemTitle}>UX/UI Experience</h3>
+              <button onClick={scrollToProcess} className={styles.miniBtn}>See Design Process</button>
+            </div>
+        </div>
+      </div>
+      {/* ITEM 3 */}
+      <div className={`${styles.scrollItem} ${styles.greenHover}`}>
+          <div className={styles.webmasterHeader}><h3 className={styles.itemTitle}>Webmaster Services</h3></div>
+          <div className={styles.gridImgs}>
+            <div className={`${styles.gridImgWrap} ${styles.flashHover}`}><Image src="/webmasterservice.webp" alt="Webmaster Service 1" fill className={styles.imgCover} sizes="10vw" /></div>
+            <div className={`${styles.gridImgWrap} ${styles.darkenHover}`}><Image src="/webmaster2.webp" alt="Webmaster Service 2" fill className={styles.imgCover} sizes="10vw" /></div>
+            <div className={styles.plusMore}>+4</div>
+          </div>
+      </div>
+      {/* ITEM 4 */}
+      <div className={styles.scrollItem}>
+          <div className={`${styles.zoomContainer} group`}>
+            <Image src="/settings.jpg" alt="Website Management Settings" fill className={`${styles.imgCover} ${styles.zoomHover}`} sizes="(max-width: 768px) 100vw, 33vw" />
+            <div className={styles.overlayGrad}><h3 className={styles.overlayText}>Website Management</h3></div>
+          </div>
+      </div>
+    </>
+    );
+};
 
 export default function Hero() {
   const scrollToSection = (e: React.MouseEvent, id: string) => {
@@ -63,13 +114,11 @@ export default function Hero() {
   return (
     <section id="hero" className={styles.heroSection}>
       
-      {/* Background Gradients */}
       <div className={styles.heroBgBlobs}>
         <div className={styles.blobBlue} />
         <div className={styles.blobPurple} />
       </div>
 
-      {/* Background Code Overlay */}
       <div className={styles.heroCodeBg}>
          <div className={styles.codeRotateWrapper}>
            {Array.from({ length: 8 }).map((_, i) => (
@@ -81,19 +130,16 @@ export default function Hero() {
       <div className={styles.heroContent}>
         
         {/* === חלק 1: תמונה למובייל בלבד === */}
-        {/* תופיע למעלה במובייל, תעלם לגמרי בדסקטופ */}
         <div className={styles.mobileImageContainer}>
             <Image 
-                src="/uxui.png" 
+                src="/uxui.webp" 
                 alt="UI/UX Design Illustration" 
                 width={600} 
                 height={400}
                 priority
             />
         </div>
-
-        {/* === חלק 2: טקסט === */}
-        {/* העיצוב החדש והנקי, מיושר לשמאל */}
+      
         <div className={styles.heroTextSide}>
           <h1 className={styles.heroTitle}>
             Modern Websites.<br />

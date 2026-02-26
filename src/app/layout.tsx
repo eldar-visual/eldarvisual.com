@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     siteName: 'EldarVisual',
     images: [
       {
-        url: 'https://eldarvisual.com/og-image.jpg',
+        url: 'https://eldarvisual.com/og-image.webp',
         width: 1200,
         height: 630,
         alt: 'EldarVisual Studio',
