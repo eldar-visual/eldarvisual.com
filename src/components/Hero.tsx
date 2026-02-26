@@ -73,7 +73,13 @@ const ScrollContent = () => {
       <div className={`${styles.scrollItem} ${styles.purpleHover}`}>
         <div className={`${styles.itemContent} ${styles.itemReverse}`}>
             <div className={styles.imgWrapper}>
-              <Image src="/uxui.webp" alt="UX/UI Design Interface" fill className={`${styles.imgCover} ${styles.hueHover}`} sizes="(max-width: 768px) 100vw, 33vw" />
+              <Image src="/uxui.webp" 
+              alt="UX/UI Design Interface" 
+              fill className={`${styles.imgCover} ${styles.hueHover}`} 
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              quality={85}
+              priority
+              />
             </div>
             <div className={styles.textWrapper}>
               <h3 className={styles.itemTitle}>UX/UI Experience</h3>
