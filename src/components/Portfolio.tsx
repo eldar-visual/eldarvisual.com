@@ -51,8 +51,10 @@ export default function Portfolio() {
               <div className="image-wrapper">
                 <Image 
                 src={project.image} 
-                alt={project.title} 
+                alt={project.title}
+                fill 
                 className="project-img" 
+                style={{ objectFit: 'cover' }}
                 sizes="(max-width: 768px) 100vw, 33vw"
     quality={75}
                 />

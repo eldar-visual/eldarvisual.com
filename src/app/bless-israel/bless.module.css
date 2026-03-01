@@ -1,0 +1,451 @@
+
+.pageWrapper {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a0f1e 0%, #1e3a8a 100%);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.siteContainer {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ========================================= */
+/* Navbar                                    */
+/* ========================================= */
+.topNav {
+  box-sizing: border-box;
+  height: 75px; 
+  padding: 0 20px;
+  position: fixed;
+  top: 0; 
+  left: 0; 
+  width: 100%;
+  z-index: 1000;
+  background: rgba(10, 15, 30, 0.9);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(196, 158, 72, 0.1);
+  display: flex; 
+  align-items: center;
+}
+
+.navInner {
+  display: flex; justify-content: space-between; align-items: center;
+  width: 100%; position: relative;
+}
+
+.logoBox { display: flex; align-items: center; }
+
+.navMenu {
+  position: absolute; left: 50%; transform: translateX(-50%);
+  display: flex; gap: 3rem; list-style: none; margin: 0; padding: 0;
+}
+.navMenu li { color: #e2e8f0; font-weight: 600; font-size: 0.95rem; cursor: pointer; transition: color 0.3s; }
+.navMenu li:hover { color: #ecd074; }
+
+.navActions { display: flex; align-items: center; }
+
+/* רשתות חברתיות בנאב-בר */
+.socialIcons {
+  display: flex; align-items: center; gap: 1.2rem; margin-right: 2rem;
+}
+.socialIcons svg { color: #e2e8f0; cursor: pointer; transition: all 0.3s ease; }
+.socialIcons svg:hover { color: #ecd074; transform: translateY(-2px); }
+
+.goldCta, .donateBtn {
+  background: linear-gradient(135deg, #e6cd98 0%, #fdf5df 40%, #c8a355 100%);
+  color: #060a16; border: none; font-weight: 800; cursor: pointer;
+  transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+.goldCta { padding: 0.8rem 2.2rem; border-radius: 8px; }
+.goldCta:hover, .donateBtn:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(200, 163, 85, 0.4); }
+
+/* ========================================= */
+/* Main Stage (Desktop)                      */
+/* ========================================= */
+.mainStage {
+  flex: 1; display: flex; align-items: center; justify-content: center;
+  padding-top: 130px; padding-bottom: 50px;
+}
+
+.cinemaFrame {
+  position: relative; width: 100%;
+  aspect-ratio: 16 / 8.5; /* הפרופורציה הקולנועית הנכונה לדסקטופ */
+  border-radius: 20px; overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+}
+
+.heroImage { 
+    object-fit: cover; 
+    filter: brightness(0.75); 
+    object-position: center 15%; 
+}
+.vignetteOverlay { 
+    position: absolute; 
+    inset: 0; 
+    background: radial-gradient(circle at center, transparent 30%, rgba(10, 15, 30, 0.6) 100%); 
+    z-index: 2; 
+}
+
+.contentLayer { 
+    position: absolute; 
+    inset: 0; z-index: 10; 
+    display: flex; 
+    flex-direction: column; }
+
+.playCenter {
+  position: absolute; 
+  top: 42%; 
+  left: 50%; 
+  transform: translate(-50%, -50%);
+  background: transparent; 
+  border: none; cursor: pointer; 
+  opacity: 0.85; 
+  transition: all 0.3s ease;
+}
+.playCenter:hover { 
+    opacity: 1; 
+    transform: translate(-50%, -50%) scale(1.1); 
+}
+
+.textBottomContainer {
+  position: absolute; bottom: 12%; width: 100%;
+  display: flex; flex-direction: column; align-items: center;
+}
+
+.mainTitle {
+  font-size: clamp(2rem, 4.5vw, 4rem); font-weight: 900; line-height: 1.1;
+  color: white; text-align: center; margin-bottom: 2rem;
+  text-shadow: 0 4px 10px rgba(0,0,0,0.4), 0 1 180px rgba(0,0,0,0.6);
+}
+
+.goldHighlight {
+  background: linear-gradient(135deg, #dcb76d 0%, #fdf5df 45%, #c59b48 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  display: block; margin-top: 0.5rem; filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.2));
+}
+
+.buttonSet { display: flex; gap: 1.5rem; }
+
+.donateBtn { padding: 1.1rem 2.8rem; border-radius: 12px; display: flex; align-items: center; gap: 0.8rem; font-size: 1.1rem; }
+.playBtn {
+  background: rgba(255, 255, 255, 0.1); 
+  backdrop-filter: blur(12px); 
+  color: white;
+  padding: 0.9rem 2.8rem; 
+  border: 1px solid rgba(255, 255, 255, 0.3); 
+  border-radius: 12px;
+  font-weight: 700; 
+  font-size: 1.1rem; 
+  display: flex; 
+  align-items: center; 
+  gap: 0.8rem; 
+  cursor: pointer;
+}
+
+.missionStatement {
+  text-align: center; 
+  font-family: 'Lancelot', serif;
+  color: #e2e8f0; 
+  font-size: 1.8rem; 
+  font-weight: 500;
+  max-width: 1000px; 
+  margin: 1.5rem auto 0 auto; 
+  line-height: 1.6; 
+  letter-spacing: 0.5px;
+}
+
+/* ========================================= */
+/* סקשן: רצועת חדשות והדרכות                */
+/* ========================================= */
+.newsBanner {
+  padding: 4rem 0;
+  text-align: center;
+  border-top: 1px solid rgba(196, 158, 72, 0.1);
+  border-bottom: 1px solid rgba(196, 158, 72, 0.1);
+  background: linear-gradient(90deg, transparent, rgba(196, 158, 72, 0.05), transparent);
+  margin-top: 2rem;
+}
+
+.bannerText {
+  font-size: 2rem;
+  font-weight: 300;
+  color: #e2e8f0;
+}
+
+/* ========================================= */
+/* סקשן: המלצות (Testimonials Grid)          */
+/* ========================================= */
+.testimonialsSection {
+  padding: 6rem 0;
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 עמודות בדסקטופ */
+  gap: 2rem;
+}
+
+.testiCard {
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 2.5rem;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.testiCard:hover {
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-5px);
+  border-color: rgba(196, 158, 72, 0.2);
+}
+
+.quote {
+  font-style: italic;
+  color: #cbd5e1;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.authorBox {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.avatarPlaceholder {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #dcb76d 0%, #c59b48 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #060a16;
+  font-size: 1.1rem;
+}
+
+.authorName {
+  color: #e2e8f0;
+  margin: 0 0 0.2rem 0;
+  font-size: 1.05rem;
+}
+
+.authorTitle {
+  color: #94a3b8;
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+/* ========================================= */
+/* סקשן: פוטר (Footer)                       */
+/* ========================================= */
+.footer {
+  background: rgba(6, 10, 22, 0.8);
+  padding: 3rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footerInner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footerLeft p {
+  color: #94a3b8;
+  font-size: 0.9rem;
+  margin: 0.3rem 0;
+}
+
+.credit { font-size: 0.95rem; }
+.goldText { color: #dcb76d; font-weight: 600; }
+
+.footerRight { display: flex; align-items: center; gap: 2rem; }
+
+.footerSocials { display: flex; gap: 1rem; color: #94a3b8; }
+.footerSocials svg { cursor: pointer; transition: color 0.3s ease; }
+.footerSocials svg:hover { color: #dcb76d; }
+
+.chatBtn {
+  background: #ef4444; 
+  color: white;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.chatBtn:hover {
+  background: #dc2626;
+  transform: translateY(-2px);
+}
+
+/* --- עיצוב טופס הניוזלטר החדש --- */
+/* --- עיצוב טופס הניוזלטר החדש (כפתור משולב בתוך השדה) --- */
+.newsletterForm {
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch; /* גורם לשדה ולכפתור להימתח לאותו הגובה בדיוק */
+  margin-top: 0.5rem;
+  max-width: 400px; /* רוחב קומפקטי ומדויק כמו שביקשת */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.emailInput {
+  flex: 1;
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px 0 0 50px;
+  border: 1px solid rgba(196, 158, 72, 0.4);
+  border-right: none; /* מוחק את הקו הימני כדי שהכפתור יתחבר אליו חלק */
+  background: rgba(10, 15, 30, 0.6);
+  color: white;
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.emailInput:focus {
+  background: rgba(10, 15, 30, 0.9);
+  border-color: #dcb76d;
+}
+
+.subscribeBtn {
+  flex: 0 0 25%; /* לוקח בדיוק רבע (25%) מהרוחב הכולל, לא גדל ולא קטן */
+  max-width: 25%;
+  background: linear-gradient(135deg, #e6cd98 0%, #c8a355 100%);
+  color: #060a16;
+  border: 1px solid #c8a355; /* מסגרת קטנה שתשתלב עם השדה */
+  border-left: none; /* חיבור חלק לשדה משמאל */
+  padding: 0 ;
+  /* הקסם: מעגל פינות רק בצד ימין! */
+  border-radius: 0 50px 50px 0;
+  font-weight: 800;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex; /* כדי למרכז את הטקסט גם אנכית */
+  justify-content: center;
+  align-items: center;
+}
+
+.subscribeBtn:hover {
+  /* ביטלנו את הקפיצה למעלה (translateY) כדי שהחיבור לשדה לא יישבר בהובר */
+  background: linear-gradient(135deg, #fdf5df 0%, #dcb76d 100%);
+  box-shadow: 0 4px 15px rgba(200, 163, 85, 0.3);
+}
+
+/* --- עיצוב תמונות הדוברים במקום ראשי התיבות --- */
+.authorImage {
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(196, 158, 72, 0.4); /* מסגרת זהב יוקרתית סביב התמונה */
+}
+
+/* --- עיצוב כפתור הצ'אט הצף --- */
+.floatingChatBtn {
+  position: fixed;
+  bottom: 2.5rem;
+  right: 2.5rem;
+  z-index: 9999;
+  background: #ef4444; /* צבע אדום בולט אך יוקרתי */
+  color: white;
+  border: none;
+  padding: 1rem 1.8rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.05rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(239, 68, 68, 0.4);
+  transition: all 0.3s ease;
+}
+
+.floatingChatBtn:hover {
+  background: #dc2626;
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 15px 35px rgba(239, 68, 68, 0.6);
+}
+
+/* ========================================= */
+/* רספונסיביות (Tablet & Mobile)             */
+/* ========================================= */
+@media (max-width: 1024px) {
+  .navMenu { display: none; }
+  .cinemaFrame { aspect-ratio: 1 / 1; }
+}
+
+@media (max-width: 768px) {
+  .topNav { height: 75px; padding: 0 15px; }
+  .logoBox img { width: 120px !important; height: auto !important; }
+  .socialIcons { display: none; } /* במובייל מסתירים את הרשתות החברתיות למעלה */
+  .goldCta { padding: 0.5rem 0.8rem; font-size: 0.8rem; }
+
+  .mainStage { padding-top: 210px; }
+
+  .cinemaFrame { aspect-ratio: 16 / 10; overflow: visible; }
+  .heroImage, .vignetteOverlay { border-radius: 16px; }
+
+  .textBottomContainer { position: static; padding: 0; }
+
+  .playCenter { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); margin: 0; }
+  .playCenter svg { width: 50px; height: 50px; }
+
+  .mainTitle { 
+    position: absolute; 
+    top: -105px; 
+    left: 0; 
+    width: 100%; 
+    font-size: 1.9rem; 
+    margin: 0; 
+  }
+
+  .buttonSet { position: absolute; bottom: -90px; left: 0; width: 100%; flex-direction: row; justify-content: space-between; gap: 0.8rem; }
+  .donateBtn, .playBtn { width: 50%; padding: 0.8rem 0.5rem; font-size: 0.9rem; display: flex; justify-content: center; align-items: center; gap: 0.4rem; }
+
+  .missionStatement { font-size: 0.95rem; margin-top: 145px; padding: 0 10px; text-align: center; }
+}
+
+/* התאמות למובייל - סקשנים חדשים */
+  .bannerText { font-size: 1.3rem; }
+  .gridContainer { grid-template-columns: 1fr; } /* עמודה אחת במקום שתיים */
+  .footerInner { flex-direction: column; text-align: center; gap: 2rem; }
+  .footerRight { flex-direction: column; gap: 1.5rem; }
+
+  /* התאמות ניוזלטר וצ'אט למובייל */
+  .newsletterForm {
+    padding: 0 1rem;
+  }
+  .subscribeBtn {
+    padding: 1rem;
+    width: 100%;
+  }
+  .floatingChatBtn {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    padding: 0.8rem 1.2rem;
+    font-size: 0.95rem;
+  }
