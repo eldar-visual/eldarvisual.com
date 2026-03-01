@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from 'react';
 import { Search, PenTool, Code, Rocket } from 'lucide-react';
 import './Process.css'; // מוודאים שהקובץ מקושר

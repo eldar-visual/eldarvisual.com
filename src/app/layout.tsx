@@ -44,7 +44,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <body className={inter.className} suppressHydrationWarning={true}>
-       <Script id="microsoft-clarity" strategy="afterInteractive">
+       <Script id="microsoft-clarity" strategy="lazyOnload">
           {`
             (function(c,l,a,r,i,t,y){
                 c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -54,7 +54,7 @@ export default function RootLayout({
           `}
         </Script>
         {/* Meta Pixel Code */}
-        <Script id="fb-pixel" strategy="afterInteractive">
+        <Script id="fb-pixel" strategy="lazyOnload">
           {`
             !function(f,b,e,v,n,t,s)
             {if(f.fbq)return;n=f.fbq=function(){n.callMethod?

@@ -13,7 +13,6 @@ const ScrollContent = () => {
 
     return (
     <>
-      {/* ITEM 1 - עם Priority לשיפור ה-LCP בדסקטופ */}
       <div className={`${styles.scrollItem} ${styles.blueHover}`}>
         <div className={styles.itemContent}>
             <div className={styles.imgWrapper}>
@@ -21,7 +20,6 @@ const ScrollContent = () => {
                 src="/coding.webp" 
                 alt="Clean Architecture Code" 
                 fill 
-                priority // מוריד את ה-LCP של הדסקטופ
                 className={`${styles.imgCover} ${styles.grayscaleHover}`} 
                 sizes="(max-width: 768px) 100vw, 33vw" 
               />
