@@ -27,6 +27,17 @@
   }
 }
 
+@keyframes mockupSlideUp {
+  0% { 
+    opacity: 0; 
+    transform: translateY(150px); /* מגיע ממש עמוק מלמטה */
+  }
+  100% { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
 
 .heroContainer {
     max-width: 1200px;
@@ -268,6 +279,7 @@
 .heroVisualSide {
   display: none; 
 }
+
 @media (min-width: 768px) {
   .heroVisualSide {
     display: flex;
@@ -277,7 +289,8 @@
     justify-content: flex-end;
     perspective: 2000px;
     opacity: 0;
-    animation: fadeInUp 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) 0.4s forwards;
+    /* משתמש באנימציה החדשה מלמטה, לאורך 3.5 שניות, ומתחיל יחד עם הטקסטים */
+    animation: mockupSlideUp 3.5s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
   }
 }
 

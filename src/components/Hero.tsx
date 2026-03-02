@@ -151,12 +151,12 @@ export default function Hero() {
       
         <div className={styles.heroTextSide}>
           <h1 className={styles.heroTitle}>
-            Modern Websites.<br />
-            Clean Code.<br />
-            <span className={styles.heroTitleGradient}>Real Results.</span>
-          </h1>
+            <span className="title-part-1">Modern Websites.</span>
+            <span className="title-part-2">Clean Code.</span>
+            <span className={`title-part-3 ${styles.heroTitleGradient}`}>Real Results.</span>
+          </h1> 
           
-          <div className={styles.heroSubtitleGroup}>
+          <div className={`${styles.heroSubtitleGroup} delay1`}>
             <p className={styles.heroSubtitle}>
               High-performance websites built with modern frameworks. 
               Faster loading, better UX, and built for long-term growth. 
@@ -164,7 +164,7 @@ export default function Hero() {
             </p>
           </div>
 
-          <div className={styles.heroActions}>
+          <div className={`${styles.heroActions} delay2`}>
             <button onClick={(e) => scrollToSection(e, 'contact')} className={styles.btnPrimary}>
               Start with a Website Review
             </button>
@@ -180,7 +180,6 @@ export default function Hero() {
         </div>
 
         {/* === חלק 3: Browser Mockup לדסקטופ === */}
-        {/* הוחזר בדיוק לגרסה הקודמת שאהבת. מוסתר במובייל. */}
         <div className={styles.heroVisualSide}>
            <div className={styles.browserMockup}>
             <div className={styles.browserWindow}>
