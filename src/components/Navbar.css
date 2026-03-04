@@ -94,6 +94,18 @@
 /* === Desktop Menu === */
 .desktop-menu { display: none; }
 
+@media (max-width: 768px) {
+    .navbar {
+        height: 56px; /* מעט נמוך יותר במובייל */
+        top: 1rem;
+        width: 94%;
+    }
+    
+    .brand-name {
+        font-size: 0.95rem; /* הקטנת לוגו במובייל */
+    }
+}
+
 @media (min-width: 768px) {
     .desktop-menu { 
       display: flex; 
