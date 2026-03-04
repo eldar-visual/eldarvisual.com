@@ -82,22 +82,37 @@
 
 /* Code Overlay Background */
 .heroCodeBg {
-  position: absolute; top: 0; right: 0; height: 100%; width: 100vw;
-  overflow: hidden; pointer-events: none; user-select: none; z-index: 0;
-  display: flex; align-items: center; justify-content: flex-end;
-  opacity: 0.25; filter: blur(1px); transform: translateX(0);
+  position: absolute; 
+  top: 0; 
+  right: 0; 
+  height: 100%; 
+  width: 100vw;
+  overflow: hidden; 
+  pointer-events: none; 
+  user-select: none; 
+  z-index: 0;
+  display: flex; 
+  align-items: center; 
+  justify-content: flex-end;
+  opacity: 0.25; 
+  filter: blur(1px); 
+  transform: translateX(0);
   mask-image: linear-gradient(to bottom, transparent 0%, black 30%, black 70%, transparent 100%);
   -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 30%, black 70%, transparent 100%);
 }
 
 @media (min-width: 768px) {
   .heroCodeBg {
-    width: 70vw; opacity: 0.5; transform: translateX(5rem);
-    mask-image: linear-gradient(to right, transparent 10%, black 50%, black 100%), 
+    width: 70vw; 
+    opacity: 0.45; 
+    filter: blur(2px);
+    transform: translateX(5rem);
+    mask-image: linear-gradient(to right, transparent 0%, black 40%, black 100%), 
                 linear-gradient(to bottom, transparent 0%, black 25%, black 75%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to right, transparent 10%, black 50%, black 100%), 
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 40%, black 100%), 
                         linear-gradient(to bottom, transparent 0%, black 25%, black 75%, transparent 100%);
-    mask-composite: intersect; -webkit-mask-composite: source-in;
+    mask-composite: intersect; 
+    -webkit-mask-composite: source-in;
   }
 }
 
@@ -111,13 +126,13 @@
 @media (min-width: 768px) { .codeLine { font-size: 1rem; line-height: 1.5rem; } }
 
 /* Syntax Tokens */
-.tokenKeyword { color: #F472B6; font-weight: 700; }
-.tokenFunc { color: #93C5FD; }
+.tokenKeyword { color: #94a3b8; font-weight: 700; }
+.tokenFunc { color: #60a5fa; }
 .tokenString { color: #6EE7B7; }
 .tokenVar { color: #A5F3FC; }
 .tokenProp { color: #C4B5FD; }
 .tokenPunct { color: #FACC15; }
-.tokenComment { color: #64748B; font-style: italic; }
+.tokenComment { color: #475569; font-style: italic; }
 
 /* Main Content Grid */
 .heroContent {
@@ -141,10 +156,12 @@
   position: relative;
   margin: 0 auto;
   margin-top: 4.6rem;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); 
+  margin-bottom: 0rem;
+  box-shadow: none;
+  background: transparent;
+  /* box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);  */
   border-radius: 1.5rem;
-  overflow: hidden;
+  overflow: visible;
   animation: blurReveal 0.8s ease-out forwards;
 }
 
@@ -152,9 +169,9 @@
   width: 100%;
   height: auto;
   display: block;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 1rem; 
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5); 
+  filter: drop-shadow(0 10px 30px -10px rgba(0, 0, 0, 0.5)); 
 }
 
 @media (min-width: 768px) {

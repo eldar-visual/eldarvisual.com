@@ -141,7 +141,7 @@ export default function Hero() {
         {/* === חלק 1: תמונה למובייל בלבד === */}
         <div className={styles.mobileImageContainer}>
             <Image 
-                src="/uxui.webp" 
+                src="/floatForWeb.webp" 
                 alt="UI/UX Design Illustration" 
                 width={600} 
                 height={400}
