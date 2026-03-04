@@ -136,10 +136,12 @@
 /* === Mobile Image Wrapper  === */
 .mobileImageContainer {
   display: block;
-  width: 90%;
+  width: 100%;
   max-width: 450px;
   position: relative;
-  margin: 0 auto 1.5rem auto;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 1.5rem;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); 
   border-radius: 1.5rem;
   overflow: hidden;
@@ -181,7 +183,7 @@
 
 .heroTitle {
   font-size: 2rem; 
-  text-align: center;
+  text-align: left;
   font-weight: 800; 
   letter-spacing: -0.01em; 
   line-height: 1.1;
