@@ -6,19 +6,27 @@ import { Mail, Phone, Send, CheckCircle, X, ExternalLink } from 'lucide-react'; 
 import { useForm, ValidationError } from '@formspree/react';
 
 const Contact = () => {
-  // 1. ניהול הסטייט של הטופס
-  const [state, handleSubmit] = useForm("xlggjajo"); // אל תשכח לשים את הקוד שלך פה!
-
-  // 2. ניהול הסטייט של המודל (הפופ-אפ)
+  const [state, handleSubmit] = useForm("xlggjajo");
   const [isEmailModalOpen, setIsEmailModalOpen] = useState(false);
+  const [copied, setCopied] = useState(false);
+  
+  // זה התיקון הקריטי - ה-State חייב להיות כאן למעלה
+  const [companyType, setCompanyType] = useState(""); 
+
   const emailAddress = "aviram@eldarvisual.com";
 
-  // פונקציה לפתיחת הפופ-אפ (במקום לפתוח מייל ישר)
+  const handleCopy = () => {
+    navigator.clipboard.writeText(emailAddress);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+  // =============================================
+
+  // פונקציה לפתיחת הפופ-אפ
   const handleEmailClick = (e: React.MouseEvent) => {
-    e.preventDefault(); // מונע את הפתיחה האוטומטית
+    e.preventDefault();
     setIsEmailModalOpen(true);
   };
- 
   return (
     <section id="contact" className="contact-section">
       <div className="contact-container">
@@ -41,29 +49,38 @@ const Contact = () => {
             </p>
             
             <div className="contact-details">
-              
-              {/* כפתור האימייל שפותח את המודל */}
-              <a href={`mailto:${emailAddress}`} onClick={handleEmailClick} className="contact-item">
-                <div className="icon-box">
-                  <Mail size={20} />
-                </div>
-                <div className="contact-info">
-                   <span className="contact-text">{emailAddress}</span>
-                </div>
-              </a>
+  
+  {/* איחוד המייל וכפתור ההעתקה */}
+  <div className="contact-item contact-email-row">
+    <div className="contact-clickable-area" onClick={handleEmailClick}>
+      <div className="icon-box">
+        <Mail size={20} />
+      </div>
+      <div className="contact-info">
+         <span className="contact-text">{emailAddress}</span>
+      </div>
+    </div>
+    
+    <button 
+      onClick={(e) => { e.stopPropagation(); handleCopy(); }} 
+      className="inline-copy-btn"
+    >
+      {copied ? <CheckCircle size={14} /> : <Send size={14} />}
+      <span>{copied ? "Copied!" : "Copy"}</span>
+    </button>
+  </div>
 
-              <a href="tel:+972546786874" className="contact-item">
-                <div className="icon-box">
-                  <Phone size={20} />
-                </div>
-                <div className="contact-info">
-                   <span className="contact-text">+972 54 678 6874</span>
-                </div>
-              </a>
-            </div>
+  <a href="tel:+972546786874" className="contact-item">
+    <div className="icon-box">
+      <Phone size={20} />
+    </div>
+    <div className="contact-info">
+       <span className="contact-text">+972 54 678 6874</span>
+    </div>
+  </a>
+</div>
           </div>
 
-          {/* === צד ימין: טופס === */}
           <div className="form-wrapper">
             {state.succeeded ? (
                 <div className="success-message">
@@ -82,17 +99,42 @@ const Contact = () => {
                     </div>
                     <div className="form-group">
                         <label htmlFor="email" className="form-label">Email Address</label>
-                        <input type="email" id="email" name="email" className="form-input" placeholder="john@example.com" required />
-                        <ValidationError prefix="Email" field="email" errors={state.errors} />
+                        <input type="email" id="email" name="email" className="form-input" placeholder="john@exam ple.com" required />
                     </div>
+
                     <div className="form-group">
-                        <label htmlFor="message" className="form-label">Tell us about your project</label>
-                        <textarea id="message" name="message" className="form-textarea" placeholder="I need a website for..." required></textarea>
-                        <ValidationError prefix="Message" field="message" errors={state.errors} />
+                        <label htmlFor="website" className="form-label">Website URL (For Free Review)</label>
+                        <input type="url" id="website" name="website" className="form-input" placeholder="https://your-site.com" required />
                     </div>
-                    <button type="submit" className="submit-btn" disabled={state.submitting}>
-                        {state.submitting ? 'Sending...' : <>Send Message <Send size={16} style={{marginLeft: '8px'}}/></>}
-                    </button>
+
+                 <div className="form-group">
+    <label htmlFor="type" className="form-label">Company Type</label>
+    <select 
+        id="type" 
+        name="type" 
+        /* ה-className משתנה לאפור אם ה-State ריק */
+        className={`form-input ${companyType === "" ? "placeholder-active" : ""}`}
+        required 
+        value={companyType}
+        onChange={(e) => setCompanyType(e.target.value)}
+    >
+        <option value="" disabled hidden>Choose company type...</option>
+        <option value="startup">Tech Startup</option>
+        <option value="service">Service Business (Law/Health/etc.)</option>
+        <option value="ecommerce">E-commerce / Store</option>
+        <option value="personal">Portfolio / Personal Brand</option>
+        <option value="other">Other</option>
+    </select>
+</div>
+
+    <div className="form-group">
+        <label htmlFor="message" className="form-label">What is your main goal?</label>
+        <textarea id="message" name="message" className="form-textarea" placeholder="Boost speed, improve design, more leads..." required></textarea>
+    </div>
+
+    <button type="submit" className="submit-btn" disabled={state.submitting}>
+        {state.submitting ? 'Analyzing...' : <>Get My Free Audit <Send size={16} style={{marginLeft: '8px'}}/></>}
+    </button>
                 </form>
             )}
           </div>
