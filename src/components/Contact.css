@@ -61,8 +61,9 @@
   font-size: clamp(2.2rem, 5vw, 3.5rem);
   font-weight: 800;
   color: white;
-  line-height: 1.02;
+  line-height: 1.1;
   margin: 0;
+  padding-bottom: 0.1em;
 }
 
 .highlight-purple {
@@ -71,6 +72,7 @@
   background-clip: text;
   color: transparent;
   margin-bottom: 1.5rem;
+  display: inline-block;
 }
 
 .contact-desc {
@@ -400,12 +402,9 @@ select.form-input {
   box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
 }
 
-/* צבע אפור לפלייסהולדר ב-Select */
 .placeholder-active {
-  color: #7c7c7c !important; /* אותו אפור כמו בשאר ה-Inputs */
+  color: #7c7c7c !important; 
 }
-
-/* מוודא שהאופציות עצמן נשארות לבנות וקריאות */
 select option {
   color: #ffffff;
   background-color: #111827;
