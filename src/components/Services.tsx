@@ -1,7 +1,7 @@
 
 "use client"; 
 import React, { useState } from 'react';
-import './Services.css';
+import './Services.module.css';
 import { 
   Code, 
   Layout, 
