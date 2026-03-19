@@ -8,7 +8,6 @@ const InfiniteScroll = () => {
     const scrollToProcess = (e: React.MouseEvent) => {
         e.preventDefault();
         
-        // הגנה מפני קריסה ב-Build (שרת)
         if (typeof window !== 'undefined') {
             const element = document.getElementById('process');
             if (element) {
