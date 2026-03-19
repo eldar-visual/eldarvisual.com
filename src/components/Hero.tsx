@@ -54,6 +54,11 @@ export interface HeroProps {
 }
 
 export default function Hero({ title, subtitle, ctaText, trustLine }: HeroProps = {}) {
+
+  const [isMounted, setIsMounted] = React.useState(false);
+  React.useEffect(() => {
+    setIsMounted(true);
+  }, []);
   const scrollToSection = (e: React.MouseEvent, id: string) => {
     e.preventDefault();
     const element = document.getElementById(id);
@@ -142,11 +147,13 @@ export default function Hero({ title, subtitle, ctaText, trustLine }: HeroProps 
                   </div>
                   <div className={styles.browserAddressBar}>eldarvisual.com</div>
                 </div>
-                <div className={styles.browserContentViewport}>
-   <div className={styles.scrollingContent}>
-      <ScrollContent />
-      <ScrollContent />
-   </div>
+               <div className={styles.browserContentViewport}>
+   {isMounted && (
+     <div className={styles.scrollingContent}>
+        <ScrollContent />
+        <ScrollContent />
+     </div>
+   )}
 </div>
               </div>
           </div>
