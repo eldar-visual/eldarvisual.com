@@ -1,0 +1,57 @@
+/* [project]/Desktop/EVHub/websietsdev/src/components/Footer.css [app-client] (css) */
+.site-footer {
+  z-index: 10;
+  background-color: #020617;
+  border-top: 1px solid #ffffff0d;
+  width: 100%;
+  padding: 2rem 0;
+  font-family: sans-serif;
+  position: relative;
+}
+
+.footer-container {
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+}
+
+.footer-copyright {
+  color: #94a3b8;
+  font-size: .9rem;
+}
+
+.footer-socials {
+  align-items: center;
+  gap: 1.5rem;
+  display: flex;
+}
+
+.social-link {
+  color: #94a3b8;
+  justify-content: center;
+  align-items: center;
+  transition: all .3s;
+  display: flex;
+}
+
+.social-link:hover {
+  color: #a855f7;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 640px) {
+  .footer-container {
+    text-align: center;
+    flex-direction: column-reverse;
+    gap: 1.5rem;
+  }
+
+  .footer-copyright {
+    font-size: .8rem;
+  }
+}
+
+/*# sourceMappingURL=Desktop_EVHub_websietsdev_src_components_Footer_css_bad6b30c._.single.css.map*/

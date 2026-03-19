@@ -1,7 +1,7 @@
 
 "use client"; 
 import React, { useState } from 'react'; // הוספנו useState
-import './Contact.module.css';
+import './Contact.css';
 import { Mail, Phone, Send, CheckCircle, X, ExternalLink } from 'lucide-react'; // הוספנו X ו-ExternalLink
 import { useForm, ValidationError } from '@formspree/react';
 

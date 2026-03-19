@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from 'react';
 import { Search, PenTool, Code, Rocket } from 'lucide-react';
-import './Process.module.css'; 
+import './Process.css'; 
 
 export default function Process() {
   const [activeStep, setActiveStep] = useState<number | null>(null);

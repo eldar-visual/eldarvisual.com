@@ -1,6 +1,6 @@
 import React from 'react';
 import { ExternalLink, ArrowUpRight } from 'lucide-react';
-import './Portfolio.module.css';
+import './Portfolio.css';
 import Image from 'next/image';
 
 const projects = [

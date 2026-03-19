@@ -1,5 +1,5 @@
 import React from 'react';
-import './Footer.module.css';
+import './Footer.css';
 import { Github, Linkedin } from 'lucide-react';
 
 export default function Footer() {

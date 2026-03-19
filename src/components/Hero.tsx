@@ -4,6 +4,8 @@ import React from 'react';
 import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 import styles from './Hero.module.css';
+import ScrollContent from './ScrollContent';
+
 
 const Keyword = ({ t }: { t: string }) => <span className={styles.tokenKeyword}>{t}</span>; 
 const Func = ({ t }: { t: string }) => <span className={styles.tokenFunc}>{t}</span>; 
@@ -44,7 +46,14 @@ const CodeBlock = () => (
 
 
 
-export default function Hero() {
+export interface HeroProps {
+  title?: React.ReactNode;
+  subtitle?: React.ReactNode;
+  ctaText?: React.ReactNode;
+  trustLine?: React.ReactNode;
+}
+
+export default function Hero({ title, subtitle, ctaText, trustLine }: HeroProps = {}) {
   const scrollToSection = (e: React.MouseEvent, id: string) => {
     e.preventDefault();
     const element = document.getElementById(id);
@@ -85,22 +94,30 @@ export default function Hero() {
       
         <div className={styles.heroTextSide}>
           <h1 className={styles.heroTitle}>
-            <span className="title-part-1">Modern Websites.</span>
-            <span className="title-part-2">Clean Code.</span>
-            <span className={`title-part-3 ${styles.heroTitleGradient}`}>Real Results.</span>
+            {title ? title : (
+              <>
+                <span className="title-part-1">Modern Websites.</span>
+                <span className="title-part-2">Clean Code.</span>
+                <span className={`title-part-3 ${styles.heroTitleGradient}`}>Real Results.</span>
+              </>
+            )}
           </h1> 
           
           <div className={`${styles.heroSubtitleGroup} delay1`}>
             <p className={styles.heroSubtitle}>
-              High-performance websites built with modern frameworks. 
-              Faster loading, better UX, and built for long-term growth. 
-              No templates, no bloat.
+              {subtitle ? subtitle : (
+                <>
+                  High-performance websites built with modern frameworks. 
+                  Faster loading, better UX, and built for long-term growth. 
+                  No templates, no bloat.
+                </>
+              )}
             </p>
           </div>
 
           <div className={`${styles.heroActions} delay2`}>
             <button onClick={(e) => scrollToSection(e, 'contact')} className={styles.btnPrimary}>
-              Start with a Website Review
+              {ctaText ? ctaText : "Start with a Website Review"}
             </button>
             <button onClick={(e) => scrollToSection(e, 'portfolio')} className={`${styles.btnLink} group`}>
               <span>View Projects</span>
@@ -109,7 +126,7 @@ export default function Hero() {
           </div>
 
           <p className={styles.trustLine}>
-            Performance-focused | UX-driven | Built to last
+            {trustLine ? trustLine : "Performance-focused | UX-driven | Built to last"}
           </p>
         </div>
 
@@ -126,8 +143,11 @@ export default function Hero() {
                   <div className={styles.browserAddressBar}>eldarvisual.com</div>
                 </div>
                 <div className={styles.browserContentViewport}>
-                   
-                </div>
+   <div className={styles.scrollingContent}>
+      <ScrollContent />
+      <ScrollContent />
+   </div>
+</div>
               </div>
           </div>
         </div>
