@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
-import styles from './Hero.module.css'; 
+import styles from './HeroStyles.module.css'; 
 
 const InfiniteScroll = () => {
     const scrollToProcess = (e: React.MouseEvent) => {

@@ -3,7 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
-import styles from './Hero.module.css';
+import styles from './HeroStyles.module.css';
 import InfiniteScroll from './InfiniteScroll';
 
 
