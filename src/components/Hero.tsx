@@ -7,6 +7,7 @@ import styles from './Hero.module.css';
 import ScrollContent from './InfiniteScroll';
 
 
+
 const Keyword = ({ t }: { t: string }) => <span className={styles.tokenKeyword}>{t}</span>; 
 const Func = ({ t }: { t: string }) => <span className={styles.tokenFunc}>{t}</span>; 
 const StringVal = ({ t }: { t: string }) => <span className={styles.tokenString}>{t}</span>; 
