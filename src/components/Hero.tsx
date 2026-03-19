@@ -4,7 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 import styles from './Hero.module.css';
-import ScrollContent from './ScrollContent';
+import ScrollContent from './InfiniteScroll';
 
 
 const Keyword = ({ t }: { t: string }) => <span className={styles.tokenKeyword}>{t}</span>; 
