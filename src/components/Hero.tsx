@@ -4,8 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 import styles from './Hero.module.css';
-import ScrollContent from './InfiniteScroll';
-
+import InfiniteScroll from './InfiniteScroll';
 
 
 const Keyword = ({ t }: { t: string }) => <span className={styles.tokenKeyword}>{t}</span>; 
@@ -151,8 +150,8 @@ export default function Hero({ title, subtitle, ctaText, trustLine }: HeroProps 
                <div className={styles.browserContentViewport}>
    {isMounted && (
      <div className={styles.scrollingContent}>
-        <ScrollContent />
-        <ScrollContent />
+        <InfiniteScroll />
+        <InfiniteScroll />
      </div>
    )}
 </div>

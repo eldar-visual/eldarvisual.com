@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
-import styles from './Hero.module.css'; // וודא שזה השם הנכון של קובץ ה-CSS שלך
+import styles from './Hero.module.css'; 
 
 const InfiniteScroll = () => {
     const scrollToProcess = (e: React.MouseEvent) => {
