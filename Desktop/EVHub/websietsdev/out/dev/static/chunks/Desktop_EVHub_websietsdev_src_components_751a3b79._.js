@@ -667,7 +667,7 @@ const Keyword = ({ t })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$pr
         children: t
     }, void 0, false, {
         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-        lineNumber: 10,
+        lineNumber: 9,
         columnNumber: 43
     }, ("TURBOPACK compile-time value", void 0));
 _c = Keyword;
@@ -676,7 +676,7 @@ const Func = ({ t })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$proje
         children: t
     }, void 0, false, {
         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-        lineNumber: 11,
+        lineNumber: 10,
         columnNumber: 40
     }, ("TURBOPACK compile-time value", void 0));
 _c1 = Func;
@@ -685,7 +685,7 @@ const StringVal = ({ t })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$
         children: t
     }, void 0, false, {
         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-        lineNumber: 12,
+        lineNumber: 11,
         columnNumber: 45
     }, ("TURBOPACK compile-time value", void 0));
 _c2 = StringVal;
@@ -694,7 +694,7 @@ const Var = ({ t })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$projec
         children: t
     }, void 0, false, {
         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-        lineNumber: 13,
+        lineNumber: 12,
         columnNumber: 39
     }, ("TURBOPACK compile-time value", void 0));
 _c3 = Var;
@@ -703,7 +703,7 @@ const Prop = ({ t })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$proje
         children: t
     }, void 0, false, {
         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-        lineNumber: 14,
+        lineNumber: 13,
         columnNumber: 40
     }, ("TURBOPACK compile-time value", void 0));
 _c4 = Prop;
@@ -712,7 +712,7 @@ const Punct = ({ t })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$proj
         children: t
     }, void 0, false, {
         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-        lineNumber: 15,
+        lineNumber: 14,
         columnNumber: 41
     }, ("TURBOPACK compile-time value", void 0));
 _c5 = Punct;
@@ -721,7 +721,7 @@ const Comment = ({ t })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$pr
         children: t
     }, void 0, false, {
         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-        lineNumber: 16,
+        lineNumber: 15,
         columnNumber: 43
     }, ("TURBOPACK compile-time value", void 0));
 _c6 = Comment;
@@ -730,7 +730,7 @@ const CodeLine = ({ children })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module
         children: children
     }, void 0, false, {
         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-        lineNumber: 19,
+        lineNumber: 18,
         columnNumber: 3
     }, ("TURBOPACK compile-time value", void 0));
 _c7 = CodeLine;
@@ -742,12 +742,12 @@ const CodeBlock = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$proje
                     t: "// Initializing core render loop with high-performance vectors"
                 }, void 0, false, {
                     fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                    lineNumber: 26,
+                    lineNumber: 25,
                     columnNumber: 17
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                lineNumber: 26,
+                lineNumber: 25,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(CodeLine, {
@@ -756,7 +756,7 @@ const CodeBlock = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$proje
                         t: "const"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 27,
+                        lineNumber: 26,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     " ",
@@ -764,7 +764,7 @@ const CodeBlock = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$proje
                         t: "animateFrame"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 27,
+                        lineNumber: 26,
                         columnNumber: 39
                     }, ("TURBOPACK compile-time value", void 0)),
                     " ",
@@ -772,7 +772,7 @@ const CodeBlock = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$proje
                         t: "="
                     }, void 0, false, {
                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 27,
+                        lineNumber: 26,
                         columnNumber: 65
                     }, ("TURBOPACK compile-time value", void 0)),
                     " ",
@@ -780,7 +780,7 @@ const CodeBlock = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$proje
                         t: "async"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 27,
+                        lineNumber: 26,
                         columnNumber: 83
                     }, ("TURBOPACK compile-time value", void 0)),
                     " (",
@@ -788,7 +788,7 @@ const CodeBlock = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$proje
                         t: "delta"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 27,
+                        lineNumber: 26,
                         columnNumber: 106
                     }, ("TURBOPACK compile-time value", void 0)),
                     ", ",
@@ -796,7 +796,7 @@ const CodeBlock = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$proje
                         t: "context"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 27,
+                        lineNumber: 26,
                         columnNumber: 125
                     }, ("TURBOPACK compile-time value", void 0)),
                     ") ",
@@ -804,7 +804,7 @@ const CodeBlock = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$proje
                         t: "=>"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 27,
+                        lineNumber: 26,
                         columnNumber: 146
                     }, ("TURBOPACK compile-time value", void 0)),
                     " ",
@@ -812,13 +812,13 @@ const CodeBlock = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$proje
                         t: "{"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 27,
+                        lineNumber: 26,
                         columnNumber: 165
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                lineNumber: 27,
+                lineNumber: 26,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(CodeLine, {
@@ -828,7 +828,7 @@ const CodeBlock = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$proje
                         t: "if"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 28,
+                        lineNumber: 27,
                         columnNumber: 19
                     }, ("TURBOPACK compile-time value", void 0)),
                     " (",
@@ -836,7 +836,7 @@ const CodeBlock = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$proje
                         t: "!context"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 28,
+                        lineNumber: 27,
                         columnNumber: 39
                     }, ("TURBOPACK compile-time value", void 0)),
                     ".",
@@ -844,7 +844,7 @@ const CodeBlock = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$proje
                         t: "active"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 28,
+                        lineNumber: 27,
                         columnNumber: 60
                     }, ("TURBOPACK compile-time value", void 0)),
                     " || ",
@@ -852,7 +852,7 @@ const CodeBlock = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$proje
                         t: "system"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 28,
+                        lineNumber: 27,
                         columnNumber: 83
                     }, ("TURBOPACK compile-time value", void 0)),
                     ".",
@@ -860,7 +860,7 @@ const CodeBlock = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$proje
                         t: "isPaused"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 28,
+                        lineNumber: 27,
                         columnNumber: 102
                     }, ("TURBOPACK compile-time value", void 0)),
                     ") ",
@@ -868,7 +868,7 @@ const CodeBlock = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$proje
                         t: "return"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 28,
+                        lineNumber: 27,
                         columnNumber: 125
                     }, ("TURBOPACK compile-time value", void 0)),
                     " ",
@@ -876,7 +876,7 @@ const CodeBlock = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$proje
                         t: "Promise"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 28,
+                        lineNumber: 27,
                         columnNumber: 148
                     }, ("TURBOPACK compile-time value", void 0)),
                     ".",
@@ -884,7 +884,7 @@ const CodeBlock = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$proje
                         t: "resolve"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 28,
+                        lineNumber: 27,
                         columnNumber: 168
                     }, ("TURBOPACK compile-time value", void 0)),
                     "(",
@@ -892,21 +892,21 @@ const CodeBlock = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$proje
                         t: "null"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 28,
+                        lineNumber: 27,
                         columnNumber: 189
                     }, ("TURBOPACK compile-time value", void 0)),
                     ");"
                 ]
             }, void 0, true, {
                 fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                lineNumber: 28,
+                lineNumber: 27,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(CodeLine, {
                 children: " "
             }, void 0, false, {
                 fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                lineNumber: 29,
+                lineNumber: 28,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(CodeLine, {
@@ -916,13 +916,13 @@ const CodeBlock = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$proje
                         t: "// Calculate complex physics based on user interaction & velocity"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 30,
+                        lineNumber: 29,
                         columnNumber: 19
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                lineNumber: 30,
+                lineNumber: 29,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(CodeLine, {
@@ -932,7 +932,7 @@ const CodeBlock = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$proje
                         t: "const"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 31,
+                        lineNumber: 30,
                         columnNumber: 19
                     }, ("TURBOPACK compile-time value", void 0)),
                     " ",
@@ -940,7 +940,7 @@ const CodeBlock = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$proje
                         t: "velocity"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 31,
+                        lineNumber: 30,
                         columnNumber: 41
                     }, ("TURBOPACK compile-time value", void 0)),
                     " ",
@@ -948,7 +948,7 @@ const CodeBlock = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$proje
                         t: "="
                     }, void 0, false, {
                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 31,
+                        lineNumber: 30,
                         columnNumber: 62
                     }, ("TURBOPACK compile-time value", void 0)),
                     " ",
@@ -956,7 +956,7 @@ const CodeBlock = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$proje
                         t: "physicsEngine"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 31,
+                        lineNumber: 30,
                         columnNumber: 80
                     }, ("TURBOPACK compile-time value", void 0)),
                     ".",
@@ -964,7 +964,7 @@ const CodeBlock = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$proje
                         t: "calculateVectors"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 31,
+                        lineNumber: 30,
                         columnNumber: 106
                     }, ("TURBOPACK compile-time value", void 0)),
                     "(",
@@ -972,7 +972,7 @@ const CodeBlock = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$proje
                         t: "delta"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 31,
+                        lineNumber: 30,
                         columnNumber: 136
                     }, ("TURBOPACK compile-time value", void 0)),
                     ", ",
@@ -980,8 +980,64 @@ const CodeBlock = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$proje
                         t: "{"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 31,
+                        lineNumber: 30,
                         columnNumber: 155
+                    }, ("TURBOPACK compile-time value", void 0))
+                ]
+            }, void 0, true, {
+                fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
+                lineNumber: 30,
+                columnNumber: 7
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(CodeLine, {
+                children: [
+                    "    ",
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Prop, {
+                        t: "friction"
+                    }, void 0, false, {
+                        fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
+                        lineNumber: 31,
+                        columnNumber: 21
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    ": ",
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Var, {
+                        t: "0.94"
+                    }, void 0, false, {
+                        fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
+                        lineNumber: 31,
+                        columnNumber: 44
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    ", ",
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Prop, {
+                        t: "tension"
+                    }, void 0, false, {
+                        fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
+                        lineNumber: 31,
+                        columnNumber: 62
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    ": ",
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Var, {
+                        t: "120"
+                    }, void 0, false, {
+                        fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
+                        lineNumber: 31,
+                        columnNumber: 84
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    ", ",
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Prop, {
+                        t: "precision"
+                    }, void 0, false, {
+                        fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
+                        lineNumber: 31,
+                        columnNumber: 101
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    ": ",
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(StringVal, {
+                        t: "'high-priority'"
+                    }, void 0, false, {
+                        fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
+                        lineNumber: 31,
+                        columnNumber: 125
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
@@ -993,7 +1049,7 @@ const CodeBlock = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$proje
                 children: [
                     "    ",
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Prop, {
-                        t: "friction"
+                        t: "mass"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
                         lineNumber: 32,
@@ -1001,43 +1057,51 @@ const CodeBlock = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$proje
                     }, ("TURBOPACK compile-time value", void 0)),
                     ": ",
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Var, {
-                        t: "0.94"
+                        t: "config"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
                         lineNumber: 32,
-                        columnNumber: 44
+                        columnNumber: 40
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    ".",
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Prop, {
+                        t: "heavy"
+                    }, void 0, false, {
+                        fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
+                        lineNumber: 32,
+                        columnNumber: 59
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    " ? ",
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Var, {
+                        t: "50.5"
+                    }, void 0, false, {
+                        fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
+                        lineNumber: 32,
+                        columnNumber: 80
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    " : ",
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Var, {
+                        t: "10.2"
+                    }, void 0, false, {
+                        fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
+                        lineNumber: 32,
+                        columnNumber: 99
                     }, ("TURBOPACK compile-time value", void 0)),
                     ", ",
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Prop, {
-                        t: "tension"
+                        t: "drag"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
                         lineNumber: 32,
-                        columnNumber: 62
+                        columnNumber: 117
                     }, ("TURBOPACK compile-time value", void 0)),
                     ": ",
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Var, {
-                        t: "120"
+                        t: "0.05"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
                         lineNumber: 32,
-                        columnNumber: 84
-                    }, ("TURBOPACK compile-time value", void 0)),
-                    ", ",
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Prop, {
-                        t: "precision"
-                    }, void 0, false, {
-                        fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 32,
-                        columnNumber: 101
-                    }, ("TURBOPACK compile-time value", void 0)),
-                    ": ",
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(StringVal, {
-                        t: "'high-priority'"
-                    }, void 0, false, {
-                        fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 32,
-                        columnNumber: 125
+                        columnNumber: 136
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
@@ -1047,62 +1111,15 @@ const CodeBlock = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$proje
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(CodeLine, {
                 children: [
-                    "    ",
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Prop, {
-                        t: "mass"
+                    "  ",
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Punct, {
+                        t: "}"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
                         lineNumber: 33,
-                        columnNumber: 21
+                        columnNumber: 19
                     }, ("TURBOPACK compile-time value", void 0)),
-                    ": ",
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Var, {
-                        t: "config"
-                    }, void 0, false, {
-                        fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 33,
-                        columnNumber: 40
-                    }, ("TURBOPACK compile-time value", void 0)),
-                    ".",
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Prop, {
-                        t: "heavy"
-                    }, void 0, false, {
-                        fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 33,
-                        columnNumber: 59
-                    }, ("TURBOPACK compile-time value", void 0)),
-                    " ? ",
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Var, {
-                        t: "50.5"
-                    }, void 0, false, {
-                        fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 33,
-                        columnNumber: 80
-                    }, ("TURBOPACK compile-time value", void 0)),
-                    " : ",
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Var, {
-                        t: "10.2"
-                    }, void 0, false, {
-                        fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 33,
-                        columnNumber: 99
-                    }, ("TURBOPACK compile-time value", void 0)),
-                    ", ",
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Prop, {
-                        t: "drag"
-                    }, void 0, false, {
-                        fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 33,
-                        columnNumber: 117
-                    }, ("TURBOPACK compile-time value", void 0)),
-                    ": ",
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Var, {
-                        t: "0.05"
-                    }, void 0, false, {
-                        fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 33,
-                        columnNumber: 136
-                    }, ("TURBOPACK compile-time value", void 0))
+                    ");"
                 ]
             }, void 0, true, {
                 fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
@@ -1110,27 +1127,10 @@ const CodeBlock = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$proje
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(CodeLine, {
-                children: [
-                    "  ",
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Punct, {
-                        t: "}"
-                    }, void 0, false, {
-                        fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 34,
-                        columnNumber: 19
-                    }, ("TURBOPACK compile-time value", void 0)),
-                    ");"
-                ]
-            }, void 0, true, {
-                fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                lineNumber: 34,
-                columnNumber: 7
-            }, ("TURBOPACK compile-time value", void 0)),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(CodeLine, {
                 children: " "
             }, void 0, false, {
                 fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                lineNumber: 35,
+                lineNumber: 34,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(CodeLine, {
@@ -1140,7 +1140,7 @@ const CodeBlock = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$proje
                         t: "await"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 36,
+                        lineNumber: 35,
                         columnNumber: 19
                     }, ("TURBOPACK compile-time value", void 0)),
                     " ",
@@ -1148,7 +1148,7 @@ const CodeBlock = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$proje
                         t: "renderer"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 36,
+                        lineNumber: 35,
                         columnNumber: 41
                     }, ("TURBOPACK compile-time value", void 0)),
                     ".",
@@ -1156,7 +1156,7 @@ const CodeBlock = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$proje
                         t: "updateSceneGraph"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 36,
+                        lineNumber: 35,
                         columnNumber: 62
                     }, ("TURBOPACK compile-time value", void 0)),
                     "(",
@@ -1164,7 +1164,7 @@ const CodeBlock = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$proje
                         t: "scene"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 36,
+                        lineNumber: 35,
                         columnNumber: 92
                     }, ("TURBOPACK compile-time value", void 0)),
                     ", ",
@@ -1172,7 +1172,7 @@ const CodeBlock = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$proje
                         t: "camera"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 36,
+                        lineNumber: 35,
                         columnNumber: 111
                     }, ("TURBOPACK compile-time value", void 0)),
                     ", ",
@@ -1180,21 +1180,21 @@ const CodeBlock = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$proje
                         t: "velocity"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 36,
+                        lineNumber: 35,
                         columnNumber: 131
                     }, ("TURBOPACK compile-time value", void 0)),
                     ");"
                 ]
             }, void 0, true, {
                 fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                lineNumber: 36,
+                lineNumber: 35,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(CodeLine, {
                 children: " "
             }, void 0, false, {
                 fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                lineNumber: 37,
+                lineNumber: 36,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(CodeLine, {
@@ -1204,14 +1204,14 @@ const CodeBlock = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$proje
                         t: "return"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 38,
+                        lineNumber: 37,
                         columnNumber: 19
                     }, ("TURBOPACK compile-time value", void 0)),
                     " ("
                 ]
             }, void 0, true, {
                 fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                lineNumber: 38,
+                lineNumber: 37,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(CodeLine, {
@@ -1221,14 +1221,14 @@ const CodeBlock = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$proje
                         t: "<"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 39,
+                        lineNumber: 38,
                         columnNumber: 21
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Var, {
                         t: "motion.div"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 39,
+                        lineNumber: 38,
                         columnNumber: 36
                     }, ("TURBOPACK compile-time value", void 0)),
                     " ",
@@ -1236,35 +1236,35 @@ const CodeBlock = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$proje
                         t: "initial"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 39,
+                        lineNumber: 38,
                         columnNumber: 59
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Keyword, {
                         t: "="
                     }, void 0, false, {
                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 39,
+                        lineNumber: 38,
                         columnNumber: 79
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Punct, {
                         t: "{"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 39,
+                        lineNumber: 38,
                         columnNumber: 96
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Keyword, {
                         t: "false"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 39,
+                        lineNumber: 38,
                         columnNumber: 111
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Punct, {
                         t: "}"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 39,
+                        lineNumber: 38,
                         columnNumber: 132
                     }, ("TURBOPACK compile-time value", void 0)),
                     " ",
@@ -1272,48 +1272,48 @@ const CodeBlock = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$proje
                         t: "animate"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 39,
+                        lineNumber: 38,
                         columnNumber: 148
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Keyword, {
                         t: "="
                     }, void 0, false, {
                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 39,
+                        lineNumber: 38,
                         columnNumber: 168
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Punct, {
                         t: "{"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 39,
+                        lineNumber: 38,
                         columnNumber: 185
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Var, {
                         t: "velocity"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 39,
+                        lineNumber: 38,
                         columnNumber: 200
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Punct, {
                         t: "}"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 39,
+                        lineNumber: 38,
                         columnNumber: 220
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Punct, {
                         t: ">"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 39,
+                        lineNumber: 38,
                         columnNumber: 235
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                lineNumber: 39,
+                lineNumber: 38,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(CodeLine, {
@@ -1323,14 +1323,14 @@ const CodeBlock = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$proje
                         t: "<"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 40,
+                        lineNumber: 39,
                         columnNumber: 23
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Var, {
                         t: "Masterpiece"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 40,
+                        lineNumber: 39,
                         columnNumber: 38
                     }, ("TURBOPACK compile-time value", void 0)),
                     " ",
@@ -1338,35 +1338,35 @@ const CodeBlock = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$proje
                         t: "pixelPerfect"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 40,
+                        lineNumber: 39,
                         columnNumber: 62
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Keyword, {
                         t: "="
                     }, void 0, false, {
                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 40,
+                        lineNumber: 39,
                         columnNumber: 87
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Punct, {
                         t: "{"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 40,
+                        lineNumber: 39,
                         columnNumber: 104
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Keyword, {
                         t: "true"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 40,
+                        lineNumber: 39,
                         columnNumber: 119
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Punct, {
                         t: "}"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 40,
+                        lineNumber: 39,
                         columnNumber: 139
                     }, ("TURBOPACK compile-time value", void 0)),
                     " ",
@@ -1374,21 +1374,21 @@ const CodeBlock = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$proje
                         t: "renderMode"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 40,
+                        lineNumber: 39,
                         columnNumber: 155
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Keyword, {
                         t: "="
                     }, void 0, false, {
                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 40,
+                        lineNumber: 39,
                         columnNumber: 178
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(StringVal, {
                         t: "'3d-accelerated'"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 40,
+                        lineNumber: 39,
                         columnNumber: 195
                     }, ("TURBOPACK compile-time value", void 0)),
                     " ",
@@ -1396,13 +1396,13 @@ const CodeBlock = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$proje
                         t: "/>"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 40,
+                        lineNumber: 39,
                         columnNumber: 230
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                lineNumber: 40,
+                lineNumber: 39,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(CodeLine, {
@@ -1412,34 +1412,34 @@ const CodeBlock = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$proje
                         t: "</"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 41,
+                        lineNumber: 40,
                         columnNumber: 21
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Var, {
                         t: "motion.div"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 41,
+                        lineNumber: 40,
                         columnNumber: 37
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Punct, {
                         t: ">"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 41,
+                        lineNumber: 40,
                         columnNumber: 59
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                lineNumber: 41,
+                lineNumber: 40,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(CodeLine, {
                 children: "  );"
             }, void 0, false, {
                 fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                lineNumber: 42,
+                lineNumber: 41,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(CodeLine, {
@@ -1448,24 +1448,24 @@ const CodeBlock = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$proje
                         t: "}"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 43,
+                        lineNumber: 42,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     ";"
                 ]
             }, void 0, true, {
                 fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                lineNumber: 43,
+                lineNumber: 42,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-        lineNumber: 25,
+        lineNumber: 24,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 _c8 = CodeBlock;
-function Hero({ title, subtitle, ctaText, trustLine } = {}) {
+function Hero({ title, subtitle, ctaText, trustLine, hideSecondaryBtn } = {}) {
     _s();
     const [isMounted, setIsMounted] = __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].useState(false);
     __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].useEffect({
@@ -1618,7 +1618,7 @@ function Hero({ title, subtitle, ctaText, trustLine } = {}) {
                                         lineNumber: 124,
                                         columnNumber: 13
                                     }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                    !hideSecondaryBtn && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                         onClick: (e)=>scrollToSection(e, 'portfolio'),
                                         className: `${__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$src$2f$components$2f$HeroStyles$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].btnLink} group`,
                                         children: [
@@ -1626,22 +1626,22 @@ function Hero({ title, subtitle, ctaText, trustLine } = {}) {
                                                 children: "View Projects"
                                             }, void 0, false, {
                                                 fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                                                lineNumber: 128,
-                                                columnNumber: 15
+                                                lineNumber: 131,
+                                                columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__["ArrowRight"], {
                                                 size: 16,
                                                 className: __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$src$2f$components$2f$HeroStyles$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].arrowIcon
                                             }, void 0, false, {
                                                 fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                                                lineNumber: 129,
-                                                columnNumber: 15
+                                                lineNumber: 132,
+                                                columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                                        lineNumber: 127,
-                                        columnNumber: 13
+                                        lineNumber: 130,
+                                        columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
@@ -1654,7 +1654,7 @@ function Hero({ title, subtitle, ctaText, trustLine } = {}) {
                                 children: trustLine ? trustLine : "Performance-focused | UX-driven | Built to last"
                             }, void 0, false, {
                                 fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                                lineNumber: 133,
+                                lineNumber: 137,
                                 columnNumber: 11
                             }, this)
                         ]
@@ -1680,27 +1680,27 @@ function Hero({ title, subtitle, ctaText, trustLine } = {}) {
                                                         className: __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$src$2f$components$2f$HeroStyles$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].dot
                                                     }, void 0, false, {
                                                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                                                        lineNumber: 144,
+                                                        lineNumber: 148,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                         className: __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$src$2f$components$2f$HeroStyles$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].dot
                                                     }, void 0, false, {
                                                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                                                        lineNumber: 145,
+                                                        lineNumber: 149,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                         className: __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$src$2f$components$2f$HeroStyles$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].dot
                                                     }, void 0, false, {
                                                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                                                        lineNumber: 146,
+                                                        lineNumber: 150,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                                                lineNumber: 143,
+                                                lineNumber: 147,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1708,13 +1708,13 @@ function Hero({ title, subtitle, ctaText, trustLine } = {}) {
                                                 children: "eldarvisual.com"
                                             }, void 0, false, {
                                                 fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                                                lineNumber: 148,
+                                                lineNumber: 152,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                                        lineNumber: 142,
+                                        lineNumber: 146,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1724,39 +1724,39 @@ function Hero({ title, subtitle, ctaText, trustLine } = {}) {
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$src$2f$components$2f$InfiniteScroll$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                                                     fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                                                    lineNumber: 153,
+                                                    lineNumber: 157,
                                                     columnNumber: 9
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$EVHub$2f$websietsdev$2f$src$2f$components$2f$InfiniteScroll$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                                                     fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                                                    lineNumber: 154,
+                                                    lineNumber: 158,
                                                     columnNumber: 9
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                                            lineNumber: 152,
+                                            lineNumber: 156,
                                             columnNumber: 6
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                                        lineNumber: 150,
+                                        lineNumber: 154,
                                         columnNumber: 16
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                                lineNumber: 141,
+                                lineNumber: 145,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                            lineNumber: 140,
+                            lineNumber: 144,
                             columnNumber: 12
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/Desktop/EVHub/websietsdev/src/components/Hero.tsx",
-                        lineNumber: 139,
+                        lineNumber: 143,
                         columnNumber: 9
                     }, this)
                 ]

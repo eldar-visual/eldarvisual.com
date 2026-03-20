@@ -1,4 +1,3 @@
-
 "use client"; 
 import React from 'react';
 import Image from 'next/image';
@@ -45,15 +44,16 @@ const CodeBlock = () => (
 );
 
 
-
+// === הוספתי כאן את שתי התכונות החדשות לכפתור המשני ===
 export interface HeroProps {
   title?: React.ReactNode;
   subtitle?: React.ReactNode;
   ctaText?: React.ReactNode;
   trustLine?: React.ReactNode;
+  hideSecondaryBtn?: boolean; // <--- הוספנו את פקודת ההסתרה
 }
 
-export default function Hero({ title, subtitle, ctaText, trustLine }: HeroProps = {}) {
+export default function Hero({ title, subtitle, ctaText, trustLine, hideSecondaryBtn }: HeroProps = {}) {
 
   const [isMounted, setIsMounted] = React.useState(false);
   React.useEffect(() => {
@@ -124,10 +124,14 @@ export default function Hero({ title, subtitle, ctaText, trustLine }: HeroProps 
             <button onClick={(e) => scrollToSection(e, 'contact')} className={styles.btnPrimary}>
               {ctaText ? ctaText : "Start with a Website Review"}
             </button>
-            <button onClick={(e) => scrollToSection(e, 'portfolio')} className={`${styles.btnLink} group`}>
-              <span>View Projects</span>
-              <ArrowRight size={16} className={styles.arrowIcon} />
-            </button>
+            
+            {/* === הכפתור השני עטוף בתנאי === */}
+            {!hideSecondaryBtn && (
+              <button onClick={(e) => scrollToSection(e, 'portfolio')} className={`${styles.btnLink} group`}>
+                <span>View Projects</span>
+                <ArrowRight size={16} className={styles.arrowIcon} />
+              </button>
+            )}
           </div>
 
           <p className={styles.trustLine}>

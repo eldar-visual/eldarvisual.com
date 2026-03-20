@@ -10,11 +10,12 @@ import Footer from '@/components/Footer';
 export default function ChristianLander() {
   return (
     <main style={{ backgroundColor: '#020617' }}>
-      <Hero 
+   <Hero 
         title={<>Digital Stewardship for <span style={{color: '#60A5FA'}}>Your Mission</span></>}
         subtitle="Transforming outdated platforms into high-performance digital hubs to maximize your organization's global impact and reach."
         ctaText="Get a Free Ministry Site Audit"
         trustLine="Mission-Driven | Reliable | Built for Growth"
+        hideSecondaryBtn={true} 
       />
 
      {/* אזור "כאב" ייעודי שמדבר אליהם */}
