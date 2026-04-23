@@ -4,7 +4,8 @@ import React from 'react';
 import Image from 'next/image';
 import styles from './HeroStyles.module.css'; 
 
-const InfiniteScroll = () => {
+// הוספנו כאן את הקבלה של ה-dict כדי שה-TS יפסיק לצעוק!
+const InfiniteScroll = ({ dict }: { dict?: any }) => {
     const scrollToProcess = (e: React.MouseEvent) => {
         e.preventDefault();
         
@@ -32,7 +33,7 @@ const InfiniteScroll = () => {
                     </div>
                     <div className={styles.textWrapper}>
                         <div className={styles.skeletonLine} style={{ width: '33%' }}></div>
-                        <h3 className={styles.itemTitle}>Clean Architecture</h3>
+                        <h3 className={styles.itemTitle}>{dict?.mockup?.architectureTitle || "Clean Architecture"}</h3>
                         <div className={styles.skeletonLine} style={{ width: '100%' }}></div>
                     </div>
                 </div>
@@ -51,8 +52,8 @@ const InfiniteScroll = () => {
                         />
                     </div>
                     <div className={styles.textWrapper}>
-                        <h3 className={styles.itemTitle}>UX/UI Experience</h3>
-                        <button onClick={scrollToProcess} className={styles.miniBtn}>See Design Process</button>
+                        <h3 className={styles.itemTitle}>{dict?.mockup?.uxTitle || "UX/UI Experience"}</h3>
+                        <button onClick={scrollToProcess} className={styles.miniBtn}>{dict?.mockup?.uxBtn || "See Design Process"}</button>
                     </div>
                 </div>
             </div>
@@ -60,7 +61,7 @@ const InfiniteScroll = () => {
             {/* ITEM 3: Services */}
             <div className={`${styles.scrollItem} ${styles.greenHover}`}>
                 <div className={styles.webmasterHeader}>
-                    <h3 className={styles.itemTitle}>Webmaster Services</h3>
+                    <h3 className={styles.itemTitle}>{dict?.mockup?.webmasterTitle || "Webmaster Services"}</h3>
                 </div>
                 <div className={styles.gridImgs}>
                     <div className={`${styles.gridImgWrap} ${styles.flashHover}`}>
@@ -78,7 +79,7 @@ const InfiniteScroll = () => {
                 <div className={styles.zoomContainer}>
                     <Image src="/settings.webp" alt="Management" fill className={`${styles.imgCover} ${styles.zoomHover}`} />
                     <div className={styles.overlayGrad}>
-                        <h3 className={styles.overlayText}>Website Management</h3>
+                        <h3 className={styles.overlayText}>{dict?.mockup?.managementTitle || "Website Management"}</h3>
                     </div>
                 </div>
             </div>

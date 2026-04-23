@@ -103,3 +103,7 @@ body::after {
   0% { transform: translateY(0) translateX(-50%); opacity: 1; }
   100% { transform: translateY(24px) translateX(-50%); opacity: 0; }
 }
+
+button, input, textarea, select {
+  font-family: inherit;
+}

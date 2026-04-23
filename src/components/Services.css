@@ -433,3 +433,4 @@
   
 }
 
+html[dir="rtl"] .btn-icon-arrow { transform: rotate(180deg); }

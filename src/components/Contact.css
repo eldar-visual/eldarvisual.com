@@ -410,3 +410,26 @@ select option {
   color: #ffffff;
   background-color: #111827;
 }
+
+/* =========================================
+   RTL (Hebrew) Adjustments - Contact
+   ========================================= */
+
+   html[dir="rtl"] .info-side {
+    text-align: right;
+  }
+  
+  html[dir="rtl"] .contact-headline,
+  html[dir="rtl"] .contact-desc,
+  html[dir="rtl"] .section-label {
+    text-align: right;
+  }
+  
+  html[dir="rtl"] .contact-text {
+    text-align: right;
+  }
+  
+  html[dir="rtl"] .contact-info {
+    display: flex;
+    justify-content: flex-start;
+  }

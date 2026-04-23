@@ -1,0 +1,145 @@
+{
+  "navbar": {
+    "services": "Services",
+    "process": "Process",
+    "portfolio": "Portfolio",
+    "cta": "Let's Talk"
+  },
+ 
+  "hero": {
+    "title": "Modern websites. Clean code.",
+    "gradient": "Real results.",
+    "subtitle": "Building high-performance premium websites. Fast loading, seamless UX, and a scalable architecture.",
+    "cta": "Get a Free Website Review",
+    "viewProjects": "View Projects",
+    "tags": "PERFORMANCE-FOCUSED | UX-DRIVEN | BUILT TO LAST",
+    "mockup": {
+      "uxTitle": "UX/UI Experience",
+      "uxBtn": "See Design Process",
+      "webmasterTitle": "Webmaster Services",
+      "managementTitle": "Website Management",
+      "architectureTitle": "Clean Architecture"
+    }
+  },
+
+  "services": {
+    "subtitle": "OUR EXPERTISE",
+    "title": "Built for",
+    "gradient": "Scale.",
+    "cta": "Get a Free Website Review",
+    "items": [
+      {
+        "title": "Custom Web Development",
+        "desc": "Lightning-fast websites built for growth. We use Next.js & React to ensure security, SEO dominance, and scalability.",
+        "features": ["Next.js & React", "Server Side Rendering", "API Integration", "Scalable Architecture"]
+      },
+      {
+        "title": "UI/UX Design",
+        "desc": "Interfaces that don't just look good—they convert. We design user journeys that turn visitors into customers.",
+        "features": ["User Research", "Wireframing", "Prototyping", "Design Systems"]
+      },
+      {
+        "title": "Website Revamp",
+        "desc": "Transform outdated sites into modern masterpieces. Improve speed, trust, and usability without losing your SEO history.",
+        "features": ["Performance Audit", "Modern Stack Migration", "SEO Preservation", "Data Migration"]
+      },
+      {
+        "title": "Webmaster Services",
+        "desc": "Never worry about updates again. We handle maintenance, security patches, and content changes so you can focus on business.",
+        "features": ["24/7 Monitoring", "Security Patches", "Content Updates", "Regular Backups"]
+      },
+      {
+        "title": "E-Commerce",
+        "desc": "Stores designed to sell. Secure payments, inventory management, and a seamless checkout experience.",
+        "features": ["Shopify / Custom", "Payment Gateways", "Inventory Sync", "Conversion Optimization"]
+      },
+      {
+        "title": "SEO & Performance",
+        "desc": "Rank higher, load faster. Comprehensive optimization of site structure and core web vitals.",
+        "features": ["Technical SEO", "Core Web Vitals", "Keyword Strategy", "Speed Optimization"]
+      }
+    ]
+  },
+  "process": {
+    "subtitle": "The Workflow",
+    "title": "From Concept to",
+    "gradient": "Completion.",
+    "step1_num": "1",
+    "step1_title": "Discovery & Strategy",
+    "step1_desc": "We dive deep into your vision, analyzing competitors and defining your target audience.",
+    "step2_num": "2",
+    "step2_title": "UI/UX Design",
+    "step2_desc": "High-fidelity wireframes and stunning interfaces that provide an intuitive journey.",
+    "step3_num": "3",
+    "step3_title": "Development",
+    "step3_desc": "Clean, semantic code using Next.js. We prioritize speed, security, and scalability.",
+    "step4_num": "4",
+    "step4_title": "Launch & Growth",
+    "step4_desc": "Liftoff. We deploy your masterpiece to the world and provide continuous optimization."
+  },
+  "portfolio": {
+    "subtitle": "Our Work",
+    "title": "Recent",
+    "gradient": "Projects.",
+    "viewProject": "View Project",
+    "visitSite": "Visit Site",
+    "projects": [
+      {
+        "title": "Aviram Eldar",
+        "category": "Official Studio Site",
+        "desc": "My professional digital presence, featuring high-end web design and interactive motion.",
+        "tech": ["JavaScript", "CSS Modules", "After Effects"]
+      },
+      {
+        "title": "Judith Asher Art",
+        "category": "Concept & UI Demo",
+        "desc": "A digital gallery concept exploring minimalist aesthetics and visual storytelling.",
+        "tech": ["Next.js", "Tailwind"]
+      },
+      {
+        "title": "Adi Shoham",
+        "category": "Full-Stack Concept",
+        "desc": "Premium jewelry store demonstration, integrating MongoDB for dynamic content management.",
+        "tech": ["Next.js", "MongoDB", "CSS Modules"]
+      }
+    ]
+  },
+  "contact": {
+    "subtitle": "Let's Talk",
+    "title": "Build. Revamp.",
+    "gradient": "Manage.",
+    "desc1": "From concept to completion, and ongoing growth. We handle everything your website needs to succeed—so you can focus on your business.",
+    "desc2": "We are currently accepting new projects. Get in touch with us to discuss your vision and how we can help achieve it.",
+    "copied": "Copied!",
+    "copy": "Copy",
+    "form": {
+      "nameLabel": "Full Name",
+      "namePlaceholder": "John Doe",
+      "emailLabel": "Email Address",
+      "emailPlaceholder": "john@example.com",
+      "websiteLabel": "Website URL (For Free Review)",
+      "websitePlaceholder": "https://your-site.com",
+      "typeLabel": "Company Type",
+      "typePlaceholder": "Choose company type...",
+      "typeStartup": "Tech Startup",
+      "typeService": "Service Business",
+      "typeEcommerce": "E-commerce / Store",
+      "typePersonal": "Portfolio / Personal Brand",
+      "typeOther": "Other",
+      "goalLabel": "What is your main goal?",
+      "goalPlaceholder": "Boost speed, improve design, more leads...",
+      "submitBtn": "Get My Free Audit",
+      "submitting": "Analyzing...",
+      "successTitle": "Message Sent!",
+      "successDesc": "Thanks for reaching out. We'll get back to you shortly."
+    },
+    "modal": {
+      "title": "Choose Email Provider",
+      "default": "Open Default Mail App"
+    }
+  },
+  "footer": {
+    "copyright": "© 2026 EldarVisual Web Studio. All rights reserved.",
+    "disclaimer": "Designed and developed with passion by Eldar Visual."
+  }
+}

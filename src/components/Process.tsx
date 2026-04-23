@@ -1,102 +1,93 @@
 "use client";
 import React, { useState } from 'react';
 import { Search, PenTool, Code, Rocket } from 'lucide-react';
-import './Process.css'; 
+import './Process.css';
 
-export default function Process() {
+interface ProcessProps {
+  dict?: any;
+}
+
+export default function Process({ dict }: ProcessProps) {
   const [activeStep, setActiveStep] = useState<number | null>(null);
 
   const handleStepClick = (stepId: number) => {
     setActiveStep(stepId);
-    // חזרה אוטומטית למצב התחלתי אחרי 2 שניות
-    setTimeout(() => {
-      setActiveStep(null);
-    }, 2000);
+    setTimeout(() => setActiveStep(null), 3000);
   };
 
   return (
-    <section id="process">
+    <section id="process" className="process-section">
       <div className="process-container">
         
-        {/* Header */}
-        <div className="header-wrapper">
-          <span className="sub-title">The Workflow</span>
+        <div className="process-header">
+          <span className="sub-title">{dict?.subtitle || "The Workflow"}</span>
           <h2 className="main-title">
-            From Concept to <span className="gradient-text">Completion.</span>
+            {dict?.title || "From Concept to"} <span className="gradient-text">{dict?.gradient || "Completion."}</span>
           </h2>
         </div>
 
         <div className="steps-wrapper">
           
-          {/* === 1: Discovery & Strategy === */}
+          {/* === 1: Discovery === */}
           <div className={`step-row ${activeStep === 1 ? 'active' : ''}`} onClick={() => handleStepClick(1)}>
             <div className="visual-side">
               <div className="card-base card-blue">
-                 {/* כדור צף בכותרת */}
-                 <div className="hidden md:block absolute top-1/2 -translate-y-1/2 -right-1.5 w-3 h-3 bg-blue rounded-full shadow-[0_0_10px_#3B82F6] z-20"></div>
-                 
-                 {/* גרף עמודות פנימי */}
                  <div className="graph-bars">
-                    <div className="bar bg-slate-800" style={{ height: '40%' }}></div>
-                    <div className="bar bg-slate-700" style={{ height: '60%' }}></div>
-                    <div className="bar bg-slate-800" style={{ height: '30%' }}></div>
-                    <div className="bar bg-blue" style={{ height: '80%', boxShadow: '0 0 15px rgba(37,99,235,0.5)' }}></div>
+                    <div className="bar bar-1"></div>
+                    <div className="bar bar-2"></div>
+                    <div className="bar bar-3"></div>
+                    <div className="bar bar-blue-active"></div>
                  </div>
-
-                 {/* אייקון צף */}
-                 <div className="floating-icon" style={{ top: '-20px', right: '-20px' }}>
-                     <Search size={20} className="text-blue" />
+                 <div className="floating-icon icon-blue-wrap">
+                     <Search size={20} className="svg-icon" />
                  </div>
               </div>
             </div>
             
             <div className="content-side">
               <div className="step-header">
-                 <span className="step-num text-blue">1</span>
+                 <span className="step-num text-blue">{dict?.step1_num || "1"}</span>
                  <div className="icon-wrap">
                     <Search size={24} className="text-blue" />
-                    <h3 className="step-title">Discovery & Strategy</h3>
+                    <h3 className="step-title">{dict?.step1_title || "Discovery & Strategy"}</h3>
                  </div>
               </div>
               <p className="step-desc">
-                We dive deep into your vision, analyzing competitors and defining your target audience to build a solid foundation.
+                {dict?.step1_desc || "We dive deep into your vision, analyzing competitors and defining your target audience."}
               </p>
             </div>
           </div>
 
-          {/* === 2: UI/UX Design === */}
+          {/* === 2: UI/UX === */}
           <div className={`step-row reverse ${activeStep === 2 ? 'active' : ''}`} onClick={() => handleStepClick(2)}>
             <div className="visual-side">
-              <div className="card-purple-wrapper">
-                 {/* כדור צף */}
-                 <div className="hidden md:block absolute top-1/2 -translate-y-1/2 -left-1.5 w-3 h-3 bg-purple-500 rounded-full shadow-[0_0_10px_#A855F7] z-20" style={{ background: '#A855F7' }}></div>
-                 
-                 <div className="card-purple-bg"></div>
-                 <div className="card-purple-front">
-                     {/* שלד פנימי של עיצוב */}
-                     <div className="skeleton-title"></div>
-                     <div className="skeleton-box-container">
-                         <div className="skeleton-box"></div>
-                         <div className="skeleton-box"></div>
-                     </div>
+              <div className="card-base card-purple">
+                 {/* עטיפה פנימית קריטית כדי שהאייקון הצף לא ייחתך! */}
+                 <div className="card-purple-inner">
+                    <div className="card-purple-bg"></div>
+                    <div className="card-purple-front">
+                        <div className="skeleton-title"></div>
+                        <div className="skeleton-box-container">
+                            <div className="skeleton-box"></div>
+                            <div className="skeleton-box"></div>
+                        </div>
+                    </div>
                  </div>
-
-                 <div className="floating-icon" style={{ bottom: '-16px', right: '-16px', background: '#9333EA', borderColor: '#9333EA' }}>
-                     <PenTool size={20} style={{ color: 'white' }} />
+                 <div className="floating-icon icon-purple-wrap">
+                     <PenTool size={20} className="svg-icon" />
                  </div>
               </div>
             </div>
-
             <div className="content-side">
                <div className="step-header">
-                 <span className="step-num text-purple">2</span>
+                 <span className="step-num text-purple">{dict?.step2_num || "2"}</span>
                  <div className="icon-wrap">
                     <PenTool size={24} className="text-purple" />
-                    <h3 className="step-title">UI/UX Design</h3>
+                    <h3 className="step-title">{dict?.step2_title || "UI/UX Design"}</h3>
                  </div>
                </div>
                <p className="step-desc">
-                 High-fidelity wireframes and stunning interfaces that provide an intuitive and seamless user journey.
+                 {dict?.step2_desc || "High-fidelity wireframes and stunning interfaces that provide an intuitive journey."}
                </p>
             </div>
           </div>
@@ -105,71 +96,67 @@ export default function Process() {
           <div className={`step-row ${activeStep === 3 ? 'active' : ''}`} onClick={() => handleStepClick(3)}>
             <div className="visual-side">
                <div className="card-base card-green">
-                  {/* נקודות טרמינל */}
-                  <div className="terminal-dots">
-                      <div className="dot dot-red"></div>
-                      <div className="dot dot-yellow"></div>
-                      <div className="dot dot-green"></div>
+                  {/* העטיפה הזו מונעת מהתוכן למתוח את המלבן למטה */}
+                  <div className="terminal-wrapper">
+                    <div className="terminal-dots">
+                        <div className="dot dot-red"></div>
+                        <div className="dot dot-yellow"></div>
+                        <div className="dot dot-green"></div>
+                    </div>
+                    <div className="terminal-text">
+                        <p className="code-line-1">$ npm run build</p>
+                        <p className="code-line-2">&gt; Optimized build...</p>
+                        <p className="code-line-3">Done in 0.4s ⚡</p>
+                    </div>
                   </div>
-                  
-                  {/* טקסט קוד */}
-                  <div className="space-y-2 text-slate-500">
-                      <p>$ npm run build</p>
-                      <p className="text-green-400">&gt; Optimized build...</p>
-                      <p style={{ color: 'white' }}>Done in 0.4s ⚡</p>
-                      <div className="cursor-blink"></div>
-                  </div>
-                  
-                  <div className="floating-icon" style={{ bottom: '-12px', left: '-12px', background: '#14532d', borderColor: '#22c55e' }}>
-                     <Code size={20} className="text-green-300" />
+                  <div className="floating-icon icon-green-wrap">
+                     <Code size={20} className="svg-icon" />
                   </div>
                </div>
             </div>
-
             <div className="content-side">
                <div className="step-header">
-                 <span className="step-num text-green">3</span>
+                 <span className="step-num text-green">{dict?.step3_num || "3"}</span>
                  <div className="icon-wrap">
                     <Code size={24} className="text-green" />
-                    <h3 className="step-title">Development</h3>
+                    <h3 className="step-title">{dict?.step3_title || "Development"}</h3>
                  </div>
                </div>
                <p className="step-desc">
-                 Clean, semantic code using Next.js. We prioritize speed, security, and industrial-grade scalability.
+                 {dict?.step3_desc || "Clean, semantic code using Next.js. We prioritize speed, security, and scalability."}
                </p>
             </div>
           </div>
 
-          {/* === 4: Launch === */}
+         {/* === 4: Launch === */}
           <div className={`step-row reverse ${activeStep === 4 ? 'active' : ''}`} onClick={() => handleStepClick(4)}>
             <div className="visual-side">
-               <div className="card-yellow-wrapper">
-                 <div className="card-base card-yellow">
-                    <div className="dashed-border"></div>
+               <div className="card-base card-yellow">
+                    <div className="dashed-circle"></div>
                     
-                    {/* אנימציית טיל */}
-                    <div className="relative transform hover:-translate-y-2 transition-transform duration-500">
-                        <Rocket size={48} className="text-yellow" style={{ filter: 'drop-shadow(0 0 10px rgba(250,204,21,0.5))' }} />
+                    {/* המסכה שחותכת את הטיל כשהוא עף! */}
+                    <div className="rocket-mask">
+                        <div className="rocket-animation-container">
+                            <Rocket size={48} className="rocket-icon" />
+                        </div>
                     </div>
-                 </div>
 
-                 {/* אייקון צף חסר (הוסף) */}
-                 <div className="floating-icon" style={{ bottom: '-12px', right: '-12px', background: '#422006', borderColor: '#EAB308' }}>
-                      <Rocket size={20} className="text-yellow" />
+                 <div className="floating-icon icon-yellow-wrap">
+                      <Rocket size={20} className="svg-icon" />
                  </div>
                </div>
             </div>
 
             <div className="content-side">
                <div className="step-header">
-                 <span className="step-num text-yellow">4</span>
+                 <span className="step-num text-yellow">{dict?.step4_num || "4"}</span>
                  <div className="icon-wrap">
                     <Rocket size={24} className="text-yellow" />
-                    <h3 className="step-title">Launch & Growth</h3>
+                    <h3 className="step-title">{dict?.step4_title || "Launch & Growth"}</h3>
                  </div>
                </div>
                <p className="step-desc">
-                 Liftoff. We deploy your masterpiece to the world and provide continuous optimization for long-term growth.
+                 {dict?.step4_desc || "Liftoff. We deploy your masterpiece to the world and provide continuous optimization."}
                </p>
             </div>
           </div>

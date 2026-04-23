@@ -1,30 +1,25 @@
+"use client";
 
-import React from 'react';
-import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import Services from "@/components/Services";
-import Process from "@/components/Process";
-import Portfolio from '@/components/Portfolio';
-import Contact from '@/components/Contact';
-import Footer from '@/components/Footer';
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 
-export default function Home() {
+export default function RootRedirect() {
+  const router = useRouter();
 
+  useEffect(() => {
+    // בודק את שפת הדפדפן של המשתמש
+    const userLang = navigator.language;
+    
+    // אם הדפדפן מכיל עברית, נעביר לגרסה העברית. אחרת - אנגלית.
+    if (userLang.toLowerCase().includes('he')) {
+      router.replace('/he');
+    } else {
+      router.replace('/en');
+    }
+  }, [router]);
+
+  // מסך ריק בצבע הרקע של האתר לשבריר שנייה בזמן שהניתוב קורה
   return (
-    <main className="flex flex-col w-full min-h-screen bg-slate-950 text-white overflow-x-hidden selection:bg-purple-500/30">
-      
-      <Navbar />
-      <Hero />
-
-      <section className="relative z-20 bg-slate-950">
-         <Services />
-     </section>
-
-      <Process />
-      <Portfolio />
-      <Contact />
-      <Footer />
-    </main>
-   
+    <div style={{ backgroundColor: '#020617', width: '100vw', height: '100vh' }}></div>
   );
 }

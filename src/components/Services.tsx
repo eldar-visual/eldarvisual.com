@@ -1,128 +1,103 @@
-
 "use client"; 
 import React, { useState } from 'react';
 import './Services.css';
-import { 
-  Code, 
-  Layout, 
-  RefreshCw, 
-  Settings, 
-  ShoppingBag, 
-  TrendingUp, 
-  ArrowRight 
-} from 'lucide-react';
+import { Code, Layout, RefreshCw, Settings, ShoppingBag, TrendingUp, ArrowRight } from 'lucide-react';
 
-const services = [
-  {
-    id: 1,
-    title: "Custom Web Development",
-    description: "Lightning-fast websites built for growth. We use Next.js & React to ensure security, SEO dominance, and scalability.",
-    icon: <Code className="service-icon-svg" />,
-    features: ["Next.js & React", "Server Side Rendering", "API Integration", "Scalable Architecture"]
-  },
-  {
-    id: 2,
-    title: "UI/UX Design",
-    description: "Interfaces that don't just look good—they convert. We design user journeys that turn visitors into customers.",
-    icon: <Layout className="service-icon-svg" />,
-    features: ["User Research", "Wireframing", "Prototyping", "Design Systems"]
-  },
-  {
-    id: 3,
-    title: "Website Revamp",
-    description: "Transform outdated sites into modern masterpieces. Improve speed, trust, and usability without losing your SEO history.",
-    icon: <RefreshCw className="service-icon-svg" />,
-    features: ["Performance Audit", "Modern Stack Migration", "SEO Preservation", "Data Migration"]
-  },
-  {
-    id: 4,
-    title: "Webmaster Services",
-    description: "Never worry about updates again. We handle maintenance, security patches, and content changes so you can focus on business.",
-    icon: <Settings className="service-icon-svg" />,
-    features: ["24/7 Monitoring", "Security Patches", "Content Updates", "Regular Backups"]
-  },
-  {
-    id: 5,
-    title: "E-Commerce",
-    description: "Stores designed to sell. Secure payments, inventory management, and a seamless checkout experience.",
-    icon: <ShoppingBag className="service-icon-svg" />,
-    features: ["Shopify / Custom", "Payment Gateways", "Inventory Sync", "Conversion Optimization"]
-  },
-  {
-    id: 6,
-    title: "SEO & Performance",
-    description: "Rank higher, load faster. Comprehensive optimization of site structure and core web vitals.",
-    icon: <TrendingUp className="service-icon-svg" />,
-    features: ["Technical SEO", "Core Web Vitals", "Keyword Strategy", "Speed Optimization"]
-  }
-];
-
-const Services = () => {
-  // ניהול הכרטיס הפעיל במובייל
+export default function Services({ dict }: { dict?: any }) {
   const [activeCard, setActiveCard] = useState<number | null>(null);
 
-const handleCardClick = (id: number) => {
-  setActiveCard(prev => (prev === id ? null : id));
-};
+  const handleCardClick = (id: number) => {
+    setActiveCard(prev => (prev === id ? null : id));
+  };
+
+  // מערך חסין תקלות - עברית שיווקית ומדויקת!
+  const serviceItems = dict?.items || [
+    {
+      title: "פיתוח אתרים מותאם אישית",
+      desc: "אתרים מהירים כברק הבנויים לצמיחה. אנו משתמשים ב-Next.js ו-React כדי להבטיח אבטחה, שליטה בתוצאות החיפוש (SEO) ויכולת התרחבות.",
+      features: ["Next.js ו-React", "רינדור צד שרת", "אינטגרציית API", "ארכיטקטורה ניתנת להרחבה"]
+    },
+    {
+      title: "עיצוב חוויית משתמש (UI/UX)",
+      desc: "ממשקים שלא רק נראים טוב — הם ממירים. אנו מעצבים מסעות משתמש שהופכים מבקרים ללקוחות משלמים.",
+      features: ["מחקר משתמשים", "תכנון ממשק", "אבות-טיפוס", "מערכות עיצוב"]
+    },
+    {
+      title: "שדרוג וחידוש אתרים",
+      desc: "הפיכת אתרים מיושנים ליצירות מופת מודרניות. שיפור מהירות, אמון ושימושיות מבלי לאבד את היסטוריית הקידום שלכם בגוגל.",
+      features: ["בקרת ביצועים", "מעבר לטכנולוגיות חדשות", "שמירה על הדירוג בגוגל", "העברת נתונים"]
+    },
+    {
+      title: "ניהול אתרים",
+      desc: "אל תדאגו יותר לעדכונים. אנו מטפלים בתחזוקה, תיקוני אבטחה ושינויי תוכן כדי שתוכלו להתמקד בניהול העסק שלכם.",
+      features: ["ניטור 24/7", "עדכוני אבטחה", "ניהול תוכן", "גיבויים שוטפים"]
+    },
+    {
+      title: "חנויות וירטואליות (E-Commerce)",
+      desc: "חנויות שנועדו למכור. תשלומים מאובטחים, ניהול מלאי וחוויית קופה חלקה ומהירה ללקוח.",
+      features: ["שופיפיי או מותאם אישית", "שערי תשלום", "סנכרון מלאי", "אופטימיזציית המרות"]
+    },
+    {
+      title: "קידום וביצועים (SEO)",
+      desc: "דירוג גבוה יותר, טעינה מהירה יותר. אופטימיזציה מקיפה של מבנה האתר ומדדי הליבה של גוגל.",
+      features: ["SEO טכני", "מדדי ליבה", "אסטרטגיית מילות מפתח", "אופטימיזציית מהירות"]
+    }
+  ];
+
+  const icons = [
+    <Code key="1" className="service-icon-svg" />,
+    <Layout key="2" className="service-icon-svg" />,
+    <RefreshCw key="3" className="service-icon-svg" />,
+    <Settings key="4" className="service-icon-svg" />,
+    <ShoppingBag key="5" className="service-icon-svg" />,
+    <TrendingUp key="6" className="service-icon-svg" />
+  ];
 
   return (
     <section id="services">
-      {/* Background Pattern */}
       <div className="services-bg-pattern">
         <img src="/services.webp" alt="" aria-hidden="true" />
       </div>
 
       <div className="services-container">
-        {/* Header */}
         <div className="services-header">
-          <span className="services-subtitle">OUR EXPERTISE</span>
+          <span className="services-subtitle">{dict?.subtitle || "מה אנחנו עושים?"}</span>
           <h2 className="services-title">
-            Built for <span className="services-title-gradient">Scale.</span>
+            {dict?.title || "בנוי ל"} <span className="services-title-gradient">{dict?.gradient || "התרחבות וצמיחה."}</span>
           </h2>
         </div>
 
-        {/* Grid */}
         <div className="services-grid">
-          {services.map((service) => (
+          {serviceItems.map((service: any, index: number) => (
             <div 
-              key={service.id} 
-              className={`service-card ${activeCard === service.id ? 'active-mobile' : ''}`}
-              onClick={() => handleCardClick(service.id)}
+              key={index} 
+              className={`service-card ${activeCard === index ? 'active-mobile' : ''}`}
+              onClick={() => handleCardClick(index)}
             > 
-              
-              {/* Icon Box */}
-              <div className="service-icon-box">
-                {service.icon}
-              </div>
-
-              {/* Text Content */}
+              <div className="service-icon-box">{icons[index]}</div>
               <h3 className="service-card-title">{service.title}</h3>
-              <p className="service-card-desc">{service.description}</p>
-
-              {/* Features List */}
+              <p className="service-card-desc">{service.desc}</p>
               <div className="service-features">
-                <span className="service-features-title">WHAT'S INCLUDED</span>
+                <span className="service-features-title">
+                   {dict?.subtitle ? "מה כלול:" : "WHAT'S INCLUDED:"}
+                </span>
                 <ul className="service-features-list">
-                  {service.features.map((feature, idx) => (
+                  {service.features?.map((feature: string, idx: number) => (
                     <li key={idx}>{feature}</li>
                   ))}
                 </ul>
               </div>
-
             </div>
           ))}
         </div>
 
-        {/* CTA Button */}
         <div className="services-cta">
           <a href="#contact" className="btn-start-project">
-            Get a Free Website Review
-            <ArrowRight className="cta-icon-svg" />
+            {dict?.cta || "קבלו ניתוח אתר חינם"}
+            <ArrowRight className="cta-icon-svg btn-icon-arrow" />
           </a>
         </div>
       </div>
     </section>
   );
-};
-
-export default Services;
+}

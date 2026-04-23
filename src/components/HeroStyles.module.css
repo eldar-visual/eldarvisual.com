@@ -1,4 +1,3 @@
-
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
@@ -30,7 +29,7 @@
 @keyframes mockupSlideUp {
   0% { 
     opacity: 0; 
-    transform: translateY(150px); /* מגיע ממש עמוק מלמטה */
+    transform: translateY(150px);
   }
   100% { 
     opacity: 1; 
@@ -159,7 +158,6 @@
   margin-bottom: 0rem;
   box-shadow: none;
   background: transparent;
-  /* box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);  */
   border-radius: 1.5rem;
   overflow: visible;
   animation: blurReveal 0.8s ease-out forwards;
@@ -201,7 +199,7 @@
 .heroTitle {
   font-size: 2rem; 
   text-align: left;
-  font-weight: 800; 
+  font-weight: 700; 
   letter-spacing: -0.01em; 
   line-height: 1.1;
   margin-bottom: 0.5rem;
@@ -249,7 +247,8 @@
     text-align: left; 
     margin: 0;
     color: #E2E8F0;
-  } }
+  } 
+}
 
 .heroActions {
   display: flex; 
@@ -268,12 +267,8 @@
     flex-direction: row; 
     align-items: center; 
     justify-content: flex-start;
-    /* width: 100%;
-    gap: 1.5rem;  */
   }
 }
-
-
 
 .btnLink {
   background: none; border: none; color: #b1e6ff; font-size: 0.9375rem; font-weight: 500;
@@ -299,7 +294,6 @@
 }
 @media (min-width: 768px) { .trustLine { margin-top: 3rem; } }
 
-
 /* === Desktop Visual Side === */
 .heroVisualSide {
   display: none; 
@@ -314,7 +308,6 @@
     justify-content: flex-end;
     perspective: 2000px;
     opacity: 0;
-    /* משתמש באנימציה החדשה מלמטה, לאורך 3.5 שניות, ומתחיל יחד עם הטקסטים */
     animation: mockupSlideUp 3.5s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
   }
 }
@@ -332,7 +325,6 @@
   box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.6);
   overflow: hidden; 
   border: 1px solid rgba(30, 41, 59, 0.1);
-  
   transform: rotate(6deg) scale(1);
   transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.7s ease;
 }
@@ -371,11 +363,10 @@
 }
 
 .scrollItem:hover {
-  transform: translateY(-5px) scale(1.02); /* קפיצה קטנה למעלה וגדילה קלה */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* צל שנותן עומק */
-  z-index: 10; /* מוודא שהכרטיסייה מעל האחרות בזמן הריחופ */
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  z-index: 10;
 }
-
 
 .scrollItem:hover.blueHover { background-color: rgba(247, 250, 255, 0.5); }
 .scrollItem:hover.purpleHover { background-color: rgba(234, 229, 240, 0.5); }
@@ -425,10 +416,8 @@
 
 .btnPrimary {
   padding: 0.875rem 1.5rem;
-  /* יצירת הגרדיאנט כרקע דינמי */
   background: linear-gradient(90deg, #2563EB, #A855F7, #60A5FA, #2563EB) !important;
   background-size: 300% 100% !important;
-  
   color: white;
   border-radius: 0.5rem;
   font-weight: 600;
@@ -452,6 +441,54 @@
 .btnPrimary:hover {
   transform: translateY(-3px);
   box-shadow: 0 15px 25px -5px rgba(37, 99, 235, 0.4);
-  /* הפעלת האנימציה */
   animation: gradientFlow 2s linear infinite !important;
+}
+
+/* =========================================
+   RTL (Hebrew) Adjustments - Masterpiece
+   ========================================= */
+
+/* יישור כללי של ה-Hero */
+:global(html[dir="rtl"]) .heroTextSide { text-align: right; }
+:global(html[dir="rtl"]) .heroTitle { text-align: right; }
+@media (min-width: 768px) {
+  :global(html[dir="rtl"]) .heroSubtitle { text-align: right; }
+}
+
+/* הפיכת החצים */
+:global(html[dir="rtl"]) .arrowIcon { transform: rotate(180deg); }
+:global(html[dir="rtl"]) .btnLink:hover .arrowIcon { transform: rotate(180deg) translateX(-4px); }
+
+/* === תיקון כרטיסיית הבראוזר (יישור פלס לימין!) === */
+:global(html[dir="rtl"]) .textWrapper { 
+  text-align: right; 
+  align-items: flex-end; /* לוקח את פסי הטעינה לצד ימין */
+}
+:global(html[dir="rtl"]) .itemTitle { text-align: right; }
+:global(html[dir="rtl"]) .overlayText { text-align: right; width: 100%; }
+:global(html[dir="rtl"]) .webmasterHeader { flex-direction: row-reverse; }
+
+/* פה הקסם: התמונה תעבור לצד ימין, והטקסט לשמאל */
+:global(html[dir="rtl"]) .itemContent { flex-direction: row-reverse; }
+:global(html[dir="rtl"]) .itemReverse { flex-direction: row; }
+
+/* יישור תפריט הכפתור הקטן לימין */
+:global(html[dir="rtl"]) .miniBtn { text-align: center; }
+
+
+/* === תיקון רקע הקוד - יישור נכון לימין בעברית === */
+@media (min-width: 768px) {
+  :global(html[dir="rtl"]) .heroCodeBg {
+    justify-content: flex-start !important; /* הקסם! בעברית 'התחלה' זה צד ימין */
+    right: 0 !important;
+    left: auto !important;
+    width: 75vw !important; 
+    transform: translateX(5rem) !important; /* מושך אותו עוד קצת ימינה שיישב בול */
+    
+    /* הופכים את המסכה כדי שתדעך יפה לכיוון שמאל (האמצע) */
+    mask-image: linear-gradient(to left, transparent 0%, black 30%, black 100%), 
+                linear-gradient(to bottom, transparent 0%, black 25%, black 75%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to left, transparent 0%, black 30%, black 100%), 
+                        linear-gradient(to bottom, transparent 0%, black 25%, black 75%, transparent 100%);
+  }
 }

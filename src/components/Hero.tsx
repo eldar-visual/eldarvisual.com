@@ -5,7 +5,6 @@ import { ArrowRight } from 'lucide-react';
 import styles from './HeroStyles.module.css';
 import InfiniteScroll from './InfiniteScroll';
 
-
 const Keyword = ({ t }: { t: string }) => <span className={styles.tokenKeyword}>{t}</span>; 
 const Func = ({ t }: { t: string }) => <span className={styles.tokenFunc}>{t}</span>; 
 const StringVal = ({ t }: { t: string }) => <span className={styles.tokenString}>{t}</span>; 
@@ -21,7 +20,7 @@ const CodeLine = ({ children }: { children: React.ReactNode }) => (
 );
 
 const CodeBlock = () => (
-    <div className={styles.codeBlock}>
+    <div className={styles.codeBlock} dir="ltr">
       <CodeLine><Comment t="// Initializing core render loop with high-performance vectors" /></CodeLine>
       <CodeLine><Keyword t="const" /> <Func t="animateFrame" /> <Keyword t="=" /> <Keyword t="async" /> (<Var t="delta" />, <Var t="context" />) <Keyword t="=>" /> <Punct t="{" /></CodeLine>
       <CodeLine>  <Keyword t="if" /> (<Var t="!context" />.<Prop t="active" /> || <Var t="system" />.<Prop t="isPaused" />) <Keyword t="return" /> <Var t="Promise" />.<Func t="resolve" />(<Keyword t="null" />);</CodeLine>
@@ -43,22 +42,22 @@ const CodeBlock = () => (
     </div>
 );
 
-
-// === הוספתי כאן את שתי התכונות החדשות לכפתור המשני ===
 export interface HeroProps {
-  title?: React.ReactNode;
+ title?: React.ReactNode;
   subtitle?: React.ReactNode;
   ctaText?: React.ReactNode;
   trustLine?: React.ReactNode;
-  hideSecondaryBtn?: boolean; // <--- הוספנו את פקודת ההסתרה
+  dict?: any; 
+  hideSecondaryBtn?: boolean;
 }
 
-export default function Hero({ title, subtitle, ctaText, trustLine, hideSecondaryBtn }: HeroProps = {}) {
-
+export default function Hero({ title, subtitle, ctaText, trustLine, dict, hideSecondaryBtn }: HeroProps = {}) {
   const [isMounted, setIsMounted] = React.useState(false);
+  
   React.useEffect(() => {
     setIsMounted(true);
   }, []);
+
   const scrollToSection = (e: React.MouseEvent, id: string) => {
     e.preventDefault();
     const element = document.getElementById(id);
@@ -66,7 +65,6 @@ export default function Hero({ title, subtitle, ctaText, trustLine, hideSecondar
         element.scrollIntoView({ behavior: 'smooth' });
     }
   };
-
 
   return (
     <section id="hero" className={styles.heroSection}>
@@ -99,43 +97,32 @@ export default function Hero({ title, subtitle, ctaText, trustLine, hideSecondar
       
         <div className={styles.heroTextSide}>
           <h1 className={styles.heroTitle}>
-            {title ? title : (
-              <>
-                <span className="title-part-1">Modern Websites.</span>
-                <span className="title-part-2">Clean Code.</span>
-                <span className={`title-part-3 ${styles.heroTitleGradient}`}>Real Results.</span>
-              </>
-            )}
+            {/* שימוש במילון עבור הכותרת */}
+            <span>{dict?.title || "Modern Websites. Clean Code."}</span>
+            <br />
+            <span className={styles.heroTitleGradient}>{dict?.gradient || "Real Results."}</span>
           </h1> 
           
           <div className={`${styles.heroSubtitleGroup} delay1`}>
             <p className={styles.heroSubtitle}>
-              {subtitle ? subtitle : (
-                <>
-                  High-performance websites built with modern frameworks. 
-                  Faster loading, better UX, and built for long-term growth. 
-                  No templates, no bloat.
-                </>
-              )}
+              {dict?.subtitle || "High-performance websites built with modern frameworks. Faster loading, better UX, and built for long-term growth. No templates, no bloat."}
             </p>
           </div>
 
           <div className={`${styles.heroActions} delay2`}>
             <button onClick={(e) => scrollToSection(e, 'contact')} className={styles.btnPrimary}>
-              {ctaText ? ctaText : "Start with a Website Review"}
+              {dict?.cta || "Start with a Website Review"}
             </button>
-            
-            {/* === הכפתור השני עטוף בתנאי === */}
             {!hideSecondaryBtn && (
               <button onClick={(e) => scrollToSection(e, 'portfolio')} className={`${styles.btnLink} group`}>
-                <span>View Projects</span>
+                <span>{dict?.viewProjects || "View Projects"}</span>
                 <ArrowRight size={16} className={styles.arrowIcon} />
               </button>
             )}
           </div>
 
           <p className={styles.trustLine}>
-            {trustLine ? trustLine : "Performance-focused | UX-driven | Built to last"}
+            {dict?.tags || "Performance-focused | UX-driven | Built to last"}
           </p>
         </div>
 
@@ -149,16 +136,16 @@ export default function Hero({ title, subtitle, ctaText, trustLine, hideSecondar
                     <div className={styles.dot} />
                     <div className={styles.dot} />
                   </div>
-                  <div className={styles.browserAddressBar}>eldarvisual.com</div>
+                  <div className={styles.browserAddressBar} dir="ltr">eldarvisual.com</div>
                 </div>
-               <div className={styles.browserContentViewport}>
-   {isMounted && (
-     <div className={styles.scrollingContent}>
-        <InfiniteScroll />
-        <InfiniteScroll />
-     </div>
-   )}
-</div>
+               <div className={styles.browserContentViewport} dir="ltr">
+                 {isMounted && (
+                   <div className={styles.scrollingContent}>
+                      <InfiniteScroll dict={dict} />
+        <InfiniteScroll dict={dict} />
+                   </div>
+                 )}
+               </div>
               </div>
           </div>
         </div>
