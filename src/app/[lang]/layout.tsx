@@ -17,11 +17,31 @@ const assistant = Assistant({
 
 export async function generateMetadata({ params }: any): Promise<Metadata> {
   const resolvedParams = await params;
-  const isHe = resolvedParams?.lang === 'he';
+  const lang = resolvedParams?.lang || 'en';
+  const isHe = lang === 'he';
+  
+  // הדינמיקה של התמונות לפי ההגדרות שלך
+  const ogImage = isHe ? "/og-image-he.png" : "/og-image.webp";
   
   return {
     title: isHe ? "אלדר ויז'ואל | סטודיו פרימיום" : "EldarVisual Web Studio | Premium Web Design",
     description: isHe ? "התמחות ביצירת חוויות רשת מהירות ומרהיבות." : "Specialized in crafting high-performance, stunning web applications.",
+    openGraph: {
+      title: isHe ? "אלדר ויז'ואל | אתרי איטנרט ברמת פרימיום" : "EldarVisual | Premium Web Design",
+      description: isHe ? "בניית אתרים ב-Next.js עם דגש על ביצועים וחוויית משתמש." : "High-performance web apps built for growth.",
+      url: `https://eldarvisual.com/${lang}`,
+      siteName: "EldarVisual",
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: isHe ? "אלדר ויז'ואל - השקה בעברית" : "EldarVisual Web Studio",
+        },
+      ],
+      locale: isHe ? "he_IL" : "en_US",
+      type: "website",
+    },
   };
 }
 
