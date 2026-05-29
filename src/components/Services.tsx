@@ -79,7 +79,7 @@ export default function Services({ dict }: { dict?: any }) {
               <p className="service-card-desc">{service.desc}</p>
               <div className="service-features">
                 <span className="service-features-title">
-                   {dict?.subtitle ? "מה כלול:" : "WHAT'S INCLUDED:"}
+                  {dict?.included || "WHAT'S INCLUDED:"}
                 </span>
                 <ul className="service-features-list">
                   {service.features?.map((feature: string, idx: number) => (
