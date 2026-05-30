@@ -467,7 +467,7 @@
 
 /* הפיכת החצים */
 :global(html[dir="rtl"]) .arrowIcon { transform: rotate(180deg); }
-:global(html[dir="rtl"]) .btnLink:hover .arrowIcon { transform: rotate(-180deg) translateX(-4px); }
+:global(html[dir="rtl"]) .btnLink:hover .arrowIcon { transform: rotate(180deg) translateX(4px); }
 
 /* === תיקון כרטיסיית הבראוזר (יישור פלס לימין!) === */
 :global(html[dir="rtl"]) .textWrapper { 
