@@ -272,7 +272,17 @@
 
 .btnLink {
   background: none; border: none; color: #b1e6ff; font-size: 0.9375rem; font-weight: 500;
-  cursor: pointer; padding: 0; transition: color 0.3s; display: flex; align-items: center; gap: 0.5rem;
+  cursor: pointer; padding: 0; transition: color 0.3s; 
+  display: flex; 
+  align-items: center; /* ממרכז אנכית */
+  gap: 0.5rem;
+
+  .arrowIcon {
+  display: inline-block;
+  transition: transform 0.3s ease;
+  /* מוריד את החץ מעט למטה כדי שיהיה פלס עם הפונט החדש */
+  margin-top: 0.15rem; 
+}
 }
 @media (min-width: 768px) { .btnLink { font-size: 1rem; } }
 .btnLink:hover { color: white; }
