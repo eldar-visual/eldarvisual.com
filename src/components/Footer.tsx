@@ -1,6 +1,6 @@
 import React from 'react';
 import './Footer.css';
-import { Github, Linkedin } from 'lucide-react';
+import { Facebook, Github, Linkedin } from 'lucide-react';
 
 interface FooterProps {
   dict?: any;
@@ -24,6 +24,9 @@ export default function Footer({ dict }: FooterProps) {
         <div className="footer-socials">
           <a href="https://github.com/eldar-visual" className="social-link" aria-label="Github" target="_blank" rel="noopener noreferrer">
             <Github size={20} />
+          </a>
+          <a href="https://www.facebook.com/EldarVisual/" className="social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+            <Facebook size={20} />
           </a>
           <a href="https://www.linkedin.com/in/aviram-eldar/" className="social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
             <Linkedin size={20} />
