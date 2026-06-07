@@ -1,6 +1,8 @@
 /* === הגדרות בסיס ורקע האתר === */
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden; /* תוספת לאטימה */
+  width: 100%; /* תוספת לאטימה */
 }
 
 body {
@@ -10,6 +12,7 @@ body {
   color: #ffffff;
   font-family: sans-serif;
   overflow-x: hidden;
+  width: 100%; /* תוספת לאטימה */
 }
 
 /* === תיקון הגלילה הגלובלי === */

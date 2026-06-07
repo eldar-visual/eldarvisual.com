@@ -502,3 +502,7 @@
                         linear-gradient(to bottom, transparent 0%, black 25%, black 75%, transparent 100%);
   }
 }
+
+:global(html[dir="rtl"]) .btnLink:hover .arrowIcon {
+  transform: rotate(180deg) translateX(4px); 
+}
