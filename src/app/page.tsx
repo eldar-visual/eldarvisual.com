@@ -20,6 +20,6 @@ export default function RootRedirect() {
 
   // מסך ריק בצבע הרקע של האתר לשבריר שנייה בזמן שהניתוב קורה
   return (
-    <div style={{ backgroundColor: '#020617', width: '100vw', height: '100vh' }}></div>
+    <div style={{ backgroundColor: '#020617', width: '100%', height: '100vh' }}></div>
   );
 }
