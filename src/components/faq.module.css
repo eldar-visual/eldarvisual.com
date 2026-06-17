@@ -1,0 +1,41 @@
+.section { padding: 5rem 2rem; background-color: #FFFFFF; }
+.container { max-width: 800px; margin: 0 auto; }
+.title { font-size: 2rem; text-align: center; margin-bottom: 3rem; color: #0F172A; }
+
+.item {
+  border-bottom: 1px solid #E2E8F0;
+  padding: 1.5rem 0;
+  cursor: pointer;
+}
+
+.question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  color: #1E293B;
+}
+
+.answer {
+  margin-top: 1rem;
+  color: #64748B;
+  line-height: 1.6;
+  padding-left: 1rem;
+}
+
+.section {
+  padding: 6rem 2rem;
+  background-color: #FFFFFF;
+  position: relative;
+}
+
+/* מוסיף "צל" קליל למעלה שנותן תחושה של עומק */
+.section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 20%;
+  right: 20%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #E2E8F0, transparent);
+}

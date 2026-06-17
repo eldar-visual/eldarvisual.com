@@ -1,0 +1,218 @@
+.section {
+  padding: 6rem 0;
+  background-color: #F8FAFC; /* רקע בהיר ונקי למרפאות */
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .container {
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 6rem;
+  }
+}
+
+/* --- צד טקסט --- */
+.textSide {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  color: #0284C7;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-weight: 800;
+  color: #0F172A;
+  line-height: 1.2;
+  margin: 0 0 1rem 0;
+  letter-spacing: -0.02em;
+}
+
+.highlight {
+  color: #EF4444; /* צבע אזהרה עדין להדגשת הכאב */
+}
+
+.description {
+  font-size: 1.1rem;
+  color: #475569;
+  line-height: 1.6;
+  margin: 0 0 3rem 0;
+  max-width: 90%;
+}
+
+.painPoints {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.point {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+}
+
+.iconWrap {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.75rem;
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #EF4444;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.pointContent h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0F172A;
+  margin: 0 0 0.25rem 0;
+}
+
+.pointContent p {
+  font-size: 0.95rem;
+  color: #64748B;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* --- צד ויזואלי --- */
+.visualSide {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.abstractCard {
+  width: 100%;
+  max-width: 420px;
+  background: #FFFFFF;
+  border-radius: 1rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  position: relative;
+  z-index: 10;
+  transform: rotate(-2deg);
+  transition: transform 0.4s ease;
+}
+
+.abstractCard:hover {
+  transform: rotate(0deg) translateY(-5px);
+}
+
+.cardHeader {
+  padding: 1rem;
+  border-bottom: 1px solid #F1F5F9;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.dots {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #E2E8F0;
+}
+
+.urlBar {
+  flex-grow: 1;
+  background-color: #F8FAFC;
+  border-radius: 4px;
+  padding: 0.4rem;
+  text-align: center;
+  font-size: 0.7rem;
+  color: #94A3B8;
+  letter-spacing: 0.05em;
+}
+
+.cardBody {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.alertBox {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.alertNumber {
+  display: block;
+  font-size: 4rem;
+  font-weight: 800;
+  color: #EF4444;
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+.alertText {
+  font-size: 0.9rem;
+  color: #64748B;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.graphSkeleton {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 1rem;
+  height: 100px;
+  width: 100%;
+  border-bottom: 2px solid #F1F5F9;
+  padding-bottom: 0.5rem;
+}
+
+.bar {
+  width: 30px;
+  background-color: #94A3B8;
+  border-radius: 4px 4px 0 0;
+}
+
+.graphLabel {
+  margin-top: 1rem;
+  font-size: 0.75rem;
+  color: #94A3B8;
+  font-weight: 500;
+}
+
+.bgGlow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle, rgba(239, 68, 68, 0.05) 0%, rgba(255,255,255,0) 70%);
+  z-index: 1;
+  pointer-events: none;
+}

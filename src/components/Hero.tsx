@@ -66,6 +66,15 @@ export default function Hero({ title, subtitle, ctaText, trustLine, dict, hideSe
     }
   };
 
+  const handlePrimaryClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (dict?.calendlyLink) {
+      window.open(dict.calendlyLink, '_blank');
+    } else {
+      scrollToSection(e, 'contact');
+    }
+  };
+
   return (
     <section id="hero" className={styles.heroSection}>
       
@@ -109,8 +118,18 @@ export default function Hero({ title, subtitle, ctaText, trustLine, dict, hideSe
             </p>
           </div>
 
-          <div className={`${styles.heroActions} delay2`}>
-            <button onClick={(e) => scrollToSection(e, 'contact')} className={styles.btnPrimary}>
+         <div className={`${styles.heroActions} delay2`}>
+            <button 
+              onClick={(e) => {
+                e.preventDefault();
+                if (dict?.calendlyLink) {
+                  window.open(dict.calendlyLink, '_blank');
+                } else {
+                  scrollToSection(e, 'contact');
+                }
+              }} 
+              className={styles.btnPrimary}
+            >
               {dict?.cta || "Start with a Website Review"}
             </button>
             {!hideSecondaryBtn && (
