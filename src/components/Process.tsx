@@ -22,7 +22,7 @@ export default function Process({ dict }: ProcessProps) {
         <div className="process-header">
           <span className="sub-title">{dict?.subtitle || "The Workflow"}</span>
           <h2 className="main-title">
-            {dict?.title || "From Concept to"} <span className="gradient-text">{dict?.gradient || "Completion."}</span>
+            {dict?.title || "From Architecture to"} <span className="gradient-text">{dict?.gradient || "Deployment."}</span>
           </h2>
         </div>
 
@@ -53,9 +53,9 @@ export default function Process({ dict }: ProcessProps) {
                  </div>
               </div>
               <p className="step-desc">
-                {dict?.step1_desc || "We dive deep into your vision, analyzing competitors and defining your target audience."}
+                {dict?.step1_desc || "Comprehensive technical and UX audit. We map out conversion bottlenecks, analyze your market, and deliver a clear, actionable roadmap for development."}
               </p>
-            </div>
+            </div> 
           </div>
 
           {/* === 2: UI/UX === */}
@@ -123,8 +123,7 @@ export default function Process({ dict }: ProcessProps) {
                  </div>
                </div>
                <p className="step-desc">
-                 {dict?.step3_desc || "Clean, semantic code using Next.js. We prioritize speed, security, and scalability."}
-               </p>
+{dict?.step3_desc || "Clean, semantic code using Next.js and React Native. We build cross-platform applications prioritizing speed, security, and industrial-grade scalability."}               </p>
             </div>
           </div>
 

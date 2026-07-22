@@ -43,7 +43,7 @@ const CodeBlock = () => (
 );
 
 export interface HeroProps {
- title?: React.ReactNode;
+  title?: React.ReactNode;
   subtitle?: React.ReactNode;
   ctaText?: React.ReactNode;
   trustLine?: React.ReactNode;
@@ -63,15 +63,6 @@ export default function Hero({ title, subtitle, ctaText, trustLine, dict, hideSe
     const element = document.getElementById(id);
     if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  const handlePrimaryClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    if (dict?.calendlyLink) {
-      window.open(dict.calendlyLink, '_blank');
-    } else {
-      scrollToSection(e, 'contact');
     }
   };
 
@@ -106,31 +97,20 @@ export default function Hero({ title, subtitle, ctaText, trustLine, dict, hideSe
       
         <div className={styles.heroTextSide}>
           <h1 className={styles.heroTitle}>
-            {/* שימוש במילון עבור הכותרת */}
-            <span>{dict?.title || "Modern Websites. Clean Code."}</span>
+            <span>{dict?.title || "Engineering Web Systems"}</span>
             <br />
-            <span className={styles.heroTitleGradient}>{dict?.gradient || "Real Results."}</span>
+            <span className={styles.heroTitleGradient}>{dict?.gradient || "& Mobile Apps"}</span>
           </h1> 
           
           <div className={`${styles.heroSubtitleGroup} delay1`}>
             <p className={styles.heroSubtitle}>
-              {dict?.subtitle || "High-performance websites built with modern frameworks. Faster loading, better UX, and built for long-term growth. No templates, no bloat."}
+              {dict?.subtitle || "A digital studio specializing in custom software solutions. From high-performance websites to SaaS platforms and mobile applications for businesses, enterprises, and startups."}
             </p>
           </div>
 
-         <div className={`${styles.heroActions} delay2`}>
-            <button 
-              onClick={(e) => {
-                e.preventDefault();
-                if (dict?.calendlyLink) {
-                  window.open(dict.calendlyLink, '_blank');
-                } else {
-                  scrollToSection(e, 'contact');
-                }
-              }} 
-              className={styles.btnPrimary}
-            >
-              {dict?.cta || "Start with a Website Review"}
+          <div className={`${styles.heroActions} delay2`}>
+            <button onClick={(e) => scrollToSection(e, 'contact')} className={styles.btnPrimary}>
+              {dict?.cta || "Get a Performance & UX Audit"}
             </button>
             {!hideSecondaryBtn && (
               <button onClick={(e) => scrollToSection(e, 'portfolio')} className={`${styles.btnLink} group`}>
@@ -141,7 +121,7 @@ export default function Hero({ title, subtitle, ctaText, trustLine, dict, hideSe
           </div>
 
           <p className={styles.trustLine}>
-            {dict?.tags || "Performance-focused | UX-driven | Built to last"}
+            {dict?.tags || "Clean Code | High Performance | Uncompromising Architecture"}
           </p>
         </div>
 
@@ -161,7 +141,7 @@ export default function Hero({ title, subtitle, ctaText, trustLine, dict, hideSe
                  {isMounted && (
                    <div className={styles.scrollingContent}>
                       <InfiniteScroll dict={dict} />
-        <InfiniteScroll dict={dict} />
+                      <InfiniteScroll dict={dict} />
                    </div>
                  )}
                </div>

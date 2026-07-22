@@ -34,11 +34,11 @@ const Contact = ({ dict }: ContactProps) => {
           
           <div className="info-side">
             <span className="section-label">{dict?.subtitle || "Let's Talk"}</span>
-            <h2 className="contact-headline">{dict?.title || "Build. Revamp."}</h2>
-            <h2 className="contact-headline highlight-purple">{dict?.gradient || "Manage."}</h2>
+            <h2 className="contact-headline">{dict?.title || "Architect. Develop."}</h2>
+            <h2 className="contact-headline highlight-purple">{dict?.gradient || "Launch."}</h2>
   
-            <p className="contact-desc">{dict?.desc1 || "From concept to completion..."}</p>
-            <p className="contact-desc">{dict?.desc2 || "We are currently accepting new projects."}</p>
+            <p className="contact-desc">{dict?.desc1 || "From software architecture to development, launch, and monitoring. We build stable digital infrastructures that allow your business to grow seamlessly."}</p>
+            <p className="contact-desc">{dict?.desc2 || "We are currently available for select projects. Leave your details to discuss the right architecture for your product."}</p>
             
             <div className="contact-details">
               <div className="contact-item contact-email-row">
@@ -113,7 +113,7 @@ const Contact = ({ dict }: ContactProps) => {
                     </div>
 
                     <button type="submit" className="submit-btn" disabled={state.submitting}>
-                        {state.submitting ? (dict?.form?.submitting || 'Analyzing...') : <>{dict?.form?.submitBtn || "Get My Free Audit"} <Send size={16} style={{marginLeft: '8px'}}/></>}
+                        {state.submitting ? (dict?.form?.submitting || 'Processing...') : <>{dict?.form?.submitBtn || "Get a Performance & UX Audit"} <Send size={16} style={{marginLeft: '8px'}}/></>}
                     </button>
                 </form>
             )}

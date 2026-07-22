@@ -10,37 +10,37 @@ export default function Services({ dict }: { dict?: any }) {
     setActiveCard(prev => (prev === id ? null : id));
   };
 
-  // מערך חסין תקלות - עברית שיווקית ומדויקת!
+  // מערך חסין תקלות - מותאם לסטנדרט פרימיום B2B באנגלית
   const serviceItems = dict?.items || [
     {
-      title: "פיתוח אתרים מותאם אישית",
-      desc: "אתרים מהירים כברק הבנויים לצמיחה. אנו משתמשים ב-Next.js ו-React כדי להבטיח אבטחה, שליטה בתוצאות החיפוש (SEO) ויכולת התרחבות.",
-      features: ["Next.js ו-React", "רינדור צד שרת", "אינטגרציית API", "ארכיטקטורה ניתנת להרחבה"]
+      title: "Mobile App Development (React Native)",
+      desc: "Native app development for iOS and Android from a single codebase. We focus on offline-first architecture and high performance for enterprises and startups.",
+      features: ["React Native & Expo", "Offline-First Architecture", "Smart Data Synchronization", "Store Deployment"]
     },
     {
-      title: "עיצוב חוויית משתמש (UI/UX)",
-      desc: "ממשקים שלא רק נראים טוב — הם ממירים. אנו מעצבים מסעות משתמש שהופכים מבקרים ללקוחות משלמים.",
-      features: ["מחקר משתמשים", "תכנון ממשק", "אבות-טיפוס", "מערכות עיצוב"]
+      title: "Web & SaaS Development",
+      desc: "Complex systems and web applications built to scale. We utilize Next.js and React to ensure maximum security and performance.",
+      features: ["Next.js & React", "Server-Side Rendering", "API Integration", "Serverless Architecture"]
     },
     {
-      title: "שדרוג וחידוש אתרים",
-      desc: "הפיכת אתרים מיושנים ליצירות מופת מודרניות. שיפור מהירות, אמון ושימושיות מבלי לאבד את היסטוריית הקידום שלכם בגוגל.",
-      features: ["בקרת ביצועים", "מעבר לטכנולוגיות חדשות", "שמירה על הדירוג בגוגל", "העברת נתונים"]
+      title: "UX/UI Design",
+      desc: "Precise interfaces that reduce friction and increase conversions. We design data-driven user journeys based on business understanding.",
+      features: ["Functional Specification", "Wireframing", "UI Design", "Design Systems"]
     },
     {
-      title: "ניהול אתרים",
-      desc: "אל תדאגו יותר לעדכונים. אנו מטפלים בתחזוקה, תיקוני אבטחה ושינויי תוכן כדי שתוכלו להתמקד בניהול העסק שלכם.",
-      features: ["ניטור 24/7", "עדכוני אבטחה", "ניהול תוכן", "גיבויים שוטפים"]
+      title: "Legacy System Modernization",
+      desc: "Migrating outdated systems to modern architecture. Improving speed, security, and maintainability without losing SEO history.",
+      features: ["Code & Performance Audit", "Modern Tech Stack Migration", "SEO Preservation", "Database Migration"]
     },
     {
-      title: "חנויות וירטואליות (E-Commerce)",
-      desc: "חנויות שנועדו למכור. תשלומים מאובטחים, ניהול מלאי וחוויית קופה חלקה ומהירה ללקוח.",
-      features: ["שופיפיי או מותאם אישית", "שערי תשלום", "סנכרון מלאי", "אופטימיזציית המרות"]
+      title: "Management, Maintenance & Security",
+      desc: "Webmaster services for organizations demanding zero downtime. We handle performance monitoring, security updates, and ongoing digital infrastructure management.",
+      features: ["24/7 Uptime Monitoring", "Monthly Security Updates", "Automated Backups", "Server & Traffic Management"]
     },
     {
-      title: "קידום וביצועים (SEO)",
-      desc: "דירוג גבוה יותר, טעינה מהירה יותר. אופטימיזציה מקיפה של מבנה האתר ומדדי הליבה של גוגל.",
-      features: ["SEO טכני", "מדדי ליבה", "אסטרטגיית מילות מפתח", "אופטימיזציית מהירות"]
+      title: "E-Commerce Development",
+      desc: "Fast and secure e-commerce infrastructures. Emphasis on frictionless checkout experiences and reliable inventory management.",
+      features: ["Headless E-Commerce", "Secure Payment Gateways", "Inventory System Sync", "Mobile Speed Optimization"]
     }
   ];
 
@@ -61,9 +61,9 @@ export default function Services({ dict }: { dict?: any }) {
 
       <div className="services-container">
         <div className="services-header">
-          <span className="services-subtitle">{dict?.subtitle || "מה אנחנו עושים?"}</span>
+          <span className="services-subtitle">{dict?.subtitle || "What We Do"}</span>
           <h2 className="services-title">
-            {dict?.title || "בנוי ל"} <span className="services-title-gradient">{dict?.gradient || "התרחבות וצמיחה."}</span>
+            {dict?.title || "Architecture Built For"} <span className="services-title-gradient">{dict?.gradient || "Stability & Growth."}</span>
           </h2>
         </div>
 
@@ -79,7 +79,7 @@ export default function Services({ dict }: { dict?: any }) {
               <p className="service-card-desc">{service.desc}</p>
               <div className="service-features">
                 <span className="service-features-title">
-                  {dict?.included || "WHAT'S INCLUDED:"}
+                  {dict?.included || "What's Included:"}
                 </span>
                 <ul className="service-features-list">
                   {service.features?.map((feature: string, idx: number) => (
@@ -93,7 +93,7 @@ export default function Services({ dict }: { dict?: any }) {
 
         <div className="services-cta">
           <a href="#contact" className="btn-start-project">
-            {dict?.cta || "קבלו ניתוח אתר חינם"}
+            {dict?.cta || "Get a Performance & UX Audit"}
             <ArrowRight className="cta-icon-svg btn-icon-arrow" />
           </a>
         </div>

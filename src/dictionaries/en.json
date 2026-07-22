@@ -3,80 +3,102 @@
     "services": "Services",
     "process": "Process",
     "portfolio": "Portfolio",
-    "cta": "Let's Talk"
+    "cta": "Book an Audit" 
   },
  
-  "hero": {
-    "title": "Modern websites. Clean code.",
-    "gradient": "Real results.",
-    "subtitle": "Building high-performance premium websites. Fast loading, seamless UX, and a scalable architecture.",
-    "cta": "Get a Free Website Review",
+ "hero": {
+    "title": "Engineering Web Systems",
+    "gradient": "& Mobile Apps.",
+    "subtitle": "A digital studio specializing in custom software solutions. From high-performance websites to SaaS platforms and mobile applications for businesses, enterprises, and startups.",
+    "cta": "Get a Performance & UX Audit",
     "viewProjects": "View Projects",
-    "tags": "PERFORMANCE-FOCUSED | UX-DRIVEN | BUILT TO LAST",
-    "mockup": {
-      "uxTitle": "UX/UI Experience",
-      "uxBtn": "See Design Process",
-      "webmasterTitle": "Webmaster Services",
-      "managementTitle": "Website Management",
-      "architectureTitle": "Clean Architecture"
-    }
+    "tags": "Clean Code | High Performance | Uncompromising Architecture"
   },
-
   "services": {
-    "subtitle": "OUR EXPERTISE",
-    "title": "Built for",
-    "gradient": "Scale.",
-    "cta": "Get a Free Website Review",
-    "included": "WHAT'S INCLUDED:",
+    "subtitle": "What We Do",
+    "title": "Architecture Built For",
+    "gradient": "Stability & Growth.",
+    "included": "What's Included:",
+    "cta": "Get a Performance & UX Audit",
     "items": [
       {
-        "title": "Custom Web Development",
-        "desc": "Lightning-fast websites built for growth. We use Next.js & React to ensure security, SEO dominance, and scalability.",
-        "features": ["Next.js & React", "Server Side Rendering", "API Integration", "Scalable Architecture"]
+        "title": "Mobile App Development (React Native)",
+        "desc": "Native app development for iOS and Android from a single codebase. We focus on offline-first architecture and high performance for enterprises and startups.",
+        "features": [
+          "React Native & Expo",
+          "Offline-First Architecture",
+          "Smart Data Synchronization",
+          "Store Deployment"
+        ]
       },
       {
-        "title": "UI/UX Design",
-        "desc": "Interfaces that don't just look good—they convert. We design user journeys that turn visitors into customers.",
-        "features": ["User Research", "Wireframing", "Prototyping", "Design Systems"]
+        "title": "Web & SaaS Development",
+        "desc": "Complex systems and web applications built to scale. We utilize Next.js and React to ensure maximum security and performance.",
+        "features": [
+          "Next.js & React",
+          "Server-Side Rendering",
+          "API Integration",
+          "Serverless Architecture"
+        ]
       },
       {
-        "title": "Website Revamp",
-        "desc": "Transform outdated sites into modern masterpieces. Improve speed, trust, and usability without losing your SEO history.",
-        "features": ["Performance Audit", "Modern Stack Migration", "SEO Preservation", "Data Migration"]
+        "title": "UX/UI Design",
+        "desc": "Precise interfaces that reduce friction and increase conversions. We design data-driven user journeys based on business understanding.",
+        "features": [
+          "Functional Specification",
+          "Wireframing",
+          "UI Design",
+          "Design Systems"
+        ]
       },
       {
-        "title": "Webmaster Services",
-        "desc": "Never worry about updates again. We handle maintenance, security patches, and content changes so you can focus on business.",
-        "features": ["24/7 Monitoring", "Security Patches", "Content Updates", "Regular Backups"]
+        "title": "Legacy System Modernization",
+        "desc": "Migrating outdated systems to modern architecture. Improving speed, security, and maintainability without losing SEO history.",
+        "features": [
+          "Code & Performance Audit",
+          "Modern Tech Stack Migration",
+          "SEO Preservation",
+          "Database Migration"
+        ]
       },
       {
-        "title": "E-Commerce",
-        "desc": "Stores designed to sell. Secure payments, inventory management, and a seamless checkout experience.",
-        "features": ["Shopify / Custom", "Payment Gateways", "Inventory Sync", "Conversion Optimization"]
+        "title": "Management, Maintenance & Security",
+        "desc": "Webmaster services for organizations demanding zero downtime. We handle performance monitoring, security updates, and ongoing digital infrastructure management.",
+        "features": [
+          "24/7 Uptime Monitoring",
+          "Monthly Security Updates",
+          "Automated Backups",
+          "Server & Traffic Management"
+        ]
       },
       {
-        "title": "SEO & Performance",
-        "desc": "Rank higher, load faster. Comprehensive optimization of site structure and core web vitals.",
-        "features": ["Technical SEO", "Core Web Vitals", "Keyword Strategy", "Speed Optimization"]
+        "title": "E-Commerce Development",
+        "desc": "Fast and secure e-commerce infrastructures. Emphasis on frictionless checkout experiences and reliable inventory management.",
+        "features": [
+          "Headless E-Commerce",
+          "Secure Payment Gateways",
+          "Inventory System Sync",
+          "Mobile Speed Optimization"
+        ]
       }
     ]
   },
   "process": {
-    "subtitle": "The Workflow",
-    "title": "From Concept to",
-    "gradient": "Completion.",
+    "subtitle": "Workflow",
+    "title": "From Architecture to",
+    "gradient": "Deployment.",
     "step1_num": "1",
-    "step1_title": "Discovery & Strategy",
-    "step1_desc": "We dive deep into your vision, analyzing competitors and defining your target audience.",
+    "step1_title": "Audit & Strategy",
+    "step1_desc": "Comprehensive Performance & UX audit. We map out conversion bottlenecks, analyze the market, and deliver a clear development roadmap.",
     "step2_num": "2",
     "step2_title": "UI/UX Design",
-    "step2_desc": "High-fidelity wireframes and stunning interfaces that provide an intuitive journey.",
+    "step2_desc": "Interface planning and precise prototyping, ensuring an intuitive, frictionless user experience.",
     "step3_num": "3",
     "step3_title": "Development",
-    "step3_desc": "Clean, semantic code using Next.js. We prioritize speed, security, and scalability.",
+    "step3_desc": "Clean, modular development using Next.js and React Native. Cross-platform solutions emphasizing speed and industrial-grade stability.",
     "step4_num": "4",
-    "step4_title": "Launch & Growth",
-    "step4_desc": "Liftoff. We deploy your masterpiece to the world and provide continuous optimization."
+    "step4_title": "Launch & Monitoring",
+    "step4_desc": "Cloud deployment accompanied by load testing and continuous monitoring to optimize performance and conversion rates."
   },
   "portfolio": {
     "subtitle": "Our Work",
@@ -87,60 +109,64 @@
     "projects": [
       {
         "title": "Aviram Eldar",
-        "category": "Official Studio Site",
-        "desc": "My professional digital presence, featuring high-end web design and interactive motion.",
-        "tech": ["JavaScript", "CSS Modules", "After Effects"]
+        "category": "Digital Platform",
+        "desc": "A professional digital presence combining premium development, server-side performance, and interactive animations.",
+        "tech": [
+          "Next.js",
+          "CSS Modules",
+          "Performance Optimization"
+        ]
       },
       {
         "title": "Judith Asher Art",
-        "category": "Concept & UI Demo",
-        "desc": "A digital gallery concept exploring minimalist aesthetics and visual storytelling.",
-        "tech": ["Next.js", "Tailwind"]
+        "category": "UI/UX Architecture",
+        "desc": "A digital gallery system exploring minimalist aesthetics, smart image loading, and visual storytelling.",
+        "tech": [
+          "Next.js",
+          "CSS Modules",
+          "React"
+        ]
       },
       {
         "title": "Adi Shoham",
-        "category": "Full-Stack Concept",
-        "desc": "Premium jewelry store demonstration, integrating MongoDB for dynamic content management.",
-        "tech": ["Next.js", "MongoDB", "CSS Modules"]
+        "category": "Full-Stack System",
+        "desc": "A premium e-commerce platform featuring a MongoDB-based data architecture for dynamic content management.",
+        "tech": [
+          "Next.js",
+          "MongoDB",
+          "CSS Modules"
+        ]
       }
     ]
   },
   "contact": {
-    "subtitle": "Let's Talk",
-    "title": "Build. Revamp.",
-    "gradient": "Manage.",
-    "desc1": "From concept to completion, and ongoing growth. We handle everything your website needs to succeed—so you can focus on your business.",
-    "desc2": "We are currently accepting new projects. Get in touch with us to discuss your vision and how we can help achieve it.",
+    "subtitle": "Get in Touch",
+    "title": "Architect. Develop.",
+    "gradient": "Launch.",
+    "desc1": "From software architecture to development, launch, and monitoring. We build stable digital infrastructures that allow your business to grow seamlessly.",
+    "desc2": "We are currently available for select projects. Leave your details to discuss the right architecture for your product.",
     "copied": "Copied!",
     "copy": "Copy",
     "form": {
       "nameLabel": "Full Name",
-      "namePlaceholder": "John Doe",
-      "emailLabel": "Email Address",
-      "emailPlaceholder": "john@example.com",
-      "websiteLabel": "Website URL (For Free Review)",
-      "websitePlaceholder": "https://your-site.com",
+      "namePlaceholder": "Enter full name...",
+      "emailLabel": "Work Email",
+      "emailPlaceholder": "name@company.com",
+      "websiteLabel": "Existing Website / Product URL",
+      "websitePlaceholder": "https://your-product.com",
       "typeLabel": "Company Type",
-      "typePlaceholder": "Choose company type...",
+      "typePlaceholder": "Select company type...",
       "typeStartup": "Tech Startup",
-      "typeService": "Service Business",
-      "typeEcommerce": "E-commerce / Store",
-      "typePersonal": "Portfolio / Personal Brand",
+      "typeService": "B2B / Premium Services",
+      "typeEcommerce": "E-commerce System",
+      "typePersonal": "Organization / Non-profit",
       "typeOther": "Other",
-      "goalLabel": "What is your main goal?",
-      "goalPlaceholder": "Boost speed, improve design, more leads...",
-      "submitBtn": "Get My Free Audit",
-      "submitting": "Analyzing...",
-      "successTitle": "Message Sent!",
-      "successDesc": "Thanks for reaching out. We'll get back to you shortly."
-    },
-    "modal": {
-      "title": "Choose Email Provider",
-      "default": "Open Default Mail App"
+      "goalLabel": "Main Challenge",
+      "goalPlaceholder": "Improving load times, app development, increasing conversions...",
+      "submitBtn": "Get a Performance & UX Audit",
+      "submitting": "Processing...",
+      "successTitle": "Request Received.",
+      "successDesc": "Thank you. We will review your details and get back to you shortly to coordinate."
     }
-  },
-  "footer": {
-    "copyright": "© 2026 EldarVisual Web Studio. All rights reserved.",
-    "disclaimer": "Designed and developed with passion by Eldar Visual."
   }
 }
