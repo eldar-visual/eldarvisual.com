@@ -1,6 +1,6 @@
 {
   "navbar": {
-    "services": "Services",
+    "services": "What We Do",
     "process": "Process",
     "portfolio": "Portfolio",
     "cta": "Book an Audit" 
@@ -168,5 +168,12 @@
       "successTitle": "Request Received.",
       "successDesc": "Thank you. We will review your details and get back to you shortly to coordinate."
     }
-  }
+  },
+  "footer": {
+    "tagline": "Architect. Develop. Launch.",
+    "services": "What We Do",
+    "process": "Process",
+    "portfolio": "Work",
+    "rights": "All rights reserved."
+  } 
 }
