@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Assistant } from "next/font/google"; // הנה התיקון! Assistant במקום Assistance
+import { Assistant } from "next/font/google";
 import "../globals.css"; 
 import Script from 'next/script';
 import Navbar from '../../components/Navbar';
@@ -9,18 +9,34 @@ import Footer from '../../components/Footer';
 import heDict from '../../dictionaries/he.json';
 import enDict from '../../dictionaries/en.json';
 
-// הגדרת הפונט המודרני שלנו
 const assistant = Assistant({ 
   subsets: ["hebrew", "latin"],
   weight: ["300", "400", "600", "700", "800"] 
 });
 
-export async function generateMetadata({ params }: any): Promise<Metadata> {
+// 1. הוספת הפונקציה הקריטית ל-Static Export שפותרת את השגיאה
+export async function generateStaticParams() {
+  return [
+    { lang: 'en' },
+    { lang: 'he' },
+  ];
+}
+
+// 2. הגדרת טיפוסים נכונה (Types) במקום השימוש ב-any
+type LayoutProps = {
+  children: React.ReactNode;
+  params: Promise<{ lang: string }>;
+};
+
+type MetadataProps = {
+  params: Promise<{ lang: string }>;
+};
+
+export async function generateMetadata({ params }: MetadataProps): Promise<Metadata> {
   const resolvedParams = await params;
   const lang = resolvedParams?.lang || 'en';
   const isHe = lang === 'he';
   
-  // הדינמיקה של התמונות לפי ההגדרות שלך
   const ogImage = isHe ? "/og-image-he.png" : "/og-image.webp";
   
   return {
@@ -48,7 +64,7 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
 export default async function RootLayout({
   children,
   params,
-}: any) {
+}: LayoutProps) {
   const resolvedParams = await params;
   const lang = resolvedParams?.lang || 'en';
   
@@ -63,11 +79,11 @@ export default async function RootLayout({
           {`(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "vk8t7p6xj1");`}
         </Script>
         
-        <Navbar dict={dict.navbar} />
+        
         
         <main>{children}</main>
 
-        <Footer dict={dict.footer} />
+       
         
       </body>
     </html>

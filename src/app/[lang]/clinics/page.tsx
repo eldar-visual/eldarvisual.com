@@ -1,5 +1,5 @@
 import React from 'react';
-import HeroMedical from '../../components/HeroMedical'; // <-- זה השינוי המרכזי: קוראים לקומפוננטה הרפואית החדשה
+import HeroMedical from '../../../components/HeroMedical'; // <-- זה השינוי המרכזי: קוראים לקומפוננטה הרפואית החדשה
 import TrustBar from '@/components/TrustBar';
 import ProblemSection from '@/components/ProblemSection';
 import SolutionSection from '@/components/SolutionSection';

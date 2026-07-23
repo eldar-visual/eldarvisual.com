@@ -33,5 +33,6 @@ export default async function HomePage({ params }: any) {
       <Contact dict={dict.contact} />
       
     </>
+    
   );
 }
