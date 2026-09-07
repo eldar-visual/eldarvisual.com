@@ -25,64 +25,63 @@ export default async function MinistriesPage({ params }: PageProps) {
         </div>
         
         <div className={styles.heroContent}>
-          <span className={styles.tag}>Tailored for Faith-Based Organizations</span>
+          <span className={styles.tag}>High-Performance Websites for Ministries</span>
           <h1 className={styles.title}>
-            Engineered for Impact: Ultra-Fast Digital Platforms for Global Ministries
-          </h1>
+            Help More People <br></br> Connect with Your Mission.
+          </h1> 
           <p className={styles.subtitle}>
-            We build high-converting, friction-free web experiences that increase donor trust, maximize mobile contributions, and load instantly on any device.
-          </p>
+We design and build modern, fast ministry websites that help supporters understand your work, trust your organization, and contribute easily from any device.</p>
           <div className={styles.ctaGroup}>
-            <a href="#audit-form" className={styles.primaryCta}>Request a Free Mobile Audit</a>
+            <a href="#audit-form" className={styles.primaryCta}>Request Your Website Audit</a>
           </div>
-        </div>
+        </div> 
       </section>
 
       {/* Main Content */}
       <main className={styles.container}>
         <section className={styles.section}>
-          <h2 className={styles.sectionTitle}>Why Traditional Ministry Websites Lose Donors</h2>
+          <h2 className={styles.sectionTitle}>Where Ministry Websites Create Donor Friction</h2>
           <div className={styles.grid}>
             <div className={styles.card}>
               <h3>Mobile Friction</h3>
-              <p>Over 70% of traffic arrives via newsletters and social media on mobile. Cluttered layouts cause drop-offs right before the donation step.</p>
+              <p>Many ministry websites aren’t designed for today’s mobile-first audience. When giving is difficult on a phone, supporters are more likely to leave before completing a donation.</p>
             </div>
             <div className={styles.card}>
-              <h3>Speed & Trust Issues</h3>
-              <p>Slow WordPress sites and complex navigation reduce credibility with new or younger supporters who expect seamless digital experiences.</p>
+              <h3>Slow Performance, Lower Trust</h3> 
+              <p>A slow or outdated website can reduce confidence before visitors even engage with your ministry. First impressions matter.</p>
             </div>
             <div className={styles.card}>
               <h3>Buried Impact</h3>
-              <p>Critical humanitarian efforts are often hidden under walls of text instead of clear, engaging visual project flows.</p>
+              <p>When your mission, stories, and impact are difficult to find, visitors struggle to understand why your ministry matters—and why they should support it.</p>
             </div>
           </div>
         </section>
 
         <section className={styles.section}>
-          <h2 className={styles.sectionTitle}>Built on Next.js. Optimized for Conversion.</h2>
+          <h2 className={styles.sectionTitle}>Built for Trust. Engineered for Performance.</h2>
           <div className={styles.grid}>
             <div className={styles.cardHighlight}>
-              <h3>Instant Edge Delivery</h3>
-              <p>Zero-delay page rendering powered by Next.js and Cloudflare Pages for global reliability.</p>
+              <h3>Fast Global Delivery</h3>
+              <p>Built with modern technologies to deliver fast, reliable experiences for supporters around the world.</p>
             </div>
             <div className={styles.cardHighlight}>
-              <h3>Frictionless Mobile Flow</h3>
-              <p>Streamlined, multi-currency donation interfaces that convert interest into action in 2 clicks.</p>
+              <h3>Simplified Mobile Giving</h3>
+              <p>Clear user flows and thoughtful design make giving simple across every device.</p>
             </div>
             <div className={styles.cardHighlight}>
-              <h3>Donor-First UX</h3>
-              <p>A modern visual hierarchy that establishes authority, transparency, and trust within 5 seconds.</p>
+              <h3>Designed Around Supporters</h3>
+              <p>Every page is designed to help visitors understand your mission, build trust, and take meaningful action.</p>
             </div>
           </div>
         </section>
         <section id="audit-form" className={styles.auditSection}>
-          <h2>Is Your Mobile Flow Costing You Contributions?</h2>
-          <p>Send us your URL. We’ll provide a concise 2-minute video breakdown pointing out friction points in your donor journey—no obligations.</p>
+          <h2>A Website Should Support Your MinistryNot Hold It Back.</h2>
+          <p>Share your website, and we’ll send you a personalized audit report by email highlighting opportunities to improve clarity, trust, performance, accessibility, and the overall supporter experience.</p>
           <form className={styles.form}>
             <input type="text" placeholder="Your Name" required className={styles.input} />
             <input type="email" placeholder="Ministry Email" required className={styles.input} />
             <input type="url" placeholder="Website URL (e.g., https://ministry.org)" required className={styles.input} />
-            <button type="submit" className={styles.submitBtn}>Get Free Audit Video</button>
+            <button type="submit" className={styles.submitBtn}> Request Your Website Audit</button>
           </form>
         </section>
       </main>

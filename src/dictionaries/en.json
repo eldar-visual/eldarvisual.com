@@ -7,13 +7,12 @@
   },
  
  "hero": {
-    "title": "Engineering Web Systems",
-    "gradient": "& Mobile Apps.",
-    "subtitle": "A digital studio specializing in custom software solutions. From high-performance websites to SaaS platforms and mobile applications for businesses, enterprises, and startups.",
+    "title": "Strategy, UX/UI Design & Development",
+    "gradient": "for Custom Websites and Apps.",
+  "subtitle": "Eldar Visual works with businesses, organizations, and nonprofits from product definition and user experience, through UX/UI design, to the development of websites, Web applications, and mobile apps.",
     "cta": "Get a Performance & UX Audit",
     "viewProjects": "View Projects",
-    "tags": "Clean Code | High Performance | Uncompromising Architecture"
-  },
+"tags": "Thoughtful UX/UI | Fast, Reliable Development | Built to Scale"  },
   "services": {
     "subtitle": "What We Do",
     "title": "Architecture Built For",
