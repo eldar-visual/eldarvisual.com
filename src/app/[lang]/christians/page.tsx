@@ -83,6 +83,7 @@ export default async function ChristianLander({ params }: PageProps) {
       <Process dict={dict.process} />
       
       <Contact dict={dict.contact} />
+      <Footer dict={dict.footer} />
     </main>
   );
 }

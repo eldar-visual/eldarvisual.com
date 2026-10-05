@@ -33,6 +33,7 @@ export default async function HomePage({ params }: any) {
       <Process dict={dict.process} />
       <Portfolio dict={dict.portfolio} />
       <Contact dict={dict.contact} />
+      <Footer dict={dict.footer} />
       
     </>
     
