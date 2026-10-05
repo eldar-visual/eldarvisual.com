@@ -253,6 +253,7 @@
 
 .modal-title {
   margin: 0 0 1rem;
+  padding-right: 2rem;
   color: #f8fafc;
   font-size: 1.2rem;
 }

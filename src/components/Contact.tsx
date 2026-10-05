@@ -76,7 +76,7 @@ const Contact = ({ dict }: ContactProps) => {
                     <div className="form-group">
                         <label htmlFor="name" className="form-label">{dict?.form?.nameLabel || "Full Name"}</label>
                         <input type="text" id="name" name="name" className="form-input" placeholder={dict?.form?.namePlaceholder || "John Doe"} required />
-                        <ValidationError prefix="Name" field="name" errors={state.errors} />
+                        <ValidationError prefix={dict?.form?.nameLabel || "Full Name"} field="name" errors={state.errors} />
                     </div>
                     <div className="form-group">
                         <label htmlFor="email" className="form-label">{dict?.form?.emailLabel || "Email Address"}</label>
@@ -124,7 +124,7 @@ const Contact = ({ dict }: ContactProps) => {
       {isEmailModalOpen && (
         <div className="modal-overlay" onClick={() => setIsEmailModalOpen(false)}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="modal-close" onClick={() => setIsEmailModalOpen(false)}><X size={24} /></button>
+            <button className="modal-close" aria-label={dict?.modal?.close || "Close Dialog"} onClick={() => setIsEmailModalOpen(false)}><X size={24} /></button>
             <h3 className="modal-title">{dict?.modal?.title || "Choose Email Provider"}</h3>
             <div className="provider-list">
               <a href={`https://mail.google.com/mail/?view=cm&fs=1&to=${emailAddress}`} target="_blank" rel="noopener noreferrer" className="provider-btn">Gmail <ExternalLink size={14}/></a>

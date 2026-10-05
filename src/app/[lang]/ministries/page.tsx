@@ -1,13 +1,27 @@
 import Image from 'next/image';
 import styles from './ministries.module.css';
+import { getDictionary } from '@/getDictionary';
 
 type PageProps = {
   params: Promise<{ lang: string }>;
 };
 
+export async function generateMetadata({ params }: PageProps) {
+  const { lang } = await params;
+  const dict = await getDictionary(lang === 'he' ? 'he' : 'en');
+  return {
+    ...dict.ministries.metadata,
+    openGraph: {
+      ...dict.ministries.metadata,
+      url: `https://eldarvisual.com/${lang}/ministries`,
+    },
+  };
+}
+
 export default async function MinistriesPage({ params }: PageProps) {
   const resolvedParams = await params;
   const lang = resolvedParams.lang;
+  const { ministries: dict } = await getDictionary(lang === 'he' ? 'he' : 'en');
 
   return (
     <div className={styles.pageWrapper}>
@@ -16,7 +30,7 @@ export default async function MinistriesPage({ params }: PageProps) {
         <div className={styles.imageWrapper}>
           <Image 
             src="/MiniHero.png" 
-            alt="A crowd praising the word of God" 
+            alt={dict.hero.imageAlt}
             fill
             priority
             className={styles.bgImage}
@@ -25,14 +39,14 @@ export default async function MinistriesPage({ params }: PageProps) {
         </div>
         
         <div className={styles.heroContent}>
-          <span className={styles.tag}>High-Performance Websites for Ministries</span>
+          <span className={styles.tag}>{dict.hero.tag}</span>
           <h1 className={styles.title}>
-            Help More People <br></br> Connect with Your Mission.
+            {dict.hero.title} <br /> {dict.hero.gradient}
           </h1> 
           <p className={styles.subtitle}>
-We design and build modern, fast ministry websites that help supporters understand your work, trust your organization, and contribute easily from any device.</p>
+            {dict.hero.subtitle}</p>
           <div className={styles.ctaGroup}>
-            <a href="#audit-form" className={styles.primaryCta}>Request Your Website Audit</a>
+            <a href="#audit-form" className={styles.primaryCta}>{dict.hero.cta}</a>
           </div>
         </div> 
       </section>
@@ -40,48 +54,48 @@ We design and build modern, fast ministry websites that help supporters understa
       {/* Main Content */}
       <main className={styles.container}>
         <section className={styles.section}>
-          <h2 className={styles.sectionTitle}>Where Ministry Websites Create Donor Friction</h2>
+          <h2 className={styles.sectionTitle}>{dict.problem.title}</h2>
           <div className={styles.grid}>
             <div className={styles.card}>
-              <h3>Mobile Friction</h3>
-              <p>Many ministry websites aren’t designed for today’s mobile-first audience. When giving is difficult on a phone, supporters are more likely to leave before completing a donation.</p>
+              <h3>{dict.problem.cards[0].title}</h3>
+              <p>{dict.problem.cards[0].description}</p>
             </div>
             <div className={styles.card}>
-              <h3>Slow Performance, Lower Trust</h3> 
-              <p>A slow or outdated website can reduce confidence before visitors even engage with your ministry. First impressions matter.</p>
+              <h3>{dict.problem.cards[1].title}</h3>
+              <p>{dict.problem.cards[1].description}</p>
             </div>
             <div className={styles.card}>
-              <h3>Buried Impact</h3>
-              <p>When your mission, stories, and impact are difficult to find, visitors struggle to understand why your ministry matters—and why they should support it.</p>
+              <h3>{dict.problem.cards[2].title}</h3>
+              <p>{dict.problem.cards[2].description}</p>
             </div>
           </div>
         </section>
 
         <section className={styles.section}>
-          <h2 className={styles.sectionTitle}>Built for Trust. Engineered for Performance.</h2>
+          <h2 className={styles.sectionTitle}>{dict.solution.title}</h2>
           <div className={styles.grid}>
             <div className={styles.cardHighlight}>
-              <h3>Fast Global Delivery</h3>
-              <p>Built with modern technologies to deliver fast, reliable experiences for supporters around the world.</p>
+              <h3>{dict.solution.cards[0].title}</h3>
+              <p>{dict.solution.cards[0].description}</p>
             </div>
             <div className={styles.cardHighlight}>
-              <h3>Simplified Mobile Giving</h3>
-              <p>Clear user flows and thoughtful design make giving simple across every device.</p>
+              <h3>{dict.solution.cards[1].title}</h3>
+              <p>{dict.solution.cards[1].description}</p>
             </div>
             <div className={styles.cardHighlight}>
-              <h3>Designed Around Supporters</h3>
-              <p>Every page is designed to help visitors understand your mission, build trust, and take meaningful action.</p>
+              <h3>{dict.solution.cards[2].title}</h3>
+              <p>{dict.solution.cards[2].description}</p>
             </div>
           </div>
         </section>
         <section id="audit-form" className={styles.auditSection}>
-          <h2>A Website Should Support Your MinistryNot Hold It Back.</h2>
-          <p>Share your website, and we’ll send you a personalized audit report by email highlighting opportunities to improve clarity, trust, performance, accessibility, and the overall supporter experience.</p>
+          <h2>{dict.audit.title}</h2>
+          <p>{dict.audit.description}</p>
           <form className={styles.form}>
-            <input type="text" placeholder="Your Name" required className={styles.input} />
-            <input type="email" placeholder="Ministry Email" required className={styles.input} />
-            <input type="url" placeholder="Website URL (e.g., https://ministry.org)" required className={styles.input} />
-            <button type="submit" className={styles.submitBtn}> Request Your Website Audit</button>
+            <input type="text" placeholder={dict.audit.namePlaceholder} required className={styles.input} />
+            <input type="email" placeholder={dict.audit.emailPlaceholder} required className={styles.input} />
+            <input type="url" placeholder={dict.audit.websitePlaceholder} required className={styles.input} />
+            <button type="submit" className={styles.submitBtn}>{dict.audit.submit}</button>
           </form>
         </section>
       </main>

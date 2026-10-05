@@ -1,18 +1,42 @@
 {
+  "metadata": {
+    "title": "EldarVisual | Custom Websites & Apps",
+    "description": "Product definition, UX/UI design, and development of websites, web applications, and mobile apps for businesses, organizations, and nonprofits.",
+    "ogTitle": "EldarVisual | Custom Websites & Apps",
+    "ogDescription": "Websites built with Next.js, focusing on performance and user experience.",
+    "imageAlt": "EldarVisual | Website & App Development Studio"
+  },
   "navbar": {
     "services": "What We Do",
     "process": "Process",
     "portfolio": "Portfolio",
-    "cta": "Book an Audit" 
+    "cta": "Book an Audit",
+    "changeLanguage": "Change Language",
+    "switchLanguage": "Switch to Hebrew",
+    "logoAlt": "EldarVisual Logo"
   },
  
  "hero": {
-    "title": "Strategy, UX/UI Design & Development",
+    "title": "Product Definition, Design & Development",
     "gradient": "for Custom Websites and Apps.",
   "subtitle": "Eldar Visual works with businesses, organizations, and nonprofits from product definition and user experience, through UX/UI design, to the development of websites, Web applications, and mobile apps.",
     "cta": "Get a Performance & UX Audit",
     "viewProjects": "View Projects",
-"tags": "Thoughtful UX/UI | Fast, Reliable Development | Built to Scale"  },
+"tags": "Thoughtful UX/UI | Fast, Reliable Development | Built to Scale",
+    "illustrationAlt": "UI and UX design illustration",
+    "mockup": {
+      "architectureTitle": "Clean Architecture",
+      "architectureAlt": "Clean architecture code",
+      "uxTitle": "User Experience & Interface Design",
+      "uxAlt": "UI and UX design",
+      "uxBtn": "See Design Process",
+      "webmasterTitle": "Website Management & Maintenance",
+      "webmasterAlt": "Website management and maintenance",
+      "webmasterSecondaryAlt": "Website infrastructure maintenance",
+      "managementTitle": "Website Management",
+      "managementAlt": "Website management"
+    }
+  },
   "services": {
     "subtitle": "What We Do",
     "title": "Architecture Built For",
@@ -27,7 +51,7 @@
           "React Native & Expo",
           "Offline-First Architecture",
           "Smart Data Synchronization",
-          "Store Deployment"
+          "App Store Deployment"
         ]
       },
       {
@@ -51,7 +75,7 @@
         ]
       },
       {
-        "title": "Legacy System Modernization",
+        "title": "Website Modernization",
         "desc": "Migrating outdated systems to modern architecture. Improving speed, security, and maintainability without losing SEO history.",
         "features": [
           "Code & Performance Audit",
@@ -62,7 +86,7 @@
       },
       {
         "title": "Management, Maintenance & Security",
-        "desc": "Webmaster services for organizations demanding zero downtime. We handle performance monitoring, security updates, and ongoing digital infrastructure management.",
+        "desc": "Webmaster services for organizations that need stable, reliable infrastructure. We handle performance monitoring, security updates, and ongoing digital infrastructure management.",
         "features": [
           "24/7 Uptime Monitoring",
           "Monthly Security Updates",
@@ -88,7 +112,7 @@
     "gradient": "Deployment.",
     "step1_num": "1",
     "step1_title": "Audit & Strategy",
-    "step1_desc": "Comprehensive Performance & UX audit. We map out conversion bottlenecks, analyze the market, and deliver a clear development roadmap.",
+    "step1_desc": "Comprehensive performance and UX audit. We map out bottlenecks, analyze the market, and deliver a clear development roadmap.",
     "step2_num": "2",
     "step2_title": "UI/UX Design",
     "step2_desc": "Interface planning and precise prototyping, ensuring an intuitive, frictionless user experience.",
@@ -106,6 +130,17 @@
     "viewProject": "View Project",
     "visitSite": "Visit Site",
     "projects": [
+      {
+        "title": "Johnny the Scroll",
+        "category": "UI/UX Architecture, Development & Deployment",
+        "desc": "A premium tour guide website that showcases guided experiences through a clear, intuitive interface for exploring and choosing the right tour.",
+        "tech": [
+          "Next.js",
+          "CSS Modules",
+          "React",
+          "Figma"
+        ]
+      },
       {
         "title": "Aviram Eldar",
         "category": "Digital Platform",
@@ -140,7 +175,7 @@
   },
   "contact": {
     "subtitle": "Get in Touch",
-    "title": "Architect. Develop.",
+    "title": "Define. Develop.",
     "gradient": "Launch.",
     "desc1": "From software architecture to development, launch, and monitoring. We build stable digital infrastructures that allow your business to grow seamlessly.",
     "desc2": "We are currently available for select projects. Leave your details to discuss the right architecture for your product.",
@@ -151,25 +186,30 @@
       "namePlaceholder": "Enter full name...",
       "emailLabel": "Work Email",
       "emailPlaceholder": "name@company.com",
-      "websiteLabel": "Existing Website / Product URL",
+      "websiteLabel": "Existing System / Website URL",
       "websitePlaceholder": "https://your-product.com",
-      "typeLabel": "Company Type",
-      "typePlaceholder": "Select company type...",
-      "typeStartup": "Tech Startup",
+      "typeLabel": "Business / Organization Type",
+      "typePlaceholder": "Select business or organization type...",
+      "typeStartup": "Startup / Technology Company",
       "typeService": "B2B / Premium Services",
       "typeEcommerce": "E-commerce System",
       "typePersonal": "Organization / Non-profit",
       "typeOther": "Other",
-      "goalLabel": "Main Challenge",
+      "goalLabel": "What Is Your Main Challenge?",
       "goalPlaceholder": "Improving load times, app development, increasing conversions...",
       "submitBtn": "Get a Performance & UX Audit",
       "submitting": "Processing...",
       "successTitle": "Request Received.",
       "successDesc": "Thank you. We will review your details and get back to you shortly to coordinate."
+    },
+    "modal": {
+      "title": "Choose Email Provider",
+      "default": "Open Default Mail App",
+      "close": "Close Dialog"
     }
   },
   "footer": {
-    "tagline": "Architect. Develop. Launch.",
+    "tagline": "Define. Develop. Launch.",
     "services": "What We Do",
     "process": "Process",
     "portfolio": "Work",

@@ -1,13 +1,25 @@
 import type { Metadata } from "next";
+import { getDictionary } from '@/getDictionary';
 
-export const metadata: Metadata = {
-  title: "Bless Israel Network | Interactive Prototype",
-  description: "Digital experience concept by EldarVisual",
-  robots: {
-    index: false,
-    follow: false,
-  },
+type MetadataProps = {
+  params: Promise<{ lang: string }>;
 };
+
+export async function generateMetadata({ params }: MetadataProps): Promise<Metadata> {
+  const { lang } = await params;
+  const dict = await getDictionary(lang === 'he' ? 'he' : 'en');
+  return {
+    ...dict.blessIsrael.metadata,
+    openGraph: {
+      ...dict.blessIsrael.metadata,
+      url: `https://eldarvisual.com/${lang}/christians/bless-israel`,
+    },
+    robots: {
+      index: false,
+      follow: false,
+    },
+  };
+}
 
 export default function BlessIsraelLayout({
   children,

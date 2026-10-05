@@ -1,18 +1,32 @@
 import React from 'react';
 import styles from './Hero.module.css';
+import { getDictionary } from '@/getDictionary';
 
-// 1. החסימה הקריטית ל-SEO - חובה כדי לא לפגוע בדירוג האתר שלך!
-export const metadata = {
-  title: 'CUFI - Custom Concept | Your Agency Name',
-  robots: {
-    index: false,
-    follow: false,
-    nocache: true,
-  },
+type PageProps = {
+  params: Promise<{ lang: string }>;
 };
 
+export async function generateMetadata({ params }: PageProps) {
+  const { lang } = await params;
+  const dict = await getDictionary(lang === 'he' ? 'he' : 'en');
+  return {
+    ...dict.cufi.metadata,
+    openGraph: {
+      ...dict.cufi.metadata,
+      url: `https://eldarvisual.com/${lang}/christians/cufi`,
+    },
+    robots: {
+      index: false,
+      follow: false,
+      nocache: true,
+    },
+  };
+}
+
 // 2. קומפוננטת העמוד עם התוכן שלך
-export default function CufiPage() {
+export default async function CufiPage({ params }: PageProps) {
+  const { lang } = await params;
+  const { cufi: dict } = await getDictionary(lang === 'he' ? 'he' : 'en');
   return (
     <section className={styles.heroWrapper}>
       {/* Overlay לשליטה על קריאות הטקסט מעל התמונה */}
@@ -21,31 +35,30 @@ export default function CufiPage() {
       <header className={styles.header}>
         <div className={styles.logo}>CUFI</div>
         <nav className={styles.nav}>
-          <a href="#about">About</a>
-          <a href="#impact">Our Impact</a>
-          <a href="#events">Events</a>
+          <a href="#about">{dict.nav.about}</a>
+          <a href="#impact">{dict.nav.impact}</a>
+          <a href="#events">{dict.nav.events}</a>
         </nav>
-        <button className={styles.navDonate}>Donate Now</button>
+        <button className={styles.navDonate}>{dict.nav.donate}</button>
       </header>
 
       <div className={styles.container}>
         <div className={styles.content}>
-          <span className={styles.badge}>Official Operation Update</span>
+          <span className={styles.badge}>{dict.hero.badge}</span>
           <h1 className={styles.title}>
-            Pray for Our Troops. <br />
-            <span className={styles.highlight}>Stand With Our Allies.</span>
+            {dict.hero.title} <br />
+            <span className={styles.highlight}>{dict.hero.highlight}</span>
           </h1>
           <p className={styles.description}>
-            As the largest pro-Israel organization in the U.S., we empower millions to speak 
-            and act with one voice. Join us in defending Israel and the Jewish people.
+            {dict.hero.description}
           </p>
           <div className={styles.ctaGroup}>
-            <button className={styles.primaryBtn}>Become a Member</button>
+            <button className={styles.primaryBtn}>{dict.hero.primaryCta}</button>
             <button className={styles.secondaryBtn}>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <polygon points="5 3 19 12 5 21 5 3"></polygon>
               </svg>
-              Watch Latest Updates
+              {dict.hero.secondaryCta}
             </button>
           </div>
         </div>

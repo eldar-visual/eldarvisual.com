@@ -1,20 +1,34 @@
-'use client';
 import React from 'react';
 import Navbar from '@/components/Navbar'; 
 import Hero from '@/components/Hero';
 import Process from '@/components/Process';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
+import { getDictionary } from '@/getDictionary';
 
+type PageProps = {
+  params: Promise<{ lang: string }>;
+};
 
-export default function ChristianLander() {
+export async function generateMetadata({ params }: PageProps) {
+  const { lang } = await params;
+  const dict = await getDictionary(lang === 'he' ? 'he' : 'en');
+  return {
+    ...dict.christians.metadata,
+    openGraph: {
+      ...dict.christians.metadata,
+      url: `https://eldarvisual.com/${lang}/christians`,
+    },
+  };
+}
+
+export default async function ChristianLander({ params }: PageProps) {
+  const { lang } = await params;
+  const dict = await getDictionary(lang === 'he' ? 'he' : 'en');
   return (
     <main style={{ backgroundColor: '#020617' }}>
    <Hero 
-        title={<>Digital Stewardship for <span style={{color: '#60A5FA'}}>Your Mission</span></>}
-        subtitle="Transforming outdated platforms into high-performance digital hubs to maximize your organization's global impact and reach."
-        ctaText="Get a Free Ministry Site Audit"
-        trustLine="Mission-Driven | Reliable | Built for Growth"
+        dict={{ ...dict.hero, ...dict.christians.hero }}
         hideSecondaryBtn={true} 
       />
 
@@ -55,21 +69,20 @@ export default function ChristianLander() {
 
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
           <span style={{ color: '#3b82f6', fontWeight: 'bold', fontSize: '0.9rem', letterSpacing: '2px' }}>
-            THE PROBLEM
+            {dict.christians.problem.label}
           </span>
           <h2 style={{ fontSize: '2.5rem', marginTop: '0.5rem', color: 'white' }}>
-            Is your website hindering your message?
+            {dict.christians.problem.title}
           </h2>
           <p style={{ color: '#94a3b8', fontSize: '1.2rem', lineHeight: '1.6', marginTop: '1.5rem' }}>
-            Broken links, slow loading times, and outdated designs aren't just technical issues—they're barriers to your mission. 
-            We specialize in breathing new life into legacy sites, ensuring your message reaches the world without interruption.
+            {dict.christians.problem.description}
           </p>
         </div>
       </section>
 
-      <Process />
+      <Process dict={dict.process} />
       
-      <Contact /> 
+      <Contact dict={dict.contact} />
     </main>
   );
 }

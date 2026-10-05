@@ -5,36 +5,41 @@ import ProblemSection from '@/components/ProblemSection';
 import SolutionSection from '@/components/SolutionSection';
 import FAQSection from '@/components/FAQSection';
 import FooterMedical from '@/components/FooterMedical';
-export const metadata = {
-  title: 'EldarVisual | פתרונות Web למרפאות אסתטיקה ושיניים',
-  description: 'שדרוג אתרי מרפאות לטכנולוגיית Next.js להגדלת יחס ההמרה מפרסום.',
+import { getDictionary } from '@/getDictionary';
+
+type PageProps = {
+  params: Promise<{ lang: string }>;
 };
 
-const clinicDict = {
-  title: "הלקוח כבר שפט אותך ",
-  gradient: "עוד לפני שדיברתם",
-  subtitle: 
-(<>
-אנחנו הופכים את הרושם הראשוני שלך למנוע צמיחה - כדי שמבקרים יהפכו לפניות.
-<br /> בלי תבניות. רק תוצאות.
-</>
-),
-  cta: "קבל ביקורת אתר חינם",
-  calendlyLink: "https://calendly.com/aviram-eldarvisual/30min",
-  hideSecondaryBtn: true,
-  tags: "שיחה קצרה בלי התחייבות"
-};
+export async function generateMetadata({ params }: PageProps) {
+  const { lang } = await params;
+  const dict = await getDictionary(lang === 'he' ? 'he' : 'en');
+  return {
+    ...dict.clinics.metadata,
+    openGraph: {
+      ...dict.clinics.metadata,
+      url: `https://eldarvisual.com/${lang}/clinics`,
+    },
+  };
+}
 
-export default function ClinicsPage() {
+export default async function ClinicsPage({ params }: PageProps) {
+  const { lang } = await params;
+  const { clinics: dict } = await getDictionary(lang === 'he' ? 'he' : 'en');
+  const clinicDict = {
+    ...dict.hero,
+    subtitle: <>{dict.hero.subtitle}<br />{dict.hero.subtitleEnd}</>,
+    calendlyLink: "https://calendly.com/aviram-eldarvisual/30min",
+  };
   return (
-    <main dir="rtl">
+    <main dir={lang === 'he' ? 'rtl' : 'ltr'}>
       <HeroMedical dict={clinicDict} />
       {/* בהמשך נוכל להוסיף לכאן גם את קומפוננטת Process או Services אם נרצה */}
-      <TrustBar/>
-      <ProblemSection/>
-      <SolutionSection />
-      <FAQSection />
-      <FooterMedical/>
+      <TrustBar dict={dict.trustBar} />
+      <ProblemSection dict={dict.problem} />
+      <SolutionSection dict={dict.solution} />
+      <FAQSection dict={dict.faq} />
+      <FooterMedical dict={dict.footer} />
     </main>
   );
 }

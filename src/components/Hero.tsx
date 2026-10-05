@@ -88,7 +88,7 @@ export default function Hero({ title, subtitle, ctaText, trustLine, dict, hideSe
         <div className={styles.mobileImageContainer}>
             <Image 
                 src="/floatForWeb.webp" 
-                alt="UI/UX Design Illustration" 
+                alt={dict?.illustrationAlt || "UI and UX design illustration"}
                 width={600} 
                 height={400}
                 priority

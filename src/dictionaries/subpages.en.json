@@ -1,0 +1,249 @@
+{
+  "clinics": {
+    "metadata": {
+      "title": "EldarVisual | Web Solutions for Aesthetic and Dental Clinics",
+      "description": "Upgrading clinic websites with Next.js to improve conversions from advertising."
+    },
+    "hero": {
+      "title": "Your Client Has Already Judged You",
+      "gradient": "Before You Have Even Spoken",
+      "subtitle": "We turn your first impression into a driver of growth, so visitors become inquiries.",
+      "subtitleEnd": "No Templates. Just Results.",
+      "cta": "Get a Free Website Audit",
+      "tags": "A Short Call with No Obligation",
+      "illustrationAlt": "Clinic website design",
+      "previewAlt": "Premium clinic website design"
+    },
+    "trustBar": {
+      "title": "The New Technology Standard for Clinics and Boutique Practices",
+      "benefits": [
+        "High Performance",
+        "Security & Privacy Protection",
+        "Appointment Optimization",
+        "Premium User Experience (UX)"
+      ]
+    },
+    "problem": {
+      "label": "The Main Challenge",
+      "title": "You Pay for Clicks, but",
+      "highlight": "Your Website Is Losing Patients.",
+      "description": "Generic design and slow load times make premium patients choose competitors, even when your clinic is more professional.",
+      "points": [
+        {
+          "title": "Visitors Leave Because of Slow Loading",
+          "description": "53% of mobile visitors leave if a site takes more than 3 seconds to load. Heavy template websites waste your advertising budget."
+        },
+        {
+          "title": "Damage to Your Professional Credibility",
+          "description": "A client looking for premium aesthetic and medical treatments expects a polished, premium website. A template site that looks like everyone else’s does not justify your pricing."
+        },
+        {
+          "title": "A Broken User Journey",
+          "description": "Cumbersome forms and buttons that are difficult to tap on mobile leave your appointment calendar empty."
+        }
+      ],
+      "alertText": "Abandonment Due to Slow Loading",
+      "graphLabel": "Drop in Mobile Conversions (Seconds 1-4)"
+    },
+    "solution": {
+      "label": "The EldarVisual Solution",
+      "title": "Web Architecture Built",
+      "highlight": "to Fill Your Calendar.",
+      "subtitle": "We do not use ready-made templates. Every clinic gets precise requirements, pixel-perfect design, and clean code built with modern technology (Next.js).",
+      "cards": [
+        {
+          "title": "Premium Boutique Design",
+          "description": "A premium, clean user interface (UI) that conveys professional authority from the first second. Your clients will immediately understand why your treatments are worth more."
+        },
+        {
+          "title": "Peak Performance (Zero Load Times)",
+          "description": "With Next.js, your website loads almost immediately. We stop mobile abandonment and make the most of every shekel in your advertising campaign."
+        },
+        {
+          "title": "Appointment Booking Optimization",
+          "description": "A thoughtful, minimalist user journey (UX) that guides visitors smoothly and without friction toward contacting you or booking a consultation."
+        }
+      ],
+      "ctaText": "Ready to Upgrade Your Clinic’s Online Presence and Stop Losing Leads?",
+      "ctaButton": "Let’s Start with a Consultation"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "items": [
+        {
+          "q": "How Long Does It Take to Build a Website Like This?",
+          "a": "Our definition and development process is focused on results. Unlike generic websites, we use an accelerated MVP approach. Your website will be live within a short time, with an emphasis on high-quality code that does not require ongoing maintenance."
+        },
+        {
+          "q": "I’m Not Technical. How Do I Update Content?",
+          "a": "We build your website with a custom content management system that lets you easily update images, articles, or opening hours without writing a single line of code."
+        },
+        {
+          "q": "How Is This Different from Building a WordPress Website?",
+          "a": "WordPress suffers from plugin overload that slows websites down. We build with Next.js, which means an exceptionally fast, much more secure website that gives your patients a premium experience."
+        },
+        {
+          "q": "Will This Really Affect the Number of Leads?",
+          "a": "Your campaign brings traffic, but your website closes the deal. When we build a Next.js website that loads immediately and provides a smooth mobile experience, we prevent visitors from leaving right after they click. The goal is simple: make the most of the budget you are already spending on advertising."
+        }
+      ]
+    },
+    "footer": {
+      "logoAlt": "EldarVisual Logo",
+      "brandTag": "Website Definition & Development Studio",
+      "rights": "All rights reserved.",
+      "linkedinLabel": "LinkedIn Profile",
+      "mainSiteLabel": "Main Studio Website",
+      "disclaimer": "Definition, Design & Development with Clean Code"
+    }
+  },
+  "ministries": {
+    "metadata": {
+      "title": "EldarVisual | Websites for Ministries",
+      "description": "Design and development of fast ministry websites that build supporter trust and make giving easier on any device."
+    },
+    "hero": {
+      "imageAlt": "A crowd praising God",
+      "tag": "High-Performance Websites for Ministries",
+      "title": "Help More People",
+      "gradient": "Connect with Your Mission.",
+      "subtitle": "We design and build modern, fast ministry websites that help supporters understand your work, trust your organization, and contribute easily from any device.",
+      "cta": "Request Your Website Audit"
+    },
+    "problem": {
+      "title": "Where Ministry Websites Create Donor Friction",
+      "cards": [
+        {
+          "title": "Mobile Friction",
+          "description": "Many ministry websites aren’t designed for today’s mobile-first audience. When giving is difficult on a phone, supporters are more likely to leave before completing a donation."
+        },
+        {
+          "title": "Slow Performance, Lower Trust",
+          "description": "A slow or outdated website can reduce confidence before visitors even engage with your ministry. First impressions matter."
+        },
+        {
+          "title": "Buried Impact",
+          "description": "When your mission, stories, and impact are difficult to find, visitors struggle to understand why your ministry matters and why they should support it."
+        }
+      ]
+    },
+    "solution": {
+      "title": "Built for Trust. Engineered for Performance.",
+      "cards": [
+        {
+          "title": "Fast Global Delivery",
+          "description": "Built with modern technologies to deliver fast, reliable experiences for supporters around the world."
+        },
+        {
+          "title": "Simplified Mobile Giving",
+          "description": "Clear user flows and thoughtful design make giving simple across every device."
+        },
+        {
+          "title": "Designed Around Supporters",
+          "description": "Every page is designed to help visitors understand your mission, build trust, and take meaningful action."
+        }
+      ]
+    },
+    "audit": {
+      "title": "A Website Should Support Your Ministry, Not Hold It Back.",
+      "description": "Share your website, and we’ll send you a personalized audit report by email highlighting opportunities to improve clarity, trust, performance, accessibility, and the overall supporter experience.",
+      "namePlaceholder": "Your Name",
+      "emailPlaceholder": "Ministry Email",
+      "websitePlaceholder": "Website URL (e.g., https://ministry.org)",
+      "submit": "Request Your Website Audit"
+    }
+  },
+  "christians": {
+    "metadata": {
+      "title": "EldarVisual | Digital Solutions for Your Mission",
+      "description": "Transforming outdated platforms into high-performance digital hubs to expand your organization’s global impact and reach."
+    },
+    "hero": {
+      "title": "Digital Stewardship for",
+      "gradient": "Your Mission",
+      "subtitle": "Transforming outdated platforms into high-performance digital hubs to maximize your organization’s global impact and reach.",
+      "cta": "Get a Free Ministry Site Audit",
+      "tags": "Mission-Driven | Reliable | Built for Growth"
+    },
+    "problem": {
+      "label": "THE PROBLEM",
+      "title": "Is Your Website Hindering Your Message?",
+      "description": "Broken links, slow loading times, and outdated designs are not just technical issues. They are barriers to your mission. We specialize in breathing new life into legacy sites, ensuring your message reaches the world without interruption."
+    }
+  },
+  "cufi": {
+    "metadata": {
+      "title": "CUFI | Custom Concept by EldarVisual",
+      "description": "A website design concept for CUFI by EldarVisual."
+    },
+    "nav": {
+      "about": "About",
+      "impact": "Our Impact",
+      "events": "Events",
+      "donate": "Donate Now"
+    },
+    "hero": {
+      "badge": "Official Operation Update",
+      "title": "Pray for Our Troops.",
+      "highlight": "Stand With Our Allies.",
+      "description": "As the largest pro-Israel organization in the U.S., we empower millions to speak and act with one voice. Join us in defending Israel and the Jewish people.",
+      "primaryCta": "Become a Member",
+      "secondaryCta": "Watch Latest Updates"
+    }
+  },
+  "blessIsrael": {
+    "metadata": {
+      "title": "Bless Israel Network | Interactive Prototype",
+      "description": "Digital experience concept by EldarVisual"
+    },
+    "nav": {
+      "logoAlt": "Bless Israel Logo",
+      "mission": "Our Mission",
+      "programs": "Programs",
+      "impact": "Impact",
+      "contact": "Contact",
+      "support": "Support Now"
+    },
+    "hero": {
+      "imageAlt": "Bless Israel Leaders",
+      "playLabel": "Play Mission Video",
+      "title": "Raising Up Zion",
+      "highlight": "Before the Nations",
+      "donate": "Donate Now",
+      "watch": "Watch The Mission",
+      "statement": "Uniting Jews and Christians in Messiah to co-labor and raise up Zion before the Nations"
+    },
+    "newsletter": {
+      "title": "We also provide",
+      "highlight": "TEACHINGS & NEWS UPDATES",
+      "placeholder": "Enter your email address...",
+      "submit": "Subscribe"
+    },
+    "testimonials": [
+      {
+        "quote": "“I completely support the vision of Bless Israel Network to provide a platform for leaders of Israeli Congregations and Ministries to share what they are doing to build the Kingdom of God in Israel.”",
+        "name": "Jonathan Bernis",
+        "role": "President & CEO, Jewish Voice Ministries"
+      },
+      {
+        "quote": "“Revelation to the Nations is needed in these Last Days! Daniel & D’vorah’s vision to connect the voices of authentic Israeli believers to the nations will serve as a great hub for the Body of Messiah until all Israel will be saved.”",
+        "name": "Rabbi Itzchak Shapira",
+        "role": "Author, Return of the Kosher Pig"
+      },
+      {
+        "quote": "“I praise God for the visionary venture HE has placed in the hearts of Daniel & D’vorah. It is certainly deserving of widespread support from the Christian community.”",
+        "name": "Dr. David Reagan",
+        "role": "Founder & Director, Lion and Lamb Ministries"
+      },
+      {
+        "quote": "“We are living at a time when Israel is most often slandered and marginalized. We need to be present in all platforms of media to counter the lies and misunderstandings...”",
+        "name": "Boaz Michael",
+        "role": "Founder & President, First Fruits of Zion"
+      }
+    ],
+    "footer": {
+      "rights": "All rights reserved.",
+      "credit": "Digital Experience by"
+    }
+  }
+}

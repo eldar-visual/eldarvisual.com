@@ -25,7 +25,7 @@ const InfiniteScroll = ({ dict }: { dict?: any }) => {
                     <div className={styles.imgWrapper}>
                         <Image 
                             src="/coding.webp" 
-                            alt="Clean Architecture Code" 
+                            alt={dict?.mockup?.architectureAlt || "Clean architecture code"}
                             fill 
                             className={`${styles.imgCover} ${styles.grayscaleHover}`} 
                             sizes="33vw" 
@@ -45,14 +45,14 @@ const InfiniteScroll = ({ dict }: { dict?: any }) => {
                     <div className={styles.imgWrapper}>
                         <Image 
                             src="/uxui.webp" 
-                            alt="UX/UI Design Interface" 
+                            alt={dict?.mockup?.uxAlt || "UI and UX design"}
                             fill 
                             className={`${styles.imgCover} ${styles.hueHover}`} 
                             sizes="33vw"
                         />
                     </div>
                     <div className={styles.textWrapper}>
-                        <h3 className={styles.itemTitle}>{dict?.mockup?.uxTitle || "UX/UI Experience"}</h3>
+                        <h3 className={styles.itemTitle}>{dict?.mockup?.uxTitle || "User Experience & Interface Design"}</h3>
                         <button onClick={scrollToProcess} className={styles.miniBtn}>{dict?.mockup?.uxBtn || "See Design Process"}</button>
                     </div>
                 </div>
@@ -61,14 +61,14 @@ const InfiniteScroll = ({ dict }: { dict?: any }) => {
             {/* ITEM 3: Services */}
             <div className={`${styles.scrollItem} ${styles.greenHover}`}>
                 <div className={styles.webmasterHeader}>
-                    <h3 className={styles.itemTitle}>{dict?.mockup?.webmasterTitle || "Webmaster Services"}</h3>
+                    <h3 className={styles.itemTitle}>{dict?.mockup?.webmasterTitle || "Website Management & Maintenance"}</h3>
                 </div>
                 <div className={styles.gridImgs}>
                     <div className={`${styles.gridImgWrap} ${styles.flashHover}`}>
-                        <Image src="/webmasterservice.webp" alt="Service 1" fill className={styles.imgCover} />
+                        <Image src="/webmasterservice.webp" alt={dict?.mockup?.webmasterAlt || "Website management and maintenance"} fill className={styles.imgCover} />
                     </div>
                     <div className={`${styles.gridImgWrap} ${styles.darkenHover}`}>
-                        <Image src="/webmaster2.webp" alt="Service 2" fill className={styles.imgCover} />
+                        <Image src="/webmaster2.webp" alt={dict?.mockup?.webmasterSecondaryAlt || "Website infrastructure maintenance"} fill className={styles.imgCover} />
                     </div>
                     <div className={styles.plusMore}>+4</div>
                 </div>
@@ -77,7 +77,7 @@ const InfiniteScroll = ({ dict }: { dict?: any }) => {
             {/* ITEM 4: Management */}
             <div className={styles.scrollItem}>
                 <div className={styles.zoomContainer}>
-                    <Image src="/settings.webp" alt="Management" fill className={`${styles.imgCover} ${styles.zoomHover}`} />
+                    <Image src="/settings.webp" alt={dict?.mockup?.managementAlt || "Website management"} fill className={`${styles.imgCover} ${styles.zoomHover}`} />
                     <div className={styles.overlayGrad}>
                         <h3 className={styles.overlayText}>{dict?.mockup?.managementTitle || "Website Management"}</h3>
                     </div>

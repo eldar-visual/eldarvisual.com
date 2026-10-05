@@ -1,39 +1,40 @@
 import React from 'react';
 import { ShieldCheck, Zap, Activity, Star } from 'lucide-react';
 import styles from './trustBar.module.css';
+import type { Dictionary } from '@/getDictionary';
 
-export default function TrustBar() {
+export default function TrustBar({ dict }: { dict: Dictionary['clinics']['trustBar'] }) {
   return (
     <section className={styles.trustSection}>
       <p className={styles.trustTitle}>
-        הסטנדרט הטכנולוגי החדש למרפאות וקליניקות בוטיק
+        {dict.title}
       </p>
       
       <div className={styles.benefitsContainer}>
         <div className={styles.benefitItem}>
           <Zap size={20} className={styles.icon} />
-          <span>ביצועי קצה מהירים</span>
+          <span>{dict.benefits[0]}</span>
         </div>
         
         <span className={styles.divider}>•</span>
         
         <div className={styles.benefitItem}>
           <ShieldCheck size={20} className={styles.icon} />
-          <span>אבטחה והגנת פרטיות</span>
+          <span>{dict.benefits[1]}</span>
         </div>
         
         <span className={styles.divider}>•</span>
         
         <div className={styles.benefitItem}>
           <Activity size={20} className={styles.icon} />
-          <span>אופטימיזציה ליומן</span>
+          <span>{dict.benefits[2]}</span>
         </div>
         
         <span className={styles.divider}>•</span>
         
         <div className={styles.benefitItem}>
           <Star size={20} className={styles.icon} />
-          <span>חוויית פרימיום (UX)</span>
+          <span>{dict.benefits[3]}</span>
         </div>
       </div>
     </section>

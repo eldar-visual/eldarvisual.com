@@ -2,19 +2,20 @@ import React from 'react';
 import { Palette, Zap, CalendarCheck } from 'lucide-react';
 import styles from './solution.module.css';
 import Link from 'next/link';
+import type { Dictionary } from '@/getDictionary';
 
-export default function SolutionSection() {
+export default function SolutionSection({ dict }: { dict: Dictionary['clinics']['solution'] }) {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
         
         <div className={styles.header}>
-          <span className={styles.label}>הפתרון של EldarVisual</span>
+          <span className={styles.label}>{dict.label}</span>
           <h2 className={styles.title}>
-            ארכיטקטורת אינטרנט שבנויה <span className={styles.highlight}>למלא את היומן שלך.</span>
+            {dict.title} <span className={styles.highlight}>{dict.highlight}</span>
           </h2>
           <p className={styles.subtitle}>
-            אנחנו לא משתמשים בתבניות מוכנות. כל קליניקה מקבלת אפיון מדויק, עיצוב פיקסל-פרפקט ופיתוח בקוד נקי על בסיס טכנולוגיות הקצה של הייטק (Next.js).
+            {dict.subtitle}
           </p>
         </div>
 
@@ -24,9 +25,9 @@ export default function SolutionSection() {
             <div className={styles.iconWrapper}>
               <Palette size={28} />
             </div>
-            <h3 className={styles.cardTitle}>עיצוב בוטיק פרימיום</h3>
+            <h3 className={styles.cardTitle}>{dict.cards[0].title}</h3>
             <p className={styles.cardText}>
-              ממשק משתמש (UI) יוקרתי ונקי שמשדר סמכות מקצועית מהשנייה הראשונה. הלקוחות שלך יבינו מיד למה הטיפולים שלך שווים יותר.
+              {dict.cards[0].description}
             </p>
           </div>
 
@@ -35,9 +36,9 @@ export default function SolutionSection() {
             <div className={styles.iconWrapper}>
               <Zap size={28} />
             </div>
-            <h3 className={styles.cardTitle}>ביצועי קצה (0 זמני טעינה)</h3>
+            <h3 className={styles.cardTitle}>{dict.cards[1].title}</h3>
             <p className={styles.cardText}>
-              בזכות טכנולוגיית Next.js, האתר שלך ייטען כמעט מיד. אנחנו עוצרים את הנטישה במובייל ומנצלים כל שקל מקמפיין הממומן שלך.
+              {dict.cards[1].description}
             </p>
           </div>
 
@@ -46,9 +47,9 @@ export default function SolutionSection() {
             <div className={styles.iconWrapper}>
               <CalendarCheck size={28} />
             </div>
-            <h3 className={styles.cardTitle}>אופטימיזציה להזמנת תורים</h3>
+            <h3 className={styles.cardTitle}>{dict.cards[2].title}</h3>
             <p className={styles.cardText}>
-              מסע משתמש (UX) חכם ומינימליסטי שמנתב את הגולש בצורה חלקה ונטולת חיכוך ישירות ליצירת קשר או לקביעת פגישת ייעוץ.
+              {dict.cards[2].description}
             </p>
           </div>
         </div>
@@ -56,7 +57,7 @@ export default function SolutionSection() {
       </div>
       <div className={styles.ctaWrapper}>
   <p className={styles.ctaText}>
-    מוכן לשדרג את הנראות של הקליניקה ולהפסיק לאבד לידים?
+    {dict.ctaText}
   </p>
   <a 
   href="https://calendly.com/aviram-eldarvisual/30min" 
@@ -64,7 +65,7 @@ export default function SolutionSection() {
   target="_blank" 
   rel="noopener noreferrer"
 >
-    בוא נתחיל בשיחת ייעוץ
+    {dict.ctaButton}
   </a>
 </div>
     </section>

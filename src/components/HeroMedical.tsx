@@ -36,7 +36,7 @@ export default function HeroMedical({ dict }: HeroMedicalProps) {
         <div className={styles.mobileImageContainer}>
             <Image 
                 src="/floatForWeb.webp" 
-                alt="Clinic Web Design" 
+                alt={dict?.illustrationAlt || "Clinic website design"}
                 width={600} 
                 height={400}
                 priority
@@ -88,7 +88,7 @@ export default function HeroMedical({ dict }: HeroMedicalProps) {
                <div className={styles.browserContentViewport} style={{ position: 'relative', overflow: 'hidden' }}>
                  <Image 
                    src="/clinic.png" 
-                   alt="עיצוב אתר פרימיום למרפאה"
+                   alt={dict?.previewAlt || "Premium clinic website design"}
                    fill /* גורם לתמונה למלא את האזור */
                    style={{ objectFit: 'cover', objectPosition: 'top' }} /* שומר על פרופורציות ומראה את החלק העליון */
                    priority

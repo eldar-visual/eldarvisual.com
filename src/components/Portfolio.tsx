@@ -9,9 +9,10 @@ interface PortfolioProps {
 
 // המערך הבסיסי - מחזיק רק תמונות וקישורים קשיחים
 const baseProjects = [
+  { id: 4, image: "/jts-hero.webp", link: "https://johnnythescroll.com"},
   { id: 1, image: "/aviramweb.webp", link: "https://aviram-eldar.website/#home" },
   { id: 2, image: "/JudithArtSite.webp", link: "https://judith-art.netlify.app" },
-  { id: 3, image: "/AdiShoham.webp", link: "https://adi-shoham.netlify.app/" }
+  { id: 3, image: "/AdiShoham.webp", link: "https://adi-shoham.netlify.app/" },
 ];
 
 export default function Portfolio({ dict }: PortfolioProps) {

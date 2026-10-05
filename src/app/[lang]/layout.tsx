@@ -36,15 +36,16 @@ export async function generateMetadata({ params }: MetadataProps): Promise<Metad
   const resolvedParams = await params;
   const lang = resolvedParams?.lang || 'en';
   const isHe = lang === 'he';
+  const dict = isHe ? heDict : enDict;
   
   const ogImage = isHe ? "/og-image-he.png" : "/og-image.webp";
   
   return {
-    title: isHe ? "אלדר ויז'ואל | סטודיו פרימיום" : "EldarVisual Web Studio | Premium Web Design",
-    description: isHe ? "התמחות ביצירת חוויות רשת מהירות ומרהיבות." : "Specialized in crafting high-performance, stunning web applications.",
+    title: dict.metadata.title,
+    description: dict.metadata.description,
     openGraph: {
-      title: isHe ? "אלדר ויז'ואל | אתרי איטנרט ברמת פרימיום" : "EldarVisual | Premium Web Design",
-      description: isHe ? "בניית אתרים ב-Next.js עם דגש על ביצועים וחוויית משתמש." : "High-performance web apps built for growth.",
+      title: dict.metadata.ogTitle,
+      description: dict.metadata.ogDescription,
       url: `https://eldarvisual.com/${lang}`,
       siteName: "EldarVisual",
       images: [
@@ -52,7 +53,7 @@ export async function generateMetadata({ params }: MetadataProps): Promise<Metad
           url: ogImage,
           width: 1200,
           height: 630,
-          alt: isHe ? "אלדר ויז'ואל - השקה בעברית" : "EldarVisual Web Studio",
+          alt: dict.metadata.imageAlt,
         },
       ],
       locale: isHe ? "he_IL" : "en_US",

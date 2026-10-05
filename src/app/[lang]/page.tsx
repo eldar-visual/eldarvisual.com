@@ -1,3 +1,4 @@
+import Navbar from '../../components/Navbar';
 import Hero from '../../components/Hero';
 import Services from '../../components/Services';
 import Process from '../../components/Process';
@@ -20,6 +21,7 @@ export default async function HomePage({ params }: any) {
 
   return (
     <>
+      <Navbar dict={dict.navbar} />
       <Hero 
         title={dict.hero?.title}
         subtitle={dict.hero?.subtitle}

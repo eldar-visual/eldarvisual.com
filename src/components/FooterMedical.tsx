@@ -2,8 +2,9 @@ import React from 'react';
 import Image from 'next/image';
 import { Linkedin, Globe } from 'lucide-react';
 import styles from './footerMedical.module.css';
+import type { Dictionary } from '@/getDictionary';
 
-export default function FooterMedical(){
+export default function FooterMedical({ dict }: { dict: Dictionary['clinics']['footer'] }){
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
@@ -14,7 +15,7 @@ export default function FooterMedical(){
             <div className={styles.logoWrapper}>
               <Image 
                 src="/EV-Logo.png" 
-                alt="EldarVisual לוגו" 
+                alt={dict.logoAlt}
                 width={36} 
                 height={36} 
                 className={styles.logoImg}
@@ -23,11 +24,11 @@ export default function FooterMedical(){
             </div>
             <div className={styles.textGroup}>
               <span className={styles.brandName}>EldarVisual</span>
-              <span className={styles.brandTag}>סטודיו לפיתוח ואפיון אתרים</span>
+              <span className={styles.brandTag}>{dict.brandTag}</span>
             </div>
           </div>
           <p className={styles.copyright}>
-            © {new Date().getFullYear()} EldarVisual. כל הזכויות שמורות.
+            © {new Date().getFullYear()} EldarVisual. {dict.rights}
           </p>
         </div>
 
@@ -37,7 +38,7 @@ export default function FooterMedical(){
             <a 
               href="https://www.linkedin.com/in/aviram-eldar/" 
               className={styles.socialLink} 
-              aria-label="פרופיל לינקדאין" 
+              aria-label={dict.linkedinLabel}
               target="_blank" 
               rel="noopener noreferrer"
             >
@@ -46,14 +47,14 @@ export default function FooterMedical(){
             <a 
               href="https://eldarvisual.com" 
               className={styles.socialLink} 
-              aria-label="אתר הסטודיו הראשי"
+              aria-label={dict.mainSiteLabel}
               target="_blank" 
               rel="noopener noreferrer"
             >
               <Globe size={20} />
             </a>
           </div>
-          <span className={styles.disclaimer}>אפיון, עיצוב ופיתוח בקוד נקי</span>
+          <span className={styles.disclaimer}>{dict.disclaimer}</span>
         </div>
 
       </div>

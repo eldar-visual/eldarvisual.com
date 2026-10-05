@@ -5,6 +5,9 @@ import Image from 'next/image';
 import { Play, Heart, Facebook, Youtube, Twitter, MessageCircle } from 'lucide-react';
 import styles from './bless.module.css';
 import { Lancelot } from 'next/font/google';
+import { useParams } from 'next/navigation';
+import heSubpages from '@/dictionaries/subpages.he.json';
+import enSubpages from '@/dictionaries/subpages.en.json';
 
 const lancelot = Lancelot({ 
   weight: '400',
@@ -15,6 +18,8 @@ const lancelot = Lancelot({
 
 
 export default function BlessIsraelMockup() {
+  const { lang } = useParams<{ lang: string }>();
+  const dict = (lang === 'he' ? heSubpages : enSubpages).blessIsrael;
   return (
     <div className={styles.pageWrapper}>
       
@@ -25,7 +30,7 @@ export default function BlessIsraelMockup() {
             <div className={styles.logoBox}>
               <Image 
                 src="/bless-israel/logo.png" 
-                alt="Bless Israel Logo" 
+                alt={dict.nav.logoAlt}
                 width={190} 
                 height={120} 
                 priority 
@@ -33,10 +38,10 @@ export default function BlessIsraelMockup() {
             </div>
             
             <ul className={styles.navMenu}>
-              <li>Our Mission</li>
-              <li>Programs</li>
-              <li>Impact</li>
-              <li>Contact</li>
+              <li>{dict.nav.mission}</li>
+              <li>{dict.nav.programs}</li>
+              <li>{dict.nav.impact}</li>
+              <li>{dict.nav.contact}</li>
             </ul>
 
             <div className={styles.navActions}>
@@ -45,7 +50,7 @@ export default function BlessIsraelMockup() {
                 <Facebook size={20} />
                 <Youtube size={22} />
               </div>
-              <button className={styles.goldCta}>Support Now</button>
+              <button className={styles.goldCta}>{dict.nav.support}</button>
             </div>
           </div>
         </div>
@@ -57,7 +62,7 @@ export default function BlessIsraelMockup() {
           <div className={styles.cinemaFrame}>
             <Image 
               src="/bless-israel/DanielAndDvora.webp" 
-              alt="Bless Israel Leaders" 
+              alt={dict.hero.imageAlt}
               fill 
               className={styles.heroImage}
               priority 
@@ -67,30 +72,30 @@ export default function BlessIsraelMockup() {
 
             <div className={styles.contentLayer}>
               {/* כפתור Play הועלה למעלה */}
-              <button className={styles.playCenter}>
+              <button className={styles.playCenter} aria-label={dict.hero.playLabel}>
                 <Play size={65} fill="white" strokeWidth={0}/>
               </button>
 
               {/* הטקסט והכפתורים למטה */}
               <div className={styles.textBottomContainer}>
                 <h1 className={styles.mainTitle}>
-                  Raising Up Zion <br />
-                  <span className={styles.goldHighlight}>Before the Nations</span>
+                  {dict.hero.title} <br />
+                  <span className={styles.goldHighlight}>{dict.hero.highlight}</span>
                 </h1>
                 
                 <div className={styles.buttonSet}>
                   <button className={styles.donateBtn}>
-                    Donate Now <Heart size={18} fill="currentColor" />
+                    {dict.hero.donate} <Heart size={18} fill="currentColor" />
                   </button>
                   <button className={styles.playBtn}>
-                    <Play size={18} fill="white" strokeWidth={0} /> Watch The Mission
+                    <Play size={18} fill="white" strokeWidth={0} /> {dict.hero.watch}
                   </button>
                 </div>
               </div>
             </div>
           </div>
           <p className={`${styles.missionStatement} ${lancelot.className}`}>
-            Uniting Jews and Christians in Messiah to co-labor and raise up Zion before the Nations
+            {dict.hero.statement}
           </p>
         </div>
       </main>
@@ -98,12 +103,12 @@ export default function BlessIsraelMockup() {
      <section className={styles.newsBanner}>
         <div className={styles.siteContainer}>
           <h2 className={styles.bannerText}>
-            We also provide <span className={styles.goldHighlight}>TEACHINGS & NEWS UPDATES</span>
+            {dict.newsletter.title} <span className={styles.goldHighlight}>{dict.newsletter.highlight}</span>
           </h2>
           {/* טופס הרשמה חדש */}
           <form className={styles.newsletterForm} onSubmit={(e) => e.preventDefault()}>
-            <input type="email" placeholder="Enter your email address..." className={styles.emailInput} required />
-            <button type="submit" className={styles.subscribeBtn}>Subscribe</button>
+            <input type="email" placeholder={dict.newsletter.placeholder} className={styles.emailInput} required />
+            <button type="submit" className={styles.subscribeBtn}>{dict.newsletter.submit}</button>
           </form>
         </div>
       </section>
@@ -115,46 +120,46 @@ export default function BlessIsraelMockup() {
             
             {/* כרטיסייה 1 */}
             <div className={styles.testiCard}>
-              <p className={styles.quote}>"I completely support the vision of Bless Israel Network to provide a platform for leaders of Israeli Congregations and Ministries to share what they are doing to build the Kingdom of God in Israel."</p>
+              <p className={styles.quote}>{dict.testimonials[0].quote}</p>
               <div className={styles.authorBox}>
-                <Image src="/bless-israel/JB.webp" alt="Jonathan Bernis" width={55} height={55} className={styles.authorImage} />
+                <Image src="/bless-israel/JB.webp" alt={dict.testimonials[0].name} width={55} height={55} className={styles.authorImage} />
                 <div>
-                  <h4 className={styles.authorName}>Jonathan Bernis</h4>
-                  <p className={styles.authorTitle}>President & CEO, Jewish Voice Ministries</p>
+                  <h4 className={styles.authorName}>{dict.testimonials[0].name}</h4>
+                  <p className={styles.authorTitle}>{dict.testimonials[0].role}</p>
                 </div>
               </div>
             </div>
 
             {/* כרטיסייה 2 */}
             <div className={styles.testiCard}>
-              <p className={styles.quote}>"Revelation to the Nations is needed in these Last Days! Daniel & D'vorah's vision to connect the voices of authentic Israeli believers to the nations will serve as a great hub for the Body of Messiah until all Israel will be saved."</p>
+              <p className={styles.quote}>{dict.testimonials[1].quote}</p>
               <div className={styles.authorBox}>
-               <Image src="/bless-israel/IS.webp" alt="Rabbi Itzchak Shapira" width={55} height={55} className={styles.authorImage} />
+               <Image src="/bless-israel/IS.webp" alt={dict.testimonials[1].name} width={55} height={55} className={styles.authorImage} />
                 <div>
-                  <h4 className={styles.authorName}>Rabbi Itzchak Shapira</h4>
-                  <p className={styles.authorTitle}>Author, Return of the Kosher Pig</p>
+                  <h4 className={styles.authorName}>{dict.testimonials[1].name}</h4>
+                  <p className={styles.authorTitle}>{dict.testimonials[1].role}</p>
                 </div>
               </div>
             </div>
 
             {/* כרטיסייה 3 */}
             <div className={styles.testiCard}>
-              <p className={styles.quote}>"I praise God for the visionary venture HE has placed in the hearts of Daniel & D'vorah. It is certainly deserving of widespread support from the Christian community."</p>
+              <p className={styles.quote}>{dict.testimonials[2].quote}</p>
               <div className={styles.authorBox}>
-<Image src="/bless-israel/DR.webp" alt="Dr. David Reagan" width={55} height={55} className={styles.authorImage} />                <div>
-                  <h4 className={styles.authorName}>Dr. David Reagan</h4>
-                  <p className={styles.authorTitle}>Founder & Director, Lion and Lamb Ministries</p>
+<Image src="/bless-israel/DR.webp" alt={dict.testimonials[2].name} width={55} height={55} className={styles.authorImage} />                <div>
+                  <h4 className={styles.authorName}>{dict.testimonials[2].name}</h4>
+                  <p className={styles.authorTitle}>{dict.testimonials[2].role}</p>
                 </div>
               </div>
             </div>
 
             {/* כרטיסייה 4 */}
             <div className={styles.testiCard}>
-              <p className={styles.quote}>"We are living at a time when Israel is most often slandered and marginalized. We need to be present in all platforms of media to counter the lies and misunderstandings..."</p>
+              <p className={styles.quote}>{dict.testimonials[3].quote}</p>
               <div className={styles.authorBox}>
-<Image src="/bless-israel/BM.webp" alt="Boaz Michael" width={55} height={55} className={styles.authorImage} />                <div>
-                  <h4 className={styles.authorName}>Boaz Michael</h4>
-                  <p className={styles.authorTitle}>Founder & President, First Fruits of Zion</p>
+<Image src="/bless-israel/BM.webp" alt={dict.testimonials[3].name} width={55} height={55} className={styles.authorImage} />                <div>
+                  <h4 className={styles.authorName}>{dict.testimonials[3].name}</h4>
+                  <p className={styles.authorTitle}>{dict.testimonials[3].role}</p>
                 </div>
               </div>
             </div>
@@ -169,8 +174,8 @@ export default function BlessIsraelMockup() {
           <div className={styles.footerInner}>
             
             <div className={styles.footerLeft}>
-              <p>© {new Date().getFullYear()} Bless Israel Network. All rights reserved.</p>
-              <p className={styles.credit}>Digital Experience by <span className={styles.goldText}>EldarVisual</span></p>
+              <p>© {new Date().getFullYear()} Bless Israel Network. {dict.footer.rights}</p>
+              <p className={styles.credit}>{dict.footer.credit} <span className={styles.goldText}>EldarVisual</span></p>
             </div>
 
             <div className={styles.footerRight}>

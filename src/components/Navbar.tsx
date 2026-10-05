@@ -11,6 +11,9 @@ interface NavbarProps {
     process: string;
     portfolio: string;
     cta: string;
+    changeLanguage: string;
+    switchLanguage: string;
+    logoAlt: string;
   };
 }
 
@@ -65,7 +68,7 @@ const Navbar = ({ dict }: NavbarProps) => {
           
           <a href="#hero" className="navbar-logo" onClick={() => setIsOpen(false)}>
             <div className="logo-image-wrapper">
-               <Image src="/logob.webp" alt="EV Logo" width={32} height={32} className="logo-img" />
+               <Image src="/logob.webp" alt={dict.logoAlt} width={32} height={32} className="logo-img" />
             </div>
             <div className="logo-text">
               <span className="brand-name">EldarVisual</span>
@@ -83,7 +86,7 @@ const Navbar = ({ dict }: NavbarProps) => {
           <div className="navbar-actions">
             
             {/* כפתור השפה לדסקטופ */}
-            <a href={targetLang} className="lang-switch-btn hidden-mobile" title="Change Language">
+            <a href={targetLang} className="lang-switch-btn hidden-mobile" title={dict.changeLanguage}>
                <Globe size={18} />
                <span>{langLabel}</span>
             </a>
@@ -103,7 +106,7 @@ const Navbar = ({ dict }: NavbarProps) => {
           {/* כפתור השפה למובייל */}
           <a href={targetLang} className="lang-switch-btn-mobile" onClick={() => setIsOpen(false)}>
               <Globe size={20} />
-              <span>Switch to {isHe ? 'English' : 'Hebrew'}</span>
+              <span>{dict.switchLanguage}</span>
           </a>
 
           <a href="#services" className="mobile-link" onClick={() => setIsOpen(false)}>
