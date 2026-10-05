@@ -17,7 +17,6 @@
     "react-dom": "19.2.3"
   },
   "devDependencies": {
-    "@cloudflare/next-on-pages": "^1.13.16",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
@@ -25,10 +24,5 @@
     "eslint-config-next": "16.1.1",
     "typescript": "^5",
     "wrangler": "^4.113.0"
-  },
-  "overrides": {
-    "@cloudflare/next-on-pages": {
-      "next": "$next"
-    }
   }
 }
