@@ -22,6 +22,10 @@ export async function generateStaticParams() {
   ];
 }
 
+// Only the languages above exist; any other /[lang] value is a 404.
+// Keeps every route fully static (required by next-on-pages).
+export const dynamicParams = false;
+
 // 2. הגדרת טיפוסים נכונה (Types) במקום השימוש ב-any
 type LayoutProps = {
   children: React.ReactNode;
