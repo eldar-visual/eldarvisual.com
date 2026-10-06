@@ -142,13 +142,13 @@
         ]
       },
       {
-        "title": "Aviram Eldar",
-        "category": "Digital Platform",
-        "desc": "A professional digital presence combining premium development, server-side performance, and interactive animations.",
+        "title": "Victoria",
+        "category": "Aesthetic Clinic Website",
+        "desc": "A website for an aesthetic clinic in Rishon LeZion, featuring treatments and pricing, a photo gallery, and appointment booking via WhatsApp.",
         "tech": [
           "Next.js",
-          "CSS Modules",
-          "Performance Optimization"
+          "React",
+          "Tailwind CSS"
         ]
       },
       {
