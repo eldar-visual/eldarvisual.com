@@ -9,10 +9,10 @@ interface PortfolioProps {
 
 // המערך הבסיסי - מחזיק רק תמונות וקישורים קשיחים
 const baseProjects = [
-  { id: 4, image: "/jts-hero.webp", link: "https://johnnythescroll.com"},
-  { id: 5, image: "/victoria-preview.webp", link: "https://victoria-site.netlify.app/" },
-  { id: 2, image: "/JudithArtSite.webp", link: "https://judith-art.netlify.app" },
-  { id: 3, image: "/AdiShoham.webp", link: "https://adi-shoham.netlify.app/" },
+  { id: 4, image: "/jts-hero.webp", link: "https://johnnythescroll.com", isDemo: false},
+  { id: 5, image: "/victoria-preview.webp", link: "https://victoria-site.netlify.app/", isDemo: true },
+  { id: 2, image: "/JudithArtSite.webp", link: "https://judith-art.netlify.app", isDemo: true },
+  { id: 3, image: "/AdiShoham.webp", link: "https://adi-shoham.netlify.app/", isDemo: true },
 ];
 
 export default function Portfolio({ dict }: PortfolioProps) {
@@ -22,6 +22,7 @@ export default function Portfolio({ dict }: PortfolioProps) {
     const dictProject = dict?.projects?.[index];
     return {
       ...base,
+      isDemo: "isDemo" in base ? base.isDemo !== false : true,
       title: dictProject?.title || "Project Title",
       category: dictProject?.category || "Category",
       desc: dictProject?.desc || "Description",
@@ -36,7 +37,7 @@ export default function Portfolio({ dict }: PortfolioProps) {
         <header className="portfolio-header">
           <span className="sub-title">{dict?.subtitle || "Our Work"}</span>
           <h2 className="main-title">
-            {dict?.title || "Recent"} <span className="gradient-text">{dict?.gradient || "Projects."}</span>
+            {dict?.title || "Selected"} <span className="gradient-text">{dict?.gradient || "Work."}</span>
           </h2>
         </header>
 
@@ -55,7 +56,7 @@ export default function Portfolio({ dict }: PortfolioProps) {
                 />
                 <div className="card-overlay">
                   <a href={project.link} target="_blank" rel="noopener noreferrer" className="view-btn">
-                    {dict?.viewProject || "View Project"} <ArrowUpRight size={20} />
+                    {project.isDemo ? (dict?.viewDemo || "View Demo") : (dict?.visitSite || "Visit Site")} <ArrowUpRight size={20} />
                   </a>
                 </div>
               </div>
@@ -63,7 +64,12 @@ export default function Portfolio({ dict }: PortfolioProps) {
               <div className="project-details">
                 <div className="details-header">
                   <span className="category-label">{project.category}</span>
-                  <h3 className="project-name">{project.title}</h3>
+                  <div className="project-heading">
+                    <h3 className="project-name">{project.title}</h3>
+                    {project.isDemo && (
+                      <span className="project-demo-badge">{dict?.demoLabel || "Demo Website"}</span>
+                    )}
+                  </div>
                 </div>
                 
                 <p className="project-summary">{project.desc}</p>
@@ -75,7 +81,7 @@ export default function Portfolio({ dict }: PortfolioProps) {
                 </div>
 
                 <a href={project.link} target="_blank" rel="noopener noreferrer" className="mobile-link">
-                  {dict?.visitSite || "Visit Site"} <ExternalLink size={14} />
+                  {project.isDemo ? (dict?.viewDemo || "View Demo") : (dict?.visitSite || "Visit Site")} <ExternalLink size={14} />
                 </a>
               </div>
             </article>

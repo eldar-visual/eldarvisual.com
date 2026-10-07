@@ -124,8 +124,8 @@
   },
   "portfolio": {
     "subtitle": "העבודות שלנו",
-    "title": "פרויקטים",
-    "gradient": "אחרונים.",
+    "title": "עבודות",
+    "gradient": "נבחרות.",
     "viewProject": "צפייה בפרויקט",
     "visitSite": "ביקור באתר",
     "projects": [
@@ -170,7 +170,9 @@
           "CSS Modules"
         ]
       }
-    ]
+    ],
+    "demoLabel": "אתר דמו",
+    "viewDemo": "צפייה בדמו"
   },
   "contact": {
     "subtitle": "יצירת קשר",

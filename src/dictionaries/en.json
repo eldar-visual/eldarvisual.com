@@ -125,8 +125,8 @@
   },
   "portfolio": {
     "subtitle": "Our Work",
-    "title": "Recent",
-    "gradient": "Projects.",
+    "title": "Selected",
+    "gradient": "Work.",
     "viewProject": "View Project",
     "visitSite": "Visit Site",
     "projects": [
@@ -171,7 +171,9 @@
           "CSS Modules"
         ]
       }
-    ]
+    ],
+    "demoLabel": "Demo Website",
+    "viewDemo": "View Demo"
   },
   "contact": {
     "subtitle": "Get in Touch",

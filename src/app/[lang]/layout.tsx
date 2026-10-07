@@ -45,6 +45,7 @@ export async function generateMetadata({ params }: MetadataProps): Promise<Metad
   const ogImage = isHe ? "/og-image-he.png" : "/og-image.webp";
   
   return {
+    metadataBase: new URL('https://eldarvisual.com'),
     title: dict.metadata.title,
     description: dict.metadata.description,
     openGraph: {
