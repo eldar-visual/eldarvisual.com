@@ -11,6 +11,7 @@ interface PortfolioProps {
 const baseProjects = [
   { id: 4, image: "/jts-hero.webp", link: "https://johnnythescroll.com", isDemo: false},
   { id: 6, image: "/are-you-in-preview.png?v=62b75d43af16", link: "https://areyouin.netlify.app/", isDemo: true },
+  { id: 7, image: "/adama-ptucha-preview.jpg", link: "https://adama-ptucha.netlify.app/", isDemo: true },
   { id: 5, image: "/victoria-preview.webp", link: "https://victoria-site.netlify.app/", isDemo: true },
   { id: 2, image: "/JudithArtSite.webp", link: "https://judith-art.netlify.app", isDemo: true },
   { id: 3, image: "/AdiShoham.webp", link: "https://adi-shoham.netlify.app/", isDemo: true },

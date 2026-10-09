@@ -152,6 +152,17 @@
         ]
       },
       {
+        "title": "Open Ground",
+        "category": "Environmental Nonprofit Website",
+        "desc": "A bilingual demo website for an environmental nonprofit, featuring cleanup and tree-planting activities, volunteer registration, a donation interface, and an interactive visualization of its impact on the ground.",
+        "tech": [
+          "HTML",
+          "CSS",
+          "JavaScript",
+          "Netlify"
+        ]
+      },
+      {
         "title": "Victoria",
         "category": "Aesthetic Clinic Website",
         "desc": "A website for an aesthetic clinic in Rishon LeZion, featuring treatments and pricing, a photo gallery, and appointment booking via WhatsApp.",
