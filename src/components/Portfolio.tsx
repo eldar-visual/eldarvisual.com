@@ -10,6 +10,7 @@ interface PortfolioProps {
 // המערך הבסיסי - מחזיק רק תמונות וקישורים קשיחים
 const baseProjects = [
   { id: 4, image: "/jts-hero.webp", link: "https://johnnythescroll.com", isDemo: false},
+  { id: 6, image: "/are-you-in-preview.png?v=62b75d43af16", link: "https://areyouin.netlify.app/", isDemo: true },
   { id: 5, image: "/victoria-preview.webp", link: "https://victoria-site.netlify.app/", isDemo: true },
   { id: 2, image: "/JudithArtSite.webp", link: "https://judith-art.netlify.app", isDemo: true },
   { id: 3, image: "/AdiShoham.webp", link: "https://adi-shoham.netlify.app/", isDemo: true },
@@ -65,7 +66,7 @@ export default function Portfolio({ dict }: PortfolioProps) {
                 <div className="details-header">
                   <span className="category-label">{project.category}</span>
                   <div className="project-heading">
-                    <h3 className="project-name">{project.title}</h3>
+                    <h3 className="project-name" dir="auto">{project.title}</h3>
                     {project.isDemo && (
                       <span className="project-demo-badge">{dict?.demoLabel || "Demo Website"}</span>
                     )}

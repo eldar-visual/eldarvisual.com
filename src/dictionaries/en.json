@@ -142,6 +142,16 @@
         ]
       },
       {
+        "title": "Are You In?",
+        "category": "Youth Christian Community Website",
+        "desc": "A demo website for a young Christian community, bringing together teaching and worship videos, articles, faith stories, and an interactive journey through the Gospel.",
+        "tech": [
+          "Next.js",
+          "React",
+          "Netlify"
+        ]
+      },
+      {
         "title": "Victoria",
         "category": "Aesthetic Clinic Website",
         "desc": "A website for an aesthetic clinic in Rishon LeZion, featuring treatments and pricing, a photo gallery, and appointment booking via WhatsApp.",
