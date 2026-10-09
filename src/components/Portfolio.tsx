@@ -39,7 +39,7 @@ export default function Portfolio({ dict }: PortfolioProps) {
         <header className="portfolio-header">
           <span className="sub-title">{dict?.subtitle || "Our Work"}</span>
           <h2 className="main-title">
-            {dict?.title || "Selected"} <span className="gradient-text">{dict?.gradient || "Work."}</span>
+            {dict?.title || "Selected"} <span className="gradient-text">{dict?.gradient || "Work"}</span>
           </h2>
         </header>
 
