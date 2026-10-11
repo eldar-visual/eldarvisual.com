@@ -465,6 +465,10 @@
 :global(html[dir="rtl"]) .heroTitle { text-align: right; }
 @media (min-width: 768px) {
   :global(html[dir="rtl"]) .heroSubtitle { text-align: right; }
+
+  :global(html[dir="rtl"]) .browserMockup {
+    translate: calc(max(0.5rem, 4vw + 0.25rem - max(0px, (100vw - 83rem) / 2)) + 1.25rem) 0;
+  }
 }
 
 /* הפיכת החצים */
