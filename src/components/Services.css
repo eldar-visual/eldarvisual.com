@@ -1,8 +1,13 @@
 /* === Services.css - גרסה מדויקת וסופית (Pixel Perfect) === */
 
 #services {
+  --section-light-y: 0%;
+  --service-card-background: linear-gradient(145deg, rgba(41, 58, 92, 0.96), rgba(24, 35, 59, 0.96));
+  --service-card-active-background: linear-gradient(145deg, rgba(47, 69, 120, 0.98), rgba(49, 41, 88, 0.98));
+  --service-card-shadow: 0 16px 38px rgba(2, 6, 23, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  --service-card-active-shadow: 0 0 28px rgba(59, 130, 246, 0.22), 0 18px 40px rgba(2, 6, 23, 0.35);
   position: relative;
-  background-color: #020617; /* רקע שחור עמוק כמו בדוגמה */
+  background: var(--site-corner-background);
   padding: 7rem 0;
   overflow: hidden;
 }
@@ -34,13 +39,21 @@
 /* תמונת רקע - צד ימין */
 .services-bg-pattern img {
   position: absolute;
-  right: -0.5%;
-  top: 55%;
+  right: -5%;
+  top: 50%;
   transform: translateY(-50%);
-  width: 55%;
-  opacity: 0.12;
+  width: 65%;
+  opacity: 0.42;
   mix-blend-mode: lighten;
-  -webkit-mask-image: linear-gradient(to left, black 20%, transparent 90%);
+  -webkit-mask-image:
+    linear-gradient(to left, black 25%, transparent 95%),
+    linear-gradient(to bottom, transparent, black 15%, black 80%, transparent);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(to left, black 25%, transparent 95%),
+    linear-gradient(to bottom, transparent, black 15%, black 80%, transparent);
+  mask-composite: intersect;
+  pointer-events: none;
 }
 
 .services-header {
@@ -75,7 +88,8 @@
 
 /* === כרטיסייה - עם מסגרת זוהרת כחולה === */
 .service-card {
-  background: rgba(15, 23, 42, 0.6);
+  background: var(--service-card-background);
+  box-shadow: var(--service-card-shadow);
   backdrop-filter: blur(10px);
   border-radius: 1rem;
   padding: 2.25rem;
@@ -102,9 +116,9 @@
   padding: 1px;
   background: linear-gradient(
     135deg,
-    rgba(59, 130, 246, 0.15) 0%,
-    rgba(139, 92, 246, 0.08) 50%,
-    rgba(59, 130, 246, 0.15) 100%
+    rgba(96, 165, 250, 0.65) 0%,
+    rgba(167, 139, 250, 0.4) 50%,
+    rgba(96, 165, 250, 0.5) 100%
   );
   -webkit-mask: 
     linear-gradient(#fff 0 0) content-box, 
@@ -115,21 +129,19 @@
     linear-gradient(#fff 0 0);
   mask-composite: exclude;
   pointer-events: none;
-  opacity: 0.4;
+  opacity: 1;
   transition: all 0.5s ease;
 }
 
 .service-card:hover {
-  background: rgba(23, 37, 84, 0.5);
+  background: var(--service-card-active-background);
   transform: translateY(-7px) scale(1.01);
   transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
               box-shadow 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
               background 0.3s ease;
   
   /* זוהר כחול חזק */
-  box-shadow: 
-   0 0 15px rgba(59, 130, 246, 0.15), /* הורדנו אטימות ומרחק */
-  0 10px 30px rgba(0, 0, 0, 0.5);    /* דגש על צל שחור לקונטרסט */
+  box-shadow: var(--service-card-active-shadow);
 }
 
 /* הגברת הזוהר של המסגרת ב-hover */
@@ -137,9 +149,9 @@
   opacity: 1;
   background: linear-gradient(
     135deg,
-    rgba(59, 130, 246, 0.5) 0%,
-    rgba(139, 92, 246, 0.3) 50%,
-    rgba(59, 130, 246, 0.5) 100%
+    rgba(96, 165, 250, 0.9) 0%,
+    rgba(167, 139, 250, 0.75) 50%,
+    rgba(96, 165, 250, 0.9) 100%
   );
 }
 
@@ -151,8 +163,8 @@
   align-items: center;
   justify-content: center;
   border-radius: 0.65rem;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(96, 165, 250, 0.1);
+  border: 1px solid rgba(147, 197, 253, 0.25);
   color: #60a5fa;
   margin-bottom: 1.5rem;
   transition: all 0.4s ease;
@@ -175,7 +187,7 @@
 
 .service-card-desc {
   font-size: 0.88rem;
-  color: #94a3b8;
+  color: #c3cfe2;
   line-height: 1.5;
 }
 
@@ -275,9 +287,9 @@
 
 @media (max-width: 768px) {
     .services-title {
-        font-size: 2.5rem; /* מתאים את עצמו דינמית לרוחב המסך */
-        line-height: 1.1;
-        white-space: nowrap; /* מונע מהטקסט לרדת שורה */
+        font-size: clamp(1.9rem, 7vw, 2.5rem);
+        line-height: 1.2;
+        white-space: normal;
         letter-spacing: -0.05em;
         margin-bottom: 2rem;
     }
@@ -288,14 +300,14 @@
 /* 1. אפקטים למחשב בלבד (Hover) */
 @media (hover: hover) {
   .service-card:hover {
-    background: rgba(23, 37, 84, 0.5);
+    background: var(--service-card-active-background);
     transform: translateY(-7px) scale(1.01);
-    box-shadow: 0 0 15px rgba(59, 130, 246, 0.15), 0 10px 30px rgba(0, 0, 0, 0.5);
+    box-shadow: var(--service-card-active-shadow);
   }
 
   .service-card:hover::before {
     opacity: 1;
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.5), rgba(139, 92, 246, 0.3));
+    background: linear-gradient(135deg, rgba(96, 165, 250, 0.9), rgba(167, 139, 250, 0.75));
   }
 
   .service-card:hover .service-card-title,
@@ -312,6 +324,21 @@
 }
 
 /* 2. הגדרות מובייל (Click Based) */@media screen and (max-width: 768px) {
+  #services {
+    padding: 5.5rem 0;
+  }
+
+  .services-header {
+    margin-bottom: 3rem;
+  }
+
+  .services-bg-pattern img {
+    width: 150%;
+    right: -45%;
+    top: 4rem;
+    transform: none;
+  }
+
   /* הסרת padding מהקונטיינר למרכוז נכון */
   .services-container {
     padding: 0 1rem;
@@ -331,8 +358,10 @@
   /* כרטיסייה - חזרה לעיצוב המקורי עם תיקון מרכוז */
   #services .service-card {
     width: 100%;
-    max-width: 305px; /* הקטנה לגודל נוח יותר */
-    height: 195px; /* הגובה המקורי מהקובץ שלך */
+    max-width: 420px;
+    box-sizing: border-box;
+    height: auto;
+    min-height: 320px;
     margin: 0 auto;
     position: relative;
     /* ביטול כל תנועה אלכסונית */
@@ -342,20 +371,20 @@
 
   /* איפוס הזוהר במצב רגיל (לא פעיל) */
   #services .service-card:not(.active-mobile)::before {
-    opacity: 0.4;
+    opacity: 1;
     background: linear-gradient(
       135deg,
-      rgba(59, 130, 246, 0.15) 0%,
-      rgba(139, 92, 246, 0.08) 50%,
-      rgba(59, 130, 246, 0.15) 100%
+      rgba(96, 165, 250, 0.65) 0%,
+      rgba(167, 139, 250, 0.4) 50%,
+      rgba(96, 165, 250, 0.5) 100%
     );
   }
 
   /* ביטול מוחלט של כל אפקטי Hover במובייל */
   #services .service-card:hover {
-    background: rgba(15, 23, 42, 0.6) !important;
+    background: var(--service-card-background) !important;
     transform: none !important;
-    box-shadow: none !important;
+    box-shadow: var(--service-card-shadow) !important;
   }
 
   #services .service-card:hover .service-card-title,
@@ -365,25 +394,25 @@
   }
 
   #services .service-card:hover .service-icon-box {
-    background: rgba(255, 255, 255, 0.03) !important;
+    background: rgba(96, 165, 250, 0.1) !important;
     color: #60a5fa !important;
-    border-color: rgba(255, 255, 255, 0.08) !important;
+    border-color: rgba(147, 197, 253, 0.25) !important;
     box-shadow: none !important;
     transform: none !important;
   }
 
   /* איפוס מלא למצב התחלתי כשלא פעיל */
   #services .service-card:not(.active-mobile) {
-    background: rgba(15, 23, 42, 0.6) !important;
+    background: var(--service-card-background) !important;
     border-color: transparent !important;
-    box-shadow: none !important;
+    box-shadow: var(--service-card-shadow) !important;
   }
 
   /* המצב הרצוי בלחיצה (צילום 3) */
   #services .service-card.active-mobile {
-    background: rgba(23, 37, 84, 0.5) !important;
+    background: var(--service-card-active-background) !important;
     border-color: rgba(59, 130, 246, 0.5) !important;
-    box-shadow: 0 0 15px rgba(59, 130, 246, 0.15), 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+    box-shadow: var(--service-card-active-shadow) !important;
   }
 
   /* הגברת זוהר המסגרת במצב פעיל */
@@ -391,9 +420,9 @@
     opacity: 1;
     background: linear-gradient(
       135deg,
-      rgba(59, 130, 246, 0.5) 0%,
-      rgba(139, 92, 246, 0.3) 50%,
-      rgba(59, 130, 246, 0.5) 100%
+      rgba(96, 165, 250, 0.9) 0%,
+      rgba(167, 139, 250, 0.75) 50%,
+      rgba(96, 165, 250, 0.9) 100%
     );
   }
 

@@ -2,8 +2,7 @@
 
 .site-footer {
     width: 100%;
-    background-color: #020617; /* אותו רקע כהה של האתר */
-    border-top: 1px solid rgba(255, 255, 255, 0.05); /* קו הפרדה עדין */
+    background-color: #020617;
     padding: 2rem 0;
     font-family: sans-serif;
     position: relative;

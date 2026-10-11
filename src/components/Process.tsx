@@ -22,7 +22,7 @@ export default function Process({ dict }: ProcessProps) {
         <div className="process-header">
           <span className="sub-title">{dict?.subtitle || "The Workflow"}</span>
           <h2 className="main-title">
-            {dict?.title || "From Architecture to"} <span className="gradient-text">{dict?.gradient || "Deployment."}</span>
+            {dict?.title || "From Architecture to"} <span className="gradient-text">{dict?.gradient || "Deployment"}</span>
           </h2>
         </div>
 

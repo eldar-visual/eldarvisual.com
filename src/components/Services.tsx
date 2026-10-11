@@ -63,7 +63,7 @@ export default function Services({ dict }: { dict?: any }) {
         <div className="services-header">
           <span className="services-subtitle">{dict?.subtitle || "What We Do"}</span>
           <h2 className="services-title">
-            {dict?.title || "Architecture Built For"} <span className="services-title-gradient">{dict?.gradient || "Stability & Growth."}</span>
+            {dict?.title || "Architecture Built For"} <span className="services-title-gradient">{dict?.gradient || "Stability & Growth"}</span>
           </h2>
         </div>
 

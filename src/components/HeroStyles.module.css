@@ -50,6 +50,8 @@
 
 /* Section Container */
 .heroSection {
+    --section-light-y: 100%;
+    background: var(--site-corner-background);
     position: relative;
     width: 100%;
     min-height: 100vh !important;
@@ -68,7 +70,7 @@
 
 /* Background Gradients */
 .heroBgBlobs {
-  position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: -10;
+  display: none;
 }
 .blobBlue {
   position: absolute; top: -20%; right: -10%; width: 600px; height: 600px;

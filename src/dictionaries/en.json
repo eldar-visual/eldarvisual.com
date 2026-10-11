@@ -18,7 +18,7 @@
  
  "hero": {
     "title": "Product Definition, Design & Development",
-    "gradient": "for Custom Websites and Apps.",
+    "gradient": "for Custom Websites and Apps",
   "subtitle": "Eldar Visual works with businesses, organizations, and nonprofits from product definition and user experience, through UX/UI design, to the development of websites, Web applications, and mobile apps.",
     "cta": "Get a Performance & UX Audit",
     "viewProjects": "View Projects",
@@ -40,7 +40,7 @@
   "services": {
     "subtitle": "What We Do",
     "title": "Architecture Built For",
-    "gradient": "Stability & Growth.",
+    "gradient": "Stability & Growth",
     "included": "What's Included:",
     "cta": "Get a Performance & UX Audit",
     "items": [
@@ -109,7 +109,7 @@
   "process": {
     "subtitle": "Workflow",
     "title": "From Architecture to",
-    "gradient": "Deployment.",
+    "gradient": "Deployment",
     "step1_num": "1",
     "step1_title": "Audit & Strategy",
     "step1_desc": "Comprehensive performance and UX audit. We map out bottlenecks, analyze the market, and deliver a clear development roadmap.",
@@ -196,10 +196,19 @@
     "demoLabel": "Demo Website",
     "viewDemo": "View Demo"
   },
+  "testimonial": {
+    "subtitle": "In the client’s own words",
+    "title": "Client",
+    "gradient": "Recommendation",
+    "quote": "Through personal relation and communication, he shared my vision as a Tour Guide in Israel… This website is a recommendation in itself for his work.",
+    "name": "Johan (Johnny)",
+    "role": "Tour Guide in Israel",
+    "readFull": "Read the full recommendation"
+  },
   "contact": {
     "subtitle": "Get in Touch",
-    "title": "Define. Develop.",
-    "gradient": "Launch.",
+    "title": "Define. Develop",
+    "gradient": "Launch",
     "desc1": "From software architecture to development, launch, and monitoring. We build stable digital infrastructures that allow your business to grow seamlessly.",
     "desc2": "We are currently available for select projects. Leave your details to discuss the right architecture for your product.",
     "copied": "Copied!",
@@ -222,7 +231,7 @@
       "goalPlaceholder": "Improving load times, app development, increasing conversions...",
       "submitBtn": "Get a Performance & UX Audit",
       "submitting": "Processing...",
-      "successTitle": "Request Received.",
+      "successTitle": "Request Received",
       "successDesc": "Thank you. We will review your details and get back to you shortly to coordinate."
     },
     "modal": {

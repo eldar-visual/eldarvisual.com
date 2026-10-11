@@ -1,4 +1,17 @@
 /* === הגדרות בסיס ורקע האתר === */
+:root {
+  --site-base-background: linear-gradient(90deg, #0c1225, #070b17);
+  --site-light-blue: 37, 99, 235;
+  --site-light-purple: 124, 58, 237;
+}
+
+#hero, #services, .process-section, .portfolio-section {
+  --site-corner-background:
+    radial-gradient(ellipse min(900px, 110vw) 620px at 0% var(--section-light-y, 0%), rgba(var(--site-light-blue), 0.34), transparent 75%),
+    radial-gradient(ellipse min(680px, 90vw) 440px at 0% var(--section-light-y, 0%), rgba(var(--site-light-purple), 0.3), transparent 72%),
+    var(--site-base-background);
+}
+
 html {
   scroll-behavior: smooth;
   overflow-x: hidden; /* תוספת לאטימה */
@@ -8,7 +21,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background-color: #020617; /* הנה הרקע הכהה שחזר אלינו! */
+  background: var(--site-base-background);
   color: #ffffff;
   font-family: sans-serif;
   overflow-x: hidden;
@@ -34,21 +47,17 @@ body::before {
   inset: 0;
   z-index: 9999;
   pointer-events: none;
-  border: 1px solid rgba(59, 130, 246, 0.15);
-  box-shadow: inset 0 0 120px rgba(59, 130, 246, 0.1); 
+  background:
+    linear-gradient(to right, rgba(59, 130, 246, 0.28), rgba(59, 130, 246, 0.13) 20%, rgba(59, 130, 246, 0.04) 55%, transparent) left center / 100px 100% no-repeat,
+    linear-gradient(to left, rgba(99, 102, 241, 0.25), rgba(99, 102, 241, 0.12) 20%, rgba(99, 102, 241, 0.03) 55%, transparent) right center / 100px 100% no-repeat,
+    linear-gradient(to bottom, rgba(59, 130, 246, 0.2), rgba(59, 130, 246, 0.06) 35%, transparent) center top / 100% 80px no-repeat,
+    linear-gradient(to top, rgba(99, 102, 241, 0.2), rgba(59, 130, 246, 0.06) 35%, transparent) center bottom / 100% 80px no-repeat;
 }
 
-body::after {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0; 
-  right: 0;
-  height: 2px; 
-  z-index: 100000;
-  pointer-events: none;
-  background: linear-gradient(90deg, transparent 0%, rgba(59, 130, 246, 0) 10%, #3b82f6 30%, #a855f7 50%, #3b82f6 70%, rgba(59, 130, 246, 0) 90%, transparent 100%);
-  box-shadow: 0 0 40px 5px rgba(168, 85, 247, 0.4);
+@media (max-width: 768px) {
+  body::before {
+    background-size: 46px 100%, 46px 100%, 100% 40px, 100% 40px;
+  }
 }
 
 /* ========================================= */

@@ -1,5 +1,8 @@
 .process-section {
-  background-color: #020617;
+  --section-light-y: 100%;
+  --process-card-background: linear-gradient(145deg, rgba(29, 43, 69, 0.94), rgba(21, 31, 51, 0.96));
+  --process-card-border: rgba(147, 197, 253, 0.25);
+  background: var(--site-corner-background);
   padding: 8rem 0;
   color: white;
   overflow: hidden;
@@ -27,14 +30,14 @@ html[dir="rtl"] .content-side { text-align: right; }
 
 /* === Base Card - גובה קבוע וסימטרי לכולם === */
 .card-base {
-  background: rgba(15, 23, 42, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--process-card-background);
+  border: 1px solid var(--process-card-border);
   border-radius: 1.5rem;
   height: 250px; /* זה מה שמבטיח שכולם שווים בגודל! */
   position: relative;
   display: flex; align-items: center; justify-content: center;
   backdrop-filter: blur(10px);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.05);
   transition: all 0.5s ease;
 }
 
@@ -48,26 +51,26 @@ html[dir="rtl"] .content-side { text-align: right; }
 /* === 1. Discovery === */
 .graph-bars { display: flex; align-items: flex-end; gap: 1rem; height: 120px; width: 60%; }
 .bar { flex: 1; border-radius: 0.4rem 0.4rem 0 0; transition: height 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
-.bar-1 { background: #1e293b; height: 40%; }
-.bar-2 { background: #334155; height: 60%; }
-.bar-3 { background: #1e293b; height: 30%; }
+.bar-1 { background: #3b4d6b; height: 40%; }
+.bar-2 { background: #526887; height: 60%; }
+.bar-3 { background: #3b4d6b; height: 30%; }
 .bar-blue-active { background: #3b82f6; height: 75%; transition: height 0.8s ease, box-shadow 0.4s ease; }
 
 .step-row:hover .bar-1, .step-row.active .bar-1 { height: 65%; }
-.step-row:hover .bar-2, .step-row.active .bar-2 { height: 90%; background: #475569; }
+.step-row:hover .bar-2, .step-row.active .bar-2 { height: 90%; background: #647b9a; }
 .step-row:hover .bar-3, .step-row.active .bar-3 { height: 50%; }
 .step-row:hover .bar-blue-active, .step-row.active .bar-blue-active { height: 100%; box-shadow: 0 0 20px rgba(37,99,235,0.6); }
 
 /* === 2. UI/UX === */
 .card-purple { padding: 0; background: transparent; border: none; }
-.card-purple-inner { position: absolute; inset: 0; border-radius: 1.5rem; overflow: hidden; background: rgba(15, 23, 42, 0.4); border: 1px solid rgba(255, 255, 255, 0.08); }
+.card-purple-inner { position: absolute; inset: 0; border-radius: 1.5rem; overflow: hidden; background: var(--process-card-background); border: 1px solid var(--process-card-border); }
 .card-purple-bg { position: absolute; inset: 0; background: #9333ea; opacity: 0.2; filter: blur(40px); transition: opacity 0.5s; }
 .step-row:hover .card-purple-bg, .step-row.active .card-purple-bg { opacity: 0.4; }
-.card-purple-front { background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 1rem; padding: 1rem; width: 70%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-3deg); transition: transform 0.5s ease; z-index: 2;}
+.card-purple-front { background: rgba(36, 50, 79, 0.96); border: 1px solid rgba(147, 197, 253, 0.25); border-radius: 1rem; padding: 1rem; width: 70%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-3deg); transition: transform 0.5s ease; z-index: 2;}
 .step-row:hover .card-purple-front, .step-row.active .card-purple-front { transform: translate(-50%, -50%) rotate(0deg) scale(1.05); }
-.skeleton-title { height: 12px; background: #334155; border-radius: 4px; margin-bottom: 1rem; width: 60%; }
+.skeleton-title { height: 12px; background: #526887; border-radius: 4px; margin-bottom: 1rem; width: 60%; }
 .skeleton-box-container { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; }
-.skeleton-box { height: 4rem; background: #1e293b; border-radius: 0.5rem; }
+.skeleton-box { height: 4rem; background: #344865; border-radius: 0.5rem; }
 
 /* === 3. Development === */
 .terminal-wrapper { width: 80%; display: flex; flex-direction: column; align-items: flex-start; z-index: 2; }
@@ -75,7 +78,7 @@ html[dir="rtl"] .content-side { text-align: right; }
 .dot { width: 12px; height: 12px; border-radius: 50%; }
 .dot-red { background: #ef4444; } .dot-yellow { background: #eab308; } .dot-green { background: #22c55e; }
 .terminal-text { font-family: monospace; line-height: 1.8; width: 100%; text-align: left;}
-.code-line-1 { color: #64748b; margin: 0; }
+.code-line-1 { color: #9badc8; margin: 0; }
 .code-line-2 { color: #4ade80; margin: 0; opacity: 0; transform: translateY(5px); transition: all 0.4s ease; }
 .code-line-3 { color: white; margin: 0; opacity: 0; transform: translateY(5px); transition: all 0.4s ease; }
 .step-row:hover .code-line-2, .step-row.active .code-line-2 { opacity: 1; transform: translateY(0); transition-delay: 0.1s; }
@@ -130,7 +133,7 @@ html[dir="rtl"] .content-side { text-align: right; }
 
 /* === Floating Icons (עם אפקט זוהר מטורף במעבר עכבר!) === */
 .floating-icon {
-  position: absolute; width: 44px; height: 44px; background: #0f172a; border-radius: 12px;
+  position: absolute; width: 44px; height: 44px; background: #1c2a43; border-radius: 12px;
   display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 20px rgba(0,0,0,0.4);
   transition: all 0.4s ease; z-index: 10;
 }

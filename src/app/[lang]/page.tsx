@@ -3,6 +3,7 @@ import Hero from '../../components/Hero';
 import Services from '../../components/Services';
 import Process from '../../components/Process';
 import Portfolio from '../../components/Portfolio';
+import Testimonial from '../../components/Testimonial';
 import Contact from '../../components/Contact';
 import Footer from '@/components/Footer';
 
@@ -32,6 +33,7 @@ export default async function HomePage({ params }: any) {
       <Services dict={dict.services} />
       <Process dict={dict.process} />
       <Portfolio dict={dict.portfolio} />
+      <Testimonial dict={dict.testimonial} />
       <Contact dict={dict.contact} />
       <Footer dict={dict.footer} />
       

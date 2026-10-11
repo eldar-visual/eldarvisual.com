@@ -26,7 +26,7 @@
     "problem": {
       "label": "The Main Challenge",
       "title": "You Pay for Clicks, but",
-      "highlight": "Your Website Is Losing Patients.",
+      "highlight": "Your Website Is Losing Patients",
       "description": "Generic design and slow load times make premium patients choose competitors, even when your clinic is more professional.",
       "points": [
         {
@@ -48,7 +48,7 @@
     "solution": {
       "label": "The EldarVisual Solution",
       "title": "Web Architecture Built",
-      "highlight": "to Fill Your Calendar.",
+      "highlight": "to Fill Your Calendar",
       "subtitle": "We do not use ready-made templates. Every clinic gets precise requirements, pixel-perfect design, and clean code built with modern technology (Next.js).",
       "cards": [
         {
@@ -106,7 +106,7 @@
       "imageAlt": "A crowd praising God",
       "tag": "High-Performance Websites for Ministries",
       "title": "Help More People",
-      "gradient": "Connect with Your Mission.",
+      "gradient": "Connect with Your Mission",
       "subtitle": "We design and build modern, fast ministry websites that help supporters understand your work, trust your organization, and contribute easily from any device.",
       "cta": "Request Your Website Audit"
     },
@@ -128,7 +128,7 @@
       ]
     },
     "solution": {
-      "title": "Built for Trust. Engineered for Performance.",
+      "title": "Built for Trust. Engineered for Performance",
       "cards": [
         {
           "title": "Fast Global Delivery",
@@ -145,7 +145,7 @@
       ]
     },
     "audit": {
-      "title": "A Website Should Support Your Ministry, Not Hold It Back.",
+      "title": "A Website Should Support Your Ministry, Not Hold It Back",
       "description": "Share your website, and we’ll send you a personalized audit report by email highlighting opportunities to improve clarity, trust, performance, accessibility, and the overall supporter experience.",
       "namePlaceholder": "Your Name",
       "emailPlaceholder": "Ministry Email",
@@ -184,8 +184,8 @@
     },
     "hero": {
       "badge": "Official Operation Update",
-      "title": "Pray for Our Troops.",
-      "highlight": "Stand With Our Allies.",
+      "title": "Pray for Our Troops",
+      "highlight": "Stand With Our Allies",
       "description": "As the largest pro-Israel organization in the U.S., we empower millions to speak and act with one voice. Join us in defending Israel and the Jewish people.",
       "primaryCta": "Become a Member",
       "secondaryCta": "Watch Latest Updates"

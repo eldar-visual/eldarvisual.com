@@ -1,7 +1,8 @@
 /* === Portfolio.css === */
 
 .portfolio-section {
-  background-color: #030712;
+  --section-light-y: 0%;
+  background: var(--site-corner-background);
   width: 100%;
   min-height: 100vh;
   padding: 7rem 0 5rem;
