@@ -34,8 +34,8 @@ const Contact = ({ dict }: ContactProps) => {
           
           <div className="info-side">
             <span className="section-label">{dict?.subtitle || "Let's Talk"}</span>
-            <h2 className="contact-headline">{dict?.title || "Architect. Develop"}</h2>
-            <h2 className="contact-headline highlight-purple">{dict?.gradient || "Launch"}</h2>
+            <h2 className="contact-headline">{dict?.title || "Define · Design"}</h2>
+            <h2 className="contact-headline highlight-purple">{dict?.gradient || "Develop · Launch"}</h2>
   
             <p className="contact-desc">{dict?.desc1 || "From software architecture to development, launch, and monitoring. We build stable digital infrastructures that allow your business to grow seamlessly."}</p>
             <p className="contact-desc">{dict?.desc2 || "We are currently available for select projects. Leave your details to discuss the right architecture for your product."}</p>
