@@ -4,10 +4,8 @@
   --section-light-y: 0%;
   background: var(--site-corner-background);
   width: 100%;
-  min-height: 100vh;
-  padding: 7rem 0 5rem;
+  padding: 5rem 0;
   position: relative;
-  padding-bottom: 2rem;
 }
 
 .portfolio-container {
@@ -22,7 +20,7 @@
 }
 
 .sub-title {
-  color: #6366f1;
+  color: #a5b4fc;
   font-size: 0.85rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -163,8 +161,8 @@
 }
 
 .project-summary {
-  color: #94a3b8;
-  font-size: 0.95rem;
+  color: #cbd5e1;
+  font-size: 1.05rem;
   line-height: 1.6;
   margin: 0 0 1.2rem;
   flex-grow: 1;
@@ -243,4 +241,38 @@
   font-weight: 700;
   line-height: 1.4;
   white-space: nowrap;
+}
+
+.portfolio-section .sub-title { color: #a5b4fc; }
+.portfolio-section .image-wrapper { height: 220px; }
+.portfolio-section .project-img { object-fit: cover; object-position: top; }
+.portfolio-section .project-name { font-size: 1.4rem; margin-bottom: 0.75rem; }
+.project-link { display: inline-flex; align-items: center; flex-wrap: wrap; gap: 0.5rem; color: #bfdbfe; font-weight: 700; min-height: 44px; text-underline-offset: 0.25em; margin-top: auto; }
+.project-link-name { font-weight: 400; font-size: 0.9rem; }
+.project-tech { color: #cbd5e1; font-size: 0.9rem; margin-top: 1rem; }
+.project-tech summary { cursor: pointer; min-height: 28px; }
+.project-tech .tech-pills { margin-top: 0.65rem; }
+.featured-project { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); }
+.portfolio-section .featured-project .image-wrapper { height: auto; min-height: 420px; }
+.featured-project .project-details { padding: 2rem; min-width: 0; }
+.featured-project .project-name { font-size: clamp(1.8rem, 3vw, 2.5rem); margin-top: 0.75rem; }
+.project-client-badge { width: fit-content; color: #bbf7d0; border: 1px solid #408165; background: #14392e; padding: 0.3rem 0.75rem; border-radius: 999px; font-size: 0.9rem; font-weight: 700; margin-bottom: 1rem; }
+.project-case { margin: 0 0 1rem; }
+.project-case dt { color: #e0e7ff; font-weight: 700; margin-bottom: 0.4rem; }
+.project-case dd { color: #cbd5e1; margin: 0 0 1rem; font-size: 1.05rem; line-height: 1.7; }
+.portfolio-demo-header { margin: 0 0 2rem; }
+.portfolio-demo-header h3 { font-size: 1.8rem; margin: 0 0 0.75rem; }
+.portfolio-demo-header p { color: #cbd5e1; max-width: 750px; font-size: 1.05rem; line-height: 1.7; margin: 0; }
+.portfolio-section .testimonial-section { padding: 3rem 0; background: transparent; }
+.portfolio-section .testimonial-container { max-width: none; padding: 0; }
+.portfolio-section .testimonial-header { margin-bottom: 1.5rem; }
+.portfolio-section .testimonial-title { font-size: clamp(1.8rem, 3.5vw, 2.6rem); }
+@media (max-width: 900px) {
+  .featured-project { grid-template-columns: minmax(0, 1fr); }
+  .portfolio-section .featured-project .image-wrapper { min-height: 0; height: 280px; }
+}
+@media (max-width: 767px) {
+  .featured-project .project-details { padding: 1.5rem; }
+  .portfolio-container { padding: 0 1.25rem; }
+  .portfolio-section .featured-project .image-wrapper { height: 220px; }
 }

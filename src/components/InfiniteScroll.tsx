@@ -1,22 +1,11 @@
-'use client';
-
 import React from 'react';
 import Image from 'next/image';
+import { Settings } from 'lucide-react';
+import type enDict from '@/dictionaries/en.json';
 import styles from './HeroStyles.module.css'; 
 
 // הוספנו כאן את הקבלה של ה-dict כדי שה-TS יפסיק לצעוק!
-const InfiniteScroll = ({ dict }: { dict?: any }) => {
-    const scrollToProcess = (e: React.MouseEvent) => {
-        e.preventDefault();
-        
-        if (typeof window !== 'undefined') {
-            const element = document.getElementById('process');
-            if (element) {
-                element.scrollIntoView({ behavior: 'smooth' });
-            }
-        }
-    };
-
+const InfiniteScroll = ({ dict }: { dict?: Partial<typeof enDict.hero> }) => {
     return (
         <>
             {/* ITEM 1: Engineering */}
@@ -53,7 +42,7 @@ const InfiniteScroll = ({ dict }: { dict?: any }) => {
                     </div>
                     <div className={styles.textWrapper}>
                         <h3 className={styles.itemTitle}>{dict?.mockup?.uxTitle || "User Experience & Interface Design"}</h3>
-                        <button onClick={scrollToProcess} className={styles.miniBtn}>{dict?.mockup?.uxBtn || "See Design Process"}</button>
+                        <span className={styles.miniBtn}>{dict?.mockup?.uxBtn || "Planning & Design"}</span>
                     </div>
                 </div>
             </div>
@@ -70,7 +59,7 @@ const InfiniteScroll = ({ dict }: { dict?: any }) => {
                     <div className={`${styles.gridImgWrap} ${styles.darkenHover}`}>
                         <Image src="/webmaster2.webp" alt={dict?.mockup?.webmasterSecondaryAlt || "Website infrastructure maintenance"} fill className={styles.imgCover} />
                     </div>
-                    <div className={styles.plusMore}>+4</div>
+                    <div className={styles.plusMore}><Settings size={22} /><span>{dict?.mockup?.maintenanceLabel || "Updates & Maintenance"}</span></div>
                 </div>
             </div>
 

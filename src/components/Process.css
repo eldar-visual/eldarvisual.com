@@ -173,3 +173,37 @@ html[dir="rtl"] .content-side { text-align: right; }
   .visual-side, .content-side { max-width: 100%; flex: 0 0 100%; width: 100%; }
   .step-header { justify-content: center; }
 }
+
+.process-section { padding: 5rem 0; }
+.process-header { margin-bottom: 3rem; }
+.process-section .sub-title { color: #93c5fd; }
+.steps-wrapper { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.5rem; }
+.process-section .step-row, .process-section .step-row.reverse { flex-direction: column; gap: 1.5rem; cursor: default; align-items: stretch; }
+.process-section .visual-side, .process-section .content-side { flex: none; max-width: 100%; width: 100%; text-align: start; }
+.process-section .card-base { height: 145px; border-radius: 1rem; }
+.process-section .card-purple-inner { border-radius: 1rem; }
+.process-section .graph-bars { height: 80px; gap: 0.6rem; }
+.process-section .card-purple-front { padding: 0.6rem; }
+.process-section .skeleton-box { height: 2rem; }
+.process-section .skeleton-title { margin-bottom: 0.5rem; }
+.process-section .terminal-text { font-size: 0.75rem; }
+.process-section .terminal-dots { margin-bottom: 0.5rem; }
+.process-section .rocket-mask, .process-section .dashed-circle { width: 100px; height: 100px; }
+.process-section .step-header { gap: 0.6rem; justify-content: flex-start; align-items: baseline; }
+.process-section .step-num { opacity: 1; font-size: 1.8rem; }
+.process-section .icon-wrap { gap: 0.5rem; }
+.process-section .icon-wrap > svg { display: none; }
+.process-section .step-title { font-size: 1.25rem; line-height: 1.4; }
+.process-section .step-desc { color: #cbd5e1; font-size: 1.05rem; line-height: 1.7; margin: 0; }
+.process-section .text-blue { color: #93c5fd; }
+.process-section .text-purple { color: #c4b5fd; }
+.process-section .text-green { color: #86efac; }
+.process-section .text-yellow { color: #fde68a; }
+@media (max-width: 1024px) { .steps-wrapper { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.5rem 1.5rem; } }
+@media (max-width: 600px) {
+  .process-section { padding: 4rem 0; }
+  .process-container { padding: 0 1.25rem; }
+  .steps-wrapper { grid-template-columns: minmax(0, 1fr); gap: 1.25rem; }
+  .process-section .visual-side { display: none; }
+  .process-section .step-row { padding: 1.25rem; border: 1px solid rgba(147, 197, 253, 0.25); border-radius: 1rem; background: var(--process-card-background); }
+}

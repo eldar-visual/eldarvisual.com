@@ -1,142 +1,246 @@
-"use client"; 
-import React, { useState } from 'react'; 
+'use client';
+
+import { useEffect, useRef, useState, type FormEvent } from 'react';
+import { Mail, Phone, Send, CheckCircle, Copy } from 'lucide-react';
+import { useSubmit } from '@formspree/react';
+import { usePathname } from 'next/navigation';
+import { trackContactEvent, type ContactIntent } from '@/lib/contactAnalytics';
+import type enDict from '@/dictionaries/en.json';
 import './Contact.css';
-import { Mail, Phone, Send, CheckCircle, X, ExternalLink } from 'lucide-react'; 
-import { useForm, ValidationError } from '@formspree/react';
 
-interface ContactProps {
-  dict?: any;
-}
+type ContactDictionary = typeof enDict.contact;
+type ContactFields = { name: string; email: string; website: string; type: string; message: string; request_type: ContactIntent; language: string };
+type FieldName = 'name' | 'email' | 'website' | 'message';
+type FieldErrors = Partial<Record<FieldName, string>>;
+const fieldNames: FieldName[] = ['name', 'email', 'website', 'message'];
+const emailAddress = 'aviram@eldarvisual.com';
 
-const Contact = ({ dict }: ContactProps) => {
-  const [state, handleSubmit] = useForm("xlggjajo");
-  const [isEmailModalOpen, setIsEmailModalOpen] = useState(false);
+export default function Contact({ dict }: { dict: ContactDictionary }) {
+  const submit = useSubmit<ContactFields>('xlggjajo');
+  const pathname = usePathname();
+  const [intent, setIntent] = useState<ContactIntent>('project');
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [errors, setErrors] = useState<FieldErrors>({});
   const [copied, setCopied] = useState(false);
-  const [companyType, setCompanyType] = useState(""); 
+  const [copyFailed, setCopyFailed] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
+  const pending = useRef(false);
+  const started = useRef(false);
+  const copyTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const form = dict.form;
 
-  const emailAddress = "aviram@eldarvisual.com";
+  useEffect(() => {
+    const selectFromHash = () => {
+      if (!['#contact-review', '#contact-project'].includes(window.location.hash)) return;
+      const selectedIntent = window.location.hash === '#contact-review' ? 'review' : 'project';
+      setIntent(selectedIntent);
+      trackContactEvent(selectedIntent === 'review' ? 'review_selected' : 'project_selected', selectedIntent);
+    };
+    selectFromHash();
+    window.addEventListener('hashchange', selectFromHash);
+    return () => {
+      window.removeEventListener('hashchange', selectFromHash);
+      if (copyTimer.current) clearTimeout(copyTimer.current);
+    };
+  }, []);
 
-  const handleCopy = () => {
-    navigator.clipboard.writeText(emailAddress);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(emailAddress);
+      setCopied(true);
+      setCopyFailed(false);
+      if (copyTimer.current) clearTimeout(copyTimer.current);
+      copyTimer.current = setTimeout(() => setCopied(false), 2000);
+    } catch {
+      setCopyFailed(true);
+    }
   };
 
-  const handleEmailClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    setIsEmailModalOpen(true);
+  const focusField = (field: FieldName) => {
+    (formRef.current?.elements.namedItem(field) as HTMLInputElement | HTMLTextAreaElement | null)?.focus();
   };
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (pending.current) return;
+    const element = event.currentTarget;
+    const data = new FormData(element);
+    const nextErrors: FieldErrors = {};
+    for (const field of fieldNames) data.set(field, String(data.get(field) ?? '').trim());
+    for (const field of ['name', 'email', 'message'] as const) {
+      if (!data.get(field)) nextErrors[field] = form.validationRequired;
+    }
+    const emailInput = element.elements.namedItem('email') as HTMLInputElement;
+    if (data.get('email') && emailInput.validity.typeMismatch) nextErrors.email = form.validationEmail;
+    if (data.get('website')) {
+      try {
+        const website = new URL(String(data.get('website')));
+        if (!['https:', 'http:'].includes(website.protocol) || !website.hostname) nextErrors.website = form.validationWebsite;
+      } catch {
+        nextErrors.website = form.validationWebsite;
+      }
+    }
+    setErrors(nextErrors);
+    const firstError = fieldNames.find(field => nextErrors[field]);
+    if (firstError) {
+      setStatus('idle');
+      focusField(firstError);
+      trackContactEvent('validation_error', intent);
+      return;
+    }
+
+    pending.current = true;
+    setStatus('submitting');
+    trackContactEvent('submit', intent);
+    const submittedIntent = intent;
+    try {
+      const result = await submit(data);
+      if (result.kind === 'error') {
+        const serverErrors: FieldErrors = {};
+        for (const field of fieldNames) {
+          if (result.getFieldErrors(field).length) serverErrors[field] = form.validationServer;
+        }
+        setErrors(serverErrors);
+        setStatus('error');
+        const firstServerError = fieldNames.find(field => serverErrors[field]);
+        if (firstServerError) focusField(firstServerError);
+        trackContactEvent('error', submittedIntent);
+      } else {
+        setStatus('success');
+        trackContactEvent('success', submittedIntent);
+      }
+    } catch {
+      setStatus('error');
+      trackContactEvent('error', submittedIntent);
+    } finally {
+      pending.current = false;
+    }
+  };
+
+  const onFieldInput = (field: FieldName) => {
+    setErrors(previous => ({ ...previous, [field]: undefined }));
+    if (!started.current) {
+      started.current = true;
+      trackContactEvent('started', intent);
+    }
+  };
+
+  const fieldAccessibility = (field: FieldName) => ({
+    'aria-invalid': errors[field] ? true : undefined,
+    'aria-describedby': [field === 'website' ? 'website-hint' : '', errors[field] ? field + '-error' : ''].filter(Boolean).join(' ') || undefined,
+    onInput: () => onFieldInput(field)
+  });
 
   return (
-    <section id="contact" className="contact-section">
+    <section id="contact" className="contact-section" aria-labelledby="contact-title">
       <div className="contact-container">
         <div className="contact-grid">
-          
           <div className="info-side">
-            <span className="section-label">{dict?.subtitle || "Let's Talk"}</span>
-            <h2 className="contact-headline">{dict?.title || "Define · Design"}</h2>
-            <h2 className="contact-headline highlight-purple">{dict?.gradient || "Develop · Launch"}</h2>
-  
-            <p className="contact-desc">{dict?.desc1 || "From software architecture to development, launch, and monitoring. We build stable digital infrastructures that allow your business to grow seamlessly."}</p>
-            <p className="contact-desc">{dict?.desc2 || "We are currently available for select projects. Leave your details to discuss the right architecture for your product."}</p>
-            
+            <span className="section-label">{dict.subtitle}</span>
+            <h2 id="contact-title" className="contact-headline">
+              {dict.title}<span className="highlight-purple">{dict.gradient}</span>
+            </h2>
+            <p className="contact-desc">{dict.desc1}</p>
+            <p className="contact-desc">{dict.desc2}</p>
+            <div className="contact-about">
+              <span className="contact-about-label">{dict.aboutLabel}</span>
+              <h3>{dict.aboutTitle}</h3>
+              <p>{dict.aboutDesc}</p>
+            </div>
             <div className="contact-details">
               <div className="contact-item contact-email-row">
-                <div className="contact-clickable-area" onClick={handleEmailClick}>
-                  <div className="icon-box"><Mail size={20} /></div>
-                  <div className="contact-info">
-                     <span className="contact-text">{emailAddress}</span>
-                  </div>
-                </div>
-                
-                <button onClick={(e) => { e.stopPropagation(); handleCopy(); }} className="inline-copy-btn">
-                  {copied ? <CheckCircle size={14} /> : <Send size={14} />}
-                  <span>{copied ? (dict?.copied || "Copied!") : (dict?.copy || "Copy")}</span>
+                <a href={'mailto:' + emailAddress} className="contact-clickable-area" aria-label={dict.emailLink + ': ' + emailAddress}>
+                  <span className="icon-box"><Mail size={20} aria-hidden="true" /></span>
+                  <span className="contact-text" dir="ltr">{emailAddress}</span>
+                </a>
+                <button type="button" onClick={handleCopy} className="inline-copy-btn" aria-label={dict.copy}>
+                  {copied ? <CheckCircle size={16} aria-hidden="true" /> : <Copy size={16} aria-hidden="true" />}
+                  <span aria-live="polite">{copied ? dict.copied : dict.copy}</span>
                 </button>
               </div>
-
+              {copyFailed && <p className="form-error" role="status">{dict.copyFailed}</p>}
               <a href="tel:+972546786874" className="contact-item">
-                <div className="icon-box"><Phone size={20} /></div>
-                <div className="contact-info">
-                   <span className="contact-text" dir="ltr">+972 54 678 6874</span>
-                </div>
+                <span className="icon-box"><Phone size={20} aria-hidden="true" /></span>
+                <span className="contact-text" dir="ltr">+972 54 678 6874</span>
               </a>
             </div>
           </div>
 
           <div className="form-wrapper">
-            {state.succeeded ? (
-                <div className="success-message">
-                    <CheckCircle size={48} color="#4ade80" style={{marginBottom: '1rem'}} />
-                    <h3 className="success-title">{dict?.form?.successTitle || "Message Sent!"}</h3>
-                    <p className="success-desc">{dict?.form?.successDesc || "Thanks for reaching out."}</p>
-                </div>
+            <span id="contact-project" className="contact-route-anchor" />
+            <span id="contact-review" className="contact-route-anchor" />
+            {status === 'success' ? (
+              <div className="success-message" role="status" aria-live="polite">
+                <CheckCircle size={48} aria-hidden="true" />
+                <h3 className="success-title">{form.successTitle}</h3>
+                <p className="success-desc">{form.successDesc}</p>
+              </div>
             ) : (
-                <form onSubmit={handleSubmit}>
-                    <div className="form-group">
-                        <label htmlFor="name" className="form-label">{dict?.form?.nameLabel || "Full Name"}</label>
-                        <input type="text" id="name" name="name" className="form-input" placeholder={dict?.form?.namePlaceholder || "John Doe"} required />
-                        <ValidationError prefix={dict?.form?.nameLabel || "Full Name"} field="name" errors={state.errors} />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="email" className="form-label">{dict?.form?.emailLabel || "Email Address"}</label>
-                        <input type="email" id="email" name="email" className="form-input" placeholder={dict?.form?.emailPlaceholder || "john@example.com"} required />
-                    </div>
-
-                    <div className="form-group">
-                        <label htmlFor="website" className="form-label">{dict?.form?.websiteLabel || "Website URL"}</label>
-                        <input type="url" id="website" name="website" className="form-input" placeholder={dict?.form?.websitePlaceholder || "https://your-site.com"} required />
-                    </div>
-
-                    <div className="form-group">
-                        <label htmlFor="type" className="form-label">{dict?.form?.typeLabel || "Company Type"}</label>
-                        <select 
-                            id="type" 
-                            name="type" 
-                            className={`form-input ${companyType === "" ? "placeholder-active" : ""}`}
-                            required 
-                            value={companyType}
-                            onChange={(e) => setCompanyType(e.target.value)}
-                        >
-                            <option value="" disabled hidden>{dict?.form?.typePlaceholder || "Choose company type..."}</option>
-                            <option value="startup">{dict?.form?.typeStartup || "Tech Startup"}</option>
-                            <option value="service">{dict?.form?.typeService || "Service Business"}</option>
-                            <option value="ecommerce">{dict?.form?.typeEcommerce || "E-commerce"}</option>
-                            <option value="personal">{dict?.form?.typePersonal || "Portfolio"}</option>
-                            <option value="other">{dict?.form?.typeOther || "Other"}</option>
-                        </select>
-                    </div>
-
-                    <div className="form-group">
-                        <label htmlFor="message" className="form-label">{dict?.form?.goalLabel || "What is your main goal?"}</label>
-                        <textarea id="message" name="message" className="form-textarea" placeholder={dict?.form?.goalPlaceholder || "Boost speed..."} required></textarea>
-                    </div>
-
-                    <button type="submit" className="submit-btn" disabled={state.submitting}>
-                        {state.submitting ? (dict?.form?.submitting || 'Processing...') : <>{dict?.form?.submitBtn || "Get a Performance & UX Audit"} <Send size={16} style={{marginLeft: '8px'}}/></>}
-                    </button>
-                </form>
+              <form ref={formRef} onSubmit={handleSubmit} noValidate aria-busy={status === 'submitting'} data-clarity-mask="true">
+                <fieldset className="request-options" disabled={status === 'submitting'}>
+                  <legend>{form.requestLabel}</legend>
+                  {(['project', 'review'] as const).map(option => (
+                    <label key={option} className={'request-option ' + (intent === option ? 'selected' : '')}>
+                      <input type="radio" name="request_type" value={option} checked={intent === option} onChange={() => {
+                        setIntent(option);
+                        trackContactEvent(option === 'review' ? 'review_selected' : 'project_selected', option);
+                      }} />
+                      <span>{option === 'project' ? form.projectOption : form.reviewOption}</span>
+                    </label>
+                  ))}
+                </fieldset>
+                <h3 className="form-title">{intent === 'review' ? form.reviewTitle : form.projectTitle}</h3>
+                {intent === 'review' && <div className="review-scope"><p>{form.reviewScope}</p><p>{form.reviewTiming}</p></div>}
+                <p className="form-hint">{form.requiredNote}</p>
+                <input type="hidden" name="language" value={pathname.startsWith('/he') ? 'he' : 'en'} />
+                <input type="hidden" name="_subject" value={'Eldar Visual: ' + (intent === 'review' ? 'Website review' : 'New project')} />
+                <fieldset className="contact-fields" disabled={status === 'submitting'}>
+                  <div className="form-group">
+                    <label htmlFor="name" className="form-label">{form.nameLabel}</label>
+                    <input id="name" name="name" className="form-input" placeholder={form.namePlaceholder} autoComplete="name" maxLength={150} required {...fieldAccessibility('name')} />
+                    {errors.name && <p id="name-error" className="form-error">{errors.name}</p>}
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="email" className="form-label">{form.emailLabel}</label>
+                    <input type="email" id="email" name="email" className="form-input" placeholder={form.emailPlaceholder} autoComplete="email" inputMode="email" dir="ltr" maxLength={254} required {...fieldAccessibility('email')} />
+                    {errors.email && <p id="email-error" className="form-error">{errors.email}</p>}
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="website" className="form-label">{form.websiteLabel} <span>({form.optional})</span></label>
+                    <input type="url" id="website" name="website" className="form-input" placeholder={form.websitePlaceholder} autoComplete="url" inputMode="url" dir="ltr" maxLength={2048} {...fieldAccessibility('website')} />
+                    <p id="website-hint" className="form-hint">{form.websiteHint}</p>
+                    {errors.website && <p id="website-error" className="form-error">{errors.website}</p>}
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="type" className="form-label">{form.typeLabel} <span>({form.optional})</span></label>
+                    <select id="type" name="type" className="form-input" defaultValue="">
+                      <option value="">{form.typePlaceholder}</option>
+                      <option value="startup">{form.typeStartup}</option>
+                      <option value="service">{form.typeService}</option>
+                      <option value="ecommerce">{form.typeEcommerce}</option>
+                      <option value="nonprofit">{form.typePersonal}</option>
+                      <option value="other">{form.typeOther}</option>
+                    </select>
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="message" className="form-label">{form.goalLabel}</label>
+                    <textarea id="message" name="message" className="form-textarea" placeholder={form.goalPlaceholder} maxLength={10000} required {...fieldAccessibility('message')} />
+                    {errors.message && <p id="message-error" className="form-error">{errors.message}</p>}
+                  </div>
+                </fieldset>
+                {Object.values(errors).some(Boolean) && <p className="form-error" role="alert">{form.validationSummary}</p>}
+                {status === 'error' && <div className="form-failure" role="alert"><p>{form.errorMessage}</p><a href={'mailto:' + emailAddress}>{form.emailAlternative}</a></div>}
+                <p className="form-next-step">{form.nextStep}</p>
+                <button type="submit" className="submit-btn" disabled={status === 'submitting'}>
+                  {status === 'submitting' ? form.submitting : intent === 'review' ? form.reviewSubmit : form.submitBtn}
+                  <Send size={16} aria-hidden="true" />
+                </button>
+                <p className="form-hint form-privacy">{form.privacyNote}</p>
+              </form>
             )}
           </div>
         </div>
       </div>
-
-      {isEmailModalOpen && (
-        <div className="modal-overlay" onClick={() => setIsEmailModalOpen(false)}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="modal-close" aria-label={dict?.modal?.close || "Close Dialog"} onClick={() => setIsEmailModalOpen(false)}><X size={24} /></button>
-            <h3 className="modal-title">{dict?.modal?.title || "Choose Email Provider"}</h3>
-            <div className="provider-list">
-              <a href={`https://mail.google.com/mail/?view=cm&fs=1&to=${emailAddress}`} target="_blank" rel="noopener noreferrer" className="provider-btn">Gmail <ExternalLink size={14}/></a>
-              <a href={`https://outlook.live.com/mail/0/deeplink/compose?to=${emailAddress}`} target="_blank" rel="noopener noreferrer" className="provider-btn">Outlook <ExternalLink size={14}/></a>
-              <a href={`https://compose.mail.yahoo.com/?to=${emailAddress}`} target="_blank" rel="noopener noreferrer" className="provider-btn">Yahoo <ExternalLink size={14}/></a>
-              <a href={`mailto:${emailAddress}`} className="provider-btn" style={{borderColor: '#A855F7', color: '#A855F7'}}>{dict?.modal?.default || "Open Default Mail App"}</a>
-            </div>
-          </div>
-        </div>
-      )}
     </section>
   );
-};
-
-export default Contact;
+}

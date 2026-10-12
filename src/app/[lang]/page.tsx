@@ -3,7 +3,6 @@ import Hero from '../../components/Hero';
 import Services from '../../components/Services';
 import Process from '../../components/Process';
 import Portfolio from '../../components/Portfolio';
-import Testimonial from '../../components/Testimonial';
 import Contact from '../../components/Contact';
 import Footer from '@/components/Footer';
 
@@ -15,25 +14,19 @@ export async function generateStaticParams() {
   return [{ lang: 'en' }, { lang: 'he' }];
 }
 
-export default async function HomePage({ params }: any) {
+export default async function HomePage({ params }: { params: Promise<{ lang: string }> }) {
   const resolvedParams = await params;
   const lang = resolvedParams?.lang || 'en';
-  const dict: any = lang === 'he' ? heDict : enDict;
+  const dict = lang === 'he' ? heDict : enDict;
 
   return (
     <>
       <Navbar dict={dict.navbar} />
-      <Hero 
-        title={dict.hero?.title}
-        subtitle={dict.hero?.subtitle}
-        ctaText={dict.hero?.cta}
-        dict={dict.hero} 
-      />
+      <Hero dict={dict.hero} />
       
+      <Portfolio dict={dict.portfolio} testimonial={dict.testimonial} />
       <Services dict={dict.services} />
       <Process dict={dict.process} />
-      <Portfolio dict={dict.portfolio} />
-      <Testimonial dict={dict.testimonial} />
       <Contact dict={dict.contact} />
       <Footer dict={dict.footer} />
       

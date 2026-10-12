@@ -33,11 +33,11 @@ section,
 #services, 
 #process, 
 #portfolio {
-  scroll-margin-top: 0px; 
+  scroll-margin-top: 110px;
 }
 
 #contact, .contact-section {
-  scroll-margin-top: 0px !important; 
+  scroll-margin-top: 110px !important;
 }
 
 /* === העיצוב הגלובלי שלך (מסגרת וקו עליון) === */
@@ -118,4 +118,19 @@ body::before {
 
 button, input, textarea, select {
   font-family: inherit;
+}
+
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, summary:focus-visible {
+  outline: 3px solid #bfdbfe;
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+  .delay1, .delay2, .title-part-1, .title-part-2, .title-part-3 { opacity: 1; transform: none; }
 }

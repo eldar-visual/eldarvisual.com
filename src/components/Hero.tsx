@@ -1,7 +1,7 @@
-"use client"; 
 import React from 'react';
 import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
+import type enDict from '@/dictionaries/en.json';
 import styles from './HeroStyles.module.css';
 import InfiniteScroll from './InfiniteScroll';
 
@@ -47,37 +47,23 @@ export interface HeroProps {
   subtitle?: React.ReactNode;
   ctaText?: React.ReactNode;
   trustLine?: React.ReactNode;
-  dict?: any; 
+  dict?: Partial<typeof enDict.hero>;
   hideSecondaryBtn?: boolean;
 }
 
 export default function Hero({ title, subtitle, ctaText, trustLine, dict, hideSecondaryBtn }: HeroProps = {}) {
-  const [isMounted, setIsMounted] = React.useState(false);
-  
-  React.useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
-  const scrollToSection = (e: React.MouseEvent, id: string) => {
-    e.preventDefault();
-    const element = document.getElementById(id);
-    if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <section id="hero" className={styles.heroSection}>
       
-      <div className={styles.heroBgBlobs}>
+      <div className={styles.heroBgBlobs} aria-hidden="true">
         <div className={styles.blobBlue} />
         <div className={styles.blobPurple} />
       </div>
 
-      <div className={styles.heroCodeBg}>
+      <div className={styles.heroCodeBg} aria-hidden="true">
          <div className={styles.codeRotateWrapper}>
-           {Array.from({ length: 2 }).map((_, i) => (
-             <CodeBlock key={i} />
+           {Array.from({ length: 2 }).map((_, index) => (
+             <CodeBlock key={index} />
            ))}
          </div>
       </div>
@@ -97,36 +83,43 @@ export default function Hero({ title, subtitle, ctaText, trustLine, dict, hideSe
       
         <div className={styles.heroTextSide}>
           <h1 className={styles.heroTitle}>
-            <span>{dict?.title || "Engineering Web Systems"}</span>
+            <span>{title ?? dict?.title ?? "Custom Websites"}</span>
             <br />
-            <span className={styles.heroTitleGradient}>{dict?.gradient || "& Mobile Apps"}</span>
+            <span className={styles.heroTitleGradient}>{dict?.gradient || "& Apps"}</span>
           </h1> 
           
           <div className={`${styles.heroSubtitleGroup} delay1`}>
             <p className={styles.heroSubtitle}>
-              {dict?.subtitle || "A digital studio specializing in custom software solutions. From high-performance websites to SaaS platforms and mobile applications for businesses, enterprises, and startups."}
+              {subtitle ?? dict?.subtitle ?? "Website and app design and development for businesses and organizations."}
             </p>
           </div>
 
           <div className={`${styles.heroActions} delay2`}>
-            <button onClick={(e) => scrollToSection(e, 'contact')} className={styles.btnPrimary}>
-              {dict?.cta || "Get a Performance & UX Audit"}
-            </button>
+            <a href="#contact-project" className={styles.btnPrimary}>
+              {ctaText ?? dict?.cta ?? "Talk About Your Project"}
+            </a>
             {!hideSecondaryBtn && (
-              <button onClick={(e) => scrollToSection(e, 'portfolio')} className={`${styles.btnLink} group`}>
+              <a href="#portfolio" className={styles.btnLink}>
                 <span>{dict?.viewProjects || "View Projects"}</span>
-                <ArrowRight size={16} className={styles.arrowIcon} />
-              </button>
+                <ArrowRight size={16} className={styles.arrowIcon} aria-hidden="true" />
+              </a>
             )}
           </div>
 
+          {dict?.reviewCta && (
+            <div className={styles.heroReview}>
+              <a href="#contact-review">{dict.reviewCta}</a>
+              <p>{dict.reviewNote}</p>
+            </div>
+          )}
+
           <p className={styles.trustLine}>
-            {dict?.tags || "Clean Code | High Performance | Uncompromising Architecture"}
+            {trustLine ?? dict?.tags ?? "Personal guidance from planning to launch"}
           </p>
         </div>
 
         {/* === חלק 3: Browser Mockup לדסקטופ === */}
-        <div className={styles.heroVisualSide}>
+        <div className={styles.heroVisualSide} aria-hidden="true" inert>
            <div className={styles.browserMockup}>
             <div className={styles.browserWindow}>
                 <div className={styles.browserHeader}>
@@ -138,12 +131,10 @@ export default function Hero({ title, subtitle, ctaText, trustLine, dict, hideSe
                   <div className={styles.browserAddressBar} dir="ltr">eldarvisual.com</div>
                 </div>
                <div className={styles.browserContentViewport} dir="ltr">
-                 {isMounted && (
                    <div className={styles.scrollingContent}>
                       <InfiniteScroll dict={dict} />
                       <InfiniteScroll dict={dict} />
                    </div>
-                 )}
                </div>
               </div>
           </div>

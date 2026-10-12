@@ -1,20 +1,13 @@
-"use client";
-import React, { useState } from 'react';
+import React from 'react';
+import type enDict from '@/dictionaries/en.json';
 import { Search, PenTool, Code, Rocket } from 'lucide-react';
 import './Process.css';
 
 interface ProcessProps {
-  dict?: any;
+  dict: typeof enDict.process;
 }
 
 export default function Process({ dict }: ProcessProps) {
-  const [activeStep, setActiveStep] = useState<number | null>(null);
-
-  const handleStepClick = (stepId: number) => {
-    setActiveStep(stepId);
-    setTimeout(() => setActiveStep(null), 3000);
-  };
-
   return (
     <section id="process" className="process-section">
       <div className="process-container">
@@ -22,15 +15,15 @@ export default function Process({ dict }: ProcessProps) {
         <div className="process-header">
           <span className="sub-title">{dict?.subtitle || "The Workflow"}</span>
           <h2 className="main-title">
-            {dict?.title || "From Architecture to"} <span className="gradient-text">{dict?.gradient || "Deployment"}</span>
+            {dict.title} <span className="gradient-text">{dict.gradient}</span>
           </h2>
         </div>
 
         <div className="steps-wrapper">
           
           {/* === 1: Discovery === */}
-          <div className={`step-row ${activeStep === 1 ? 'active' : ''}`} onClick={() => handleStepClick(1)}>
-            <div className="visual-side">
+          <div className="step-row">
+            <div className="visual-side" aria-hidden="true">
               <div className="card-base card-blue">
                  <div className="graph-bars">
                     <div className="bar bar-1"></div>
@@ -53,14 +46,14 @@ export default function Process({ dict }: ProcessProps) {
                  </div>
               </div>
               <p className="step-desc">
-                {dict?.step1_desc || "Comprehensive technical and UX audit. We map out conversion bottlenecks, analyze your market, and deliver a clear, actionable roadmap for development."}
+                {dict.step1_desc}
               </p>
             </div> 
           </div>
 
           {/* === 2: UI/UX === */}
-          <div className={`step-row reverse ${activeStep === 2 ? 'active' : ''}`} onClick={() => handleStepClick(2)}>
-            <div className="visual-side">
+          <div className="step-row reverse">
+            <div className="visual-side" aria-hidden="true">
               <div className="card-base card-purple">
                  {/* עטיפה פנימית קריטית כדי שהאייקון הצף לא ייחתך! */}
                  <div className="card-purple-inner">
@@ -87,14 +80,14 @@ export default function Process({ dict }: ProcessProps) {
                  </div>
                </div>
                <p className="step-desc">
-                 {dict?.step2_desc || "High-fidelity wireframes and stunning interfaces that provide an intuitive journey."}
+                 {dict.step2_desc}
                </p>
             </div>
           </div>
 
           {/* === 3: Development === */}
-          <div className={`step-row ${activeStep === 3 ? 'active' : ''}`} onClick={() => handleStepClick(3)}>
-            <div className="visual-side">
+          <div className="step-row">
+            <div className="visual-side" aria-hidden="true">
                <div className="card-base card-green">
                   {/* העטיפה הזו מונעת מהתוכן למתוח את המלבן למטה */}
                   <div className="terminal-wrapper">
@@ -106,7 +99,7 @@ export default function Process({ dict }: ProcessProps) {
                     <div className="terminal-text">
                         <p className="code-line-1">$ npm run build</p>
                         <p className="code-line-2">&gt; Optimized build...</p>
-                        <p className="code-line-3">Done in 0.4s ⚡</p>
+                        <p className="code-line-3">Build complete</p>
                     </div>
                   </div>
                   <div className="floating-icon icon-green-wrap">
@@ -123,13 +116,14 @@ export default function Process({ dict }: ProcessProps) {
                  </div>
                </div>
                <p className="step-desc">
-{dict?.step3_desc || "Clean, semantic code using Next.js and React Native. We build cross-platform applications prioritizing speed, security, and industrial-grade scalability."}               </p>
+                 {dict.step3_desc}
+               </p>
             </div>
           </div>
 
          {/* === 4: Launch === */}
-          <div className={`step-row reverse ${activeStep === 4 ? 'active' : ''}`} onClick={() => handleStepClick(4)}>
-            <div className="visual-side">
+          <div className="step-row reverse">
+            <div className="visual-side" aria-hidden="true">
                <div className="card-base card-yellow">
                     <div className="dashed-circle"></div>
                     
@@ -155,7 +149,7 @@ export default function Process({ dict }: ProcessProps) {
                  </div>
                </div>
                <p className="step-desc">
-                 {dict?.step4_desc || "Liftoff. We deploy your masterpiece to the world and provide continuous optimization."}
+                 {dict.step4_desc}
                </p>
             </div>
           </div>

@@ -1,130 +1,112 @@
 {
   "metadata": {
     "title": "EldarVisual | Custom Websites & Apps",
-    "description": "Product definition, UX/UI design, and development of websites, web applications, and mobile apps for businesses, organizations, and nonprofits.",
+    "description": "Website and app design and development for businesses, organizations, and nonprofits. New projects, improvements to existing websites, and personal guidance from Aviram Eldar.",
     "ogTitle": "EldarVisual | Custom Websites & Apps",
-    "ogDescription": "Websites built with Next.js, focusing on performance and user experience.",
+    "ogDescription": "Custom websites and apps, with clear content, thoughtful design, and personal guidance from planning to launch.",
     "imageAlt": "EldarVisual | Website & App Development Studio"
   },
   "navbar": {
-    "services": "What We Do",
+    "services": "Services",
     "process": "Process",
     "portfolio": "Portfolio",
-    "cta": "Book an Audit",
+    "cta": "Talk About Your Project",
     "changeLanguage": "Change Language",
     "switchLanguage": "Switch to Hebrew",
-    "logoAlt": "EldarVisual Logo"
+    "logoAlt": "EldarVisual Logo",
+    "openMenu": "Open navigation menu",
+    "closeMenu": "Close navigation menu"
   },
- 
- "hero": {
-    "title": "Product Definition, Design & Development",
-    "gradient": "for Custom Websites and Apps",
-  "subtitle": "Eldar Visual works with businesses, organizations, and nonprofits from product definition and user experience, through UX/UI design, to the development of websites, Web applications, and mobile apps.",
-    "cta": "Get a Performance & UX Audit",
+  "hero": {
+    "title": "Custom Websites",
+    "gradient": "& Apps",
+    "subtitle": "For businesses, organizations, and nonprofits that need a new website, a clearer existing site, or an app built around their work. Help visitors understand what you offer and take the next step.",
+    "cta": "Talk About Your Project",
     "viewProjects": "View Projects",
-"tags": "Thoughtful UX/UI | Fast, Reliable Development | Built to Scale",
+    "tags": "Personal guidance from Aviram Eldar · Planning through launch",
     "illustrationAlt": "UI and UX design illustration",
     "mockup": {
-      "architectureTitle": "Clean Architecture",
-      "architectureAlt": "Clean architecture code",
+      "architectureTitle": "Custom Development",
+      "architectureAlt": "Website development",
       "uxTitle": "User Experience & Interface Design",
       "uxAlt": "UI and UX design",
-      "uxBtn": "See Design Process",
+      "uxBtn": "Planning & Design",
       "webmasterTitle": "Website Management & Maintenance",
       "webmasterAlt": "Website management and maintenance",
       "webmasterSecondaryAlt": "Website infrastructure maintenance",
       "managementTitle": "Website Management",
-      "managementAlt": "Website management"
-    }
+      "managementAlt": "Website management",
+      "maintenanceLabel": "Updates & Maintenance"
+    },
+    "reviewCta": "Request a Free Website Review",
+    "reviewNote": "Have a website already? Start with a written review of its content, navigation, and user experience."
   },
   "services": {
     "subtitle": "What We Do",
-    "title": "Architecture Built For",
-    "gradient": "Stability & Growth",
-    "included": "What's Included:",
-    "cta": "Get a Performance & UX Audit",
+    "title": "What Does Your",
+    "gradient": "Project Need?",
+    "included": "The work can include",
+    "cta": "Talk About Your Project",
     "items": [
       {
-        "title": "Mobile App Development (React Native)",
-        "desc": "Native app development for iOS and Android from a single codebase. We focus on offline-first architecture and high performance for enterprises and startups.",
+        "title": "Improve an Existing Website",
+        "desc": "For a website that no longer represents your business or makes it hard for visitors to find what they need. Start by identifying what to change and what to keep.",
+        "cta": "Request a Free Website Review",
+        "intent": "review",
         "features": [
-          "React Native & Expo",
-          "Offline-First Architecture",
-          "Smart Data Synchronization",
-          "App Store Deployment"
+          "Review of content and navigation",
+          "Clearer layouts and calls to action",
+          "Mobile usability improvements",
+          "Technical updates where needed"
         ]
       },
       {
-        "title": "Web & SaaS Development",
-        "desc": "Complex systems and web applications built to scale. We utilize Next.js and React to ensure maximum security and performance.",
+        "title": "Build a New Website",
+        "desc": "For a business or organization that needs a website of its own. Present your services, work, or activities clearly and make it easy to get in touch.",
+        "cta": "Talk About a New Website",
+        "intent": "project",
         "features": [
-          "Next.js & React",
-          "Server-Side Rendering",
-          "API Integration",
-          "Serverless Architecture"
+          "Planning the content and structure",
+          "Interface design for desktop and mobile",
+          "Development and contact forms",
+          "Launch and a walkthrough of the site"
         ]
       },
       {
-        "title": "UX/UI Design",
-        "desc": "Precise interfaces that reduce friction and increase conversions. We design data-driven user journeys based on business understanding.",
+        "title": "Plan & Build an App",
+        "desc": "For a service or workflow that needs more than a website. Define the users, essential features, and screens before choosing the technical solution.",
+        "cta": "Talk About Your App",
+        "intent": "project",
         "features": [
-          "Functional Specification",
-          "Wireframing",
-          "UI Design",
-          "Design Systems"
-        ]
-      },
-      {
-        "title": "Website Modernization",
-        "desc": "Migrating outdated systems to modern architecture. Improving speed, security, and maintainability without losing SEO history.",
-        "features": [
-          "Code & Performance Audit",
-          "Modern Tech Stack Migration",
-          "SEO Preservation",
-          "Database Migration"
-        ]
-      },
-      {
-        "title": "Management, Maintenance & Security",
-        "desc": "Webmaster services for organizations that need stable, reliable infrastructure. We handle performance monitoring, security updates, and ongoing digital infrastructure management.",
-        "features": [
-          "24/7 Uptime Monitoring",
-          "Monthly Security Updates",
-          "Automated Backups",
-          "Server & Traffic Management"
-        ]
-      },
-      {
-        "title": "E-Commerce Development",
-        "desc": "Fast and secure e-commerce infrastructures. Emphasis on frictionless checkout experiences and reliable inventory management.",
-        "features": [
-          "Headless E-Commerce",
-          "Secure Payment Gateways",
-          "Inventory System Sync",
-          "Mobile Speed Optimization"
+          "Clarifying the need and main features",
+          "User flows and screen design",
+          "Web or mobile development",
+          "Integrations according to the agreed scope"
         ]
       }
-    ]
+    ],
+    "additionalTitle": "Support Along the Way",
+    "additionalDesc": "Interface design, content organization, online stores, and ongoing maintenance can be included according to the needs of your project. The scope is agreed together."
   },
   "process": {
     "subtitle": "Workflow",
-    "title": "From Architecture to",
-    "gradient": "Deployment",
+    "title": "From the First Conversation",
+    "gradient": "to Launch",
     "step1_num": "1",
-    "step1_title": "Audit & Strategy",
-    "step1_desc": "Comprehensive performance and UX audit. We map out bottlenecks, analyze the market, and deliver a clear development roadmap.",
+    "step1_title": "Understand the Need",
+    "step1_desc": "We clarify your goals, who will use the website or app, and what they need to do. For an existing site, we also look at what is and is not working.",
     "step2_num": "2",
-    "step2_title": "UI/UX Design",
-    "step2_desc": "Interface planning and precise prototyping, ensuring an intuitive, frictionless user experience.",
+    "step2_title": "Plan & Design",
+    "step2_desc": "I organize the content, plan the screens, and design the interface. You review the direction before development begins.",
     "step3_num": "3",
-    "step3_title": "Development",
-    "step3_desc": "Clean, modular development using Next.js and React Native. Cross-platform solutions emphasizing speed and industrial-grade stability.",
+    "step3_title": "Develop & Check",
+    "step3_desc": "I develop the agreed features and check the layout, navigation, and forms across desktop and mobile.",
     "step4_num": "4",
-    "step4_title": "Launch & Monitoring",
-    "step4_desc": "Cloud deployment accompanied by load testing and continuous monitoring to optimize performance and conversion rates."
+    "step4_title": "Launch & Handover",
+    "step4_desc": "We prepare the site for launch and go over how to use it. Any ongoing maintenance is defined separately according to your needs."
   },
   "portfolio": {
-    "subtitle": "Our Work",
+    "subtitle": "Work & Demonstrations",
     "title": "Selected",
     "gradient": "Work",
     "viewProject": "View Project",
@@ -132,8 +114,8 @@
     "projects": [
       {
         "title": "Johnny the Scroll",
-        "category": "UI/UX Architecture, Development & Deployment",
-        "desc": "A premium tour guide website that showcases guided experiences through a clear, intuitive interface for exploring and choosing the right tour.",
+        "category": "Tour Guide Website",
+        "desc": "A website for Johan, a tour guide in Israel, presenting his tours and providing a clear route from exploring an experience to getting in touch.",
         "tech": [
           "Next.js",
           "CSS Modules",
@@ -144,7 +126,7 @@
       {
         "title": "Are You In?",
         "category": "Youth Christian Community Website",
-        "desc": "A demo website for a young Christian community, bringing together teaching and worship videos, articles, faith stories, and an interactive journey through the Gospel.",
+        "desc": "A demo bringing together teaching and worship videos, articles, faith stories, and an interactive journey through the Gospel.",
         "tech": [
           "Next.js",
           "React",
@@ -154,7 +136,7 @@
       {
         "title": "Open Ground",
         "category": "Environmental Nonprofit Website",
-        "desc": "A bilingual demo website for an environmental nonprofit, featuring cleanup and tree-planting activities, volunteer registration, a donation interface, and an interactive visualization of its impact on the ground.",
+        "desc": "A bilingual demo presenting cleanup and tree-planting activities, volunteer registration, and a donation interface for an imagined environmental nonprofit.",
         "tech": [
           "HTML",
           "CSS",
@@ -165,7 +147,7 @@
       {
         "title": "Victoria",
         "category": "Aesthetic Clinic Website",
-        "desc": "A website for an aesthetic clinic in Rishon LeZion, featuring treatments and pricing, a photo gallery, and appointment booking via WhatsApp.",
+        "desc": "A demo for an imagined aesthetic clinic, presenting treatments, pricing, a photo gallery, and an appointment enquiry through WhatsApp.",
         "tech": [
           "Next.js",
           "React",
@@ -174,8 +156,8 @@
       },
       {
         "title": "Judith Asher Art",
-        "category": "UI/UX Architecture",
-        "desc": "A digital gallery system exploring minimalist aesthetics, smart image loading, and visual storytelling.",
+        "category": "Artist Portfolio",
+        "desc": "A demo gallery for presenting artwork through images, a clear collection structure, and a restrained visual design.",
         "tech": [
           "Next.js",
           "CSS Modules",
@@ -184,8 +166,8 @@
       },
       {
         "title": "Adi Shoham",
-        "category": "Full-Stack System",
-        "desc": "A premium e-commerce platform featuring a MongoDB-based data architecture for dynamic content management.",
+        "category": "Online Store",
+        "desc": "An online-store demo exploring product presentation and a shopping journey with dynamic content management.",
         "tech": [
           "Next.js",
           "MongoDB",
@@ -194,7 +176,15 @@
       }
     ],
     "demoLabel": "Demo Website",
-    "viewDemo": "View Demo"
+    "viewDemo": "View Demo",
+    "clientLabel": "Client Project",
+    "caseGoalLabel": "The Need",
+    "caseWorkLabel": "The Work",
+    "caseGoal": "Introduce Johan as a tour guide in Israel and present the tours he offers, with a clear way to explore the options and get in touch.",
+    "caseWork": "Planning the content and navigation, designing the interface, developing the website, and taking it live. The project was guided by direct communication with Johan throughout.",
+    "demoTitle": "Demo Projects",
+    "demoDesc": "Independent demonstrations of design and development. These are not client commissions or evidence of business results.",
+    "techLabel": "Technologies"
   },
   "testimonial": {
     "subtitle": "In the client’s own words",
@@ -209,42 +199,69 @@
     "subtitle": "Get in Touch",
     "title": "Define · Design",
     "gradient": "Develop · Launch",
-    "desc1": "From software architecture to development, launch, and monitoring. We build stable digital infrastructures that allow your business to grow seamlessly.",
-    "desc2": "We are currently available for select projects. Leave your details to discuss the right architecture for your product.",
-    "copied": "Copied!",
+    "desc1": "Tell me what you need, whether it is a new website, an app, or an improvement to an existing site.",
+    "desc2": "I will review your message and contact you to clarify the scope and the next step. You do not need to have a website already.",
+    "copied": "Copied",
     "copy": "Copy",
     "form": {
       "nameLabel": "Full Name",
-      "namePlaceholder": "Enter full name...",
-      "emailLabel": "Work Email",
-      "emailPlaceholder": "name@company.com",
-      "websiteLabel": "Existing System / Website URL",
-      "websitePlaceholder": "https://your-product.com",
+      "namePlaceholder": "Your name",
+      "emailLabel": "Email",
+      "emailPlaceholder": "name@example.com",
+      "websiteLabel": "Existing Website",
+      "websitePlaceholder": "https://your-site.com",
       "typeLabel": "Business / Organization Type",
-      "typePlaceholder": "Select business or organization type...",
+      "typePlaceholder": "Choose if relevant",
       "typeStartup": "Startup / Technology Company",
-      "typeService": "B2B / Premium Services",
-      "typeEcommerce": "E-commerce System",
-      "typePersonal": "Organization / Non-profit",
+      "typeService": "Service Business",
+      "typeEcommerce": "Online Store",
+      "typePersonal": "Organization / Nonprofit",
       "typeOther": "Other",
-      "goalLabel": "What Is Your Main Challenge?",
-      "goalPlaceholder": "Improving load times, app development, increasing conversions...",
-      "submitBtn": "Get a Performance & UX Audit",
-      "submitting": "Processing...",
-      "successTitle": "Request Received",
-      "successDesc": "Thank you. We will review your details and get back to you shortly to coordinate."
+      "goalLabel": "What Do You Need?",
+      "goalPlaceholder": "Tell me about the website, app, or improvement you have in mind.",
+      "submitBtn": "Send Your Message",
+      "submitting": "Sending…",
+      "successTitle": "Your Message Was Received",
+      "successDesc": "Thank you. I will review your request and reply to the email address you provided to discuss the next step.",
+      "websiteHint": "Optional, including for a review request. You can also mention the site in your message.",
+      "requestLabel": "How Can I Help?",
+      "projectOption": "A New Project",
+      "reviewOption": "Review an Existing Website",
+      "projectTitle": "Tell Me About Your Project",
+      "reviewTitle": "Request a Free Written Review",
+      "reviewScope": "A first look at the content, navigation, and user experience, with a short written summary and suggested next steps. It does not include a security audit, code review, or a comprehensive technical test.",
+      "reviewTiming": "I will confirm the review scope and delivery timing with you by email.",
+      "nextStep": "After you send the form, I will review the details and reply by email. There is no commitment to start a project.",
+      "reviewSubmit": "Request a Free Review",
+      "optional": "Optional",
+      "requiredNote": "Only your name, email, and a short description are required.",
+      "validationRequired": "Please complete this field.",
+      "validationEmail": "Enter a valid email address.",
+      "validationWebsite": "Enter a full website address starting with https:// or http://.",
+      "validationServer": "Please check this field and try again.",
+      "validationSummary": "Please check the marked fields.",
+      "errorMessage": "Your message could not be sent. Your details are still here. Try again, or contact me by email.",
+      "emailAlternative": "Contact Me by Email",
+      "privacyNote": "Your details are used to respond to your enquiry."
     },
     "modal": {
       "title": "Choose Email Provider",
       "default": "Open Default Mail App",
       "close": "Close Dialog"
-    }
+    },
+    "aboutLabel": "Who You Will Work With",
+    "aboutTitle": "Aviram Eldar",
+    "aboutDesc": "I am the person behind Eldar Visual. I work directly with you on planning, design, development, and launch, so the conversation and the work stay connected throughout the project.",
+    "copyFailed": "Could not copy. You can select the address or open your email app.",
+    "emailLink": "Open Email"
   },
   "footer": {
-    "tagline": "Define. Develop. Launch.",
+    "tagline": "Define · Design · Develop · Launch",
     "services": "What We Do",
     "process": "Process",
     "portfolio": "Work",
-    "rights": "All rights reserved."
-  } 
+    "rights": "All rights reserved.",
+    "copyright": "© 2026 Eldar Visual. All rights reserved.",
+    "disclaimer": "Designed and developed by Aviram Eldar"
+  }
 }
