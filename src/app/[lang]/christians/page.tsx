@@ -30,6 +30,7 @@ export default async function ChristianLander({ params }: PageProps) {
    <Hero 
         dict={{ ...dict.hero, ...dict.christians.hero }}
         hideSecondaryBtn={true} 
+        ctaTarget="review"
       />
 
      {/* אזור "כאב" ייעודי שמדבר אליהם */}

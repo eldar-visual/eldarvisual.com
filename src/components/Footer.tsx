@@ -1,9 +1,10 @@
 import React from 'react';
 import './Footer.css';
 import { Facebook, Github, Linkedin } from 'lucide-react';
+import type enDict from '@/dictionaries/en.json';
 
 interface FooterProps {
-  dict?: any;
+  dict?: Partial<typeof enDict.footer>;
 }
 
 export default function Footer({ dict }: FooterProps) {
@@ -16,9 +17,6 @@ export default function Footer({ dict }: FooterProps) {
             {dict?.copyright || "© 2026 EldarVisual Web Studio. All rights reserved."}
           </div>
 
-          <div className="concept-disclaimer" style={{ fontSize: '11px', opacity: 0.5, marginTop: '4px', color: '#94A3B8' }}>
-            {dict?.disclaimer || "Designed and developed with passion by Eldar Visual."}
-          </div>
         </div>
 
         <div className="footer-socials">

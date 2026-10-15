@@ -1,3 +1,6 @@
+'use client';
+
+import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { Layout, RefreshCw, Smartphone, ArrowRight } from 'lucide-react';
 import type enDict from '@/dictionaries/en.json';
@@ -5,6 +8,51 @@ import './Services.css';
 
 export default function Services({ dict }: { dict: typeof enDict.services }) {
   const icons = [RefreshCw, Layout, Smartphone];
+  const gridRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const mobileQuery = window.matchMedia('(max-width: 767px), (hover: none), (pointer: coarse)');
+    const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const timers = new Set<ReturnType<typeof setTimeout>>();
+    const seen = new Set<Element>();
+    const cards = gridRef.current?.querySelectorAll<HTMLElement>('.service-card') ?? [];
+    let observer: IntersectionObserver | undefined;
+    const clear = () => {
+      observer?.disconnect();
+      timers.forEach(timer => clearTimeout(timer));
+      timers.clear();
+      cards.forEach(card => card.classList.remove('service-card-lit'));
+    };
+    const observe = () => {
+      clear();
+      if (!mobileQuery.matches || motionQuery.matches) return;
+      observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting || seen.has(entry.target)) return;
+          const card = entry.target as HTMLElement;
+          seen.add(card);
+          card.classList.add('service-card-lit');
+          observer?.unobserve(card);
+          const timer = setTimeout(() => {
+            card.classList.remove('service-card-lit');
+            timers.delete(timer);
+          }, 1500);
+          timers.add(timer);
+        });
+      }, { threshold: 0.25 });
+      cards.forEach(card => {
+        if (!seen.has(card)) observer?.observe(card);
+      });
+    };
+    observe();
+    mobileQuery.addEventListener('change', observe);
+    motionQuery.addEventListener('change', observe);
+    return () => {
+      clear();
+      mobileQuery.removeEventListener('change', observe);
+      motionQuery.removeEventListener('change', observe);
+    };
+  }, [dict.items]);
 
   return (
     <section id="services" aria-labelledby="services-title">
@@ -18,7 +66,7 @@ export default function Services({ dict }: { dict: typeof enDict.services }) {
             {dict.title} <span className="services-title-gradient">{dict.gradient}</span>
           </h2>
         </header>
-        <div className="services-grid">
+        <div ref={gridRef} className="services-grid">
           {dict.items.map((service, index) => {
             const Icon = icons[index];
             return (
@@ -33,7 +81,7 @@ export default function Services({ dict }: { dict: typeof enDict.services }) {
                   </ul>
                 </div>
                 <a href={service.intent === 'review' ? '#contact-review' : '#contact-project'} className="service-link">
-                  {service.cta}<ArrowRight size={18} className="btn-icon-arrow" aria-hidden="true" />
+                  <span className="light-sweep-text">{service.cta}</span><ArrowRight size={18} className="btn-icon-arrow" aria-hidden="true" />
                 </a>
               </article>
             );

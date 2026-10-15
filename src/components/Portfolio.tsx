@@ -28,56 +28,57 @@ export default function Portfolio({ dict, testimonial }: { dict: PortfolioDictio
 
         <article className="premium-card featured-project">
           <div className="image-wrapper">
-            <Image src={featured.image} alt={featured.title} fill className="project-img" sizes="(max-width: 900px) 100vw, 45vw" />
+            <div className="featured-image-frame"><Image src={featured.image} alt={featured.title} fill className="project-img" sizes="(max-width: 900px) 90vw, 40vw" /></div>
           </div>
           <div className="project-details">
             <span className="project-client-badge">{dict.clientLabel}</span>
             <span className="category-label">{featured.category}</span>
             <h3 className="project-name" dir="auto">{featured.title}</h3>
-            <p className="project-summary">{featured.desc}</p>
             <dl className="project-case">
               <dt>{dict.caseGoalLabel}</dt><dd>{dict.caseGoal}</dd>
               <dt>{dict.caseWorkLabel}</dt><dd>{dict.caseWork}</dd>
             </dl>
             <a href={featured.link} target="_blank" rel="noopener noreferrer" className="project-link">
-              {dict.visitSite}<ExternalLink size={18} aria-hidden="true" />
+              <span className="light-sweep-text">{dict.visitSite}</span><ExternalLink size={18} aria-hidden="true" />
             </a>
-            <details className="project-tech">
-              <summary>{dict.techLabel}</summary>
+            <div className="project-tech" aria-label={dict.techLabel}>
               <div className="tech-pills">{featured.tech.map(technology => <span key={technology} className="pill" dir="ltr">{technology}</span>)}</div>
-            </details>
+            </div>
           </div>
         </article>
 
         <Testimonial dict={testimonial} />
 
-        <header className="portfolio-demo-header">
-          <h3>{dict.demoTitle}</h3>
-          <p>{dict.demoDesc}</p>
-        </header>
-        <div className="portfolio-grid">
-          {projects.slice(1).map(project => (
-            <article key={project.link} className="premium-card">
-              <div className="image-wrapper">
-                <Image src={project.image} alt={project.title} fill className="project-img" sizes="(max-width: 767px) 100vw, (max-width: 1024px) 50vw, 33vw" />
-              </div>
-              <div className="project-details">
-                <span className="category-label">{project.category}</span>
-                <div className="project-heading">
-                  <h4 className="project-name" dir="auto">{project.title}</h4>
-                  <span className="project-demo-badge">{dict.demoLabel}</span>
+      </div>
+      <div className="portfolio-demos">
+        <div className="portfolio-container">
+          <header className="portfolio-demo-header">
+            <h3>{dict.demoTitle}</h3>
+            <p>{dict.demoDesc}</p>
+          </header>
+          <div className="portfolio-grid">
+            {projects.slice(1).map(project => (
+              <article key={project.link} className="premium-card">
+                <div className="image-wrapper">
+                  <Image src={project.image} alt={project.title} fill className="project-img" sizes="(max-width: 767px) 100vw, (max-width: 1024px) 50vw, 33vw" />
                 </div>
-                <p className="project-summary">{project.desc}</p>
-                <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-link">
-                  {dict.viewDemo}<span className="project-link-name" dir="auto">{project.title}</span><ExternalLink size={16} aria-hidden="true" />
-                </a>
-                <details className="project-tech">
-                  <summary>{dict.techLabel}</summary>
-                  <div className="tech-pills">{project.tech.map(technology => <span key={technology} className="pill" dir="ltr">{technology}</span>)}</div>
-                </details>
-              </div>
-            </article>
-          ))}
+                <div className="project-details">
+                  <span className="category-label">{project.category}</span>
+                  <div className="project-heading">
+                    <h4 className="project-name" dir="auto">{project.title}</h4>
+                    <span className="project-demo-badge">{dict.demoLabel}</span>
+                  </div>
+                  <p className="project-summary">{project.desc}</p>
+                  <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-link">
+                    <span className="light-sweep-text">{dict.viewDemo}</span><span className="project-link-name" dir="auto">{project.title}</span><ExternalLink size={16} aria-hidden="true" />
+                  </a>
+                  <div className="project-tech" aria-label={dict.techLabel}>
+                    <div className="tech-pills">{project.tech.map(technology => <span key={technology} className="pill" dir="ltr">{technology}</span>)}</div>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </div>
     </section>

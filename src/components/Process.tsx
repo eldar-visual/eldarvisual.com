@@ -1,159 +1,74 @@
-import React from 'react';
+'use client';
+
+import { useEffect, useRef, useState } from 'react';
 import type enDict from '@/dictionaries/en.json';
 import { Search, PenTool, Code, Rocket } from 'lucide-react';
 import './Process.css';
 
-interface ProcessProps {
-  dict: typeof enDict.process;
-}
+export default function Process({ dict }: { dict: typeof enDict.process }) {
+  const [activeStep, setActiveStep] = useState<number | null>(null);
+  const resetTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-export default function Process({ dict }: ProcessProps) {
+  useEffect(() => () => {
+    if (resetTimer.current) clearTimeout(resetTimer.current);
+  }, []);
+
+  const resetPreview = () => {
+    if (resetTimer.current) clearTimeout(resetTimer.current);
+    resetTimer.current = null;
+    setActiveStep(null);
+  };
+
+  const playPreview = (index: number) => {
+    if (resetTimer.current) clearTimeout(resetTimer.current);
+    setActiveStep(index);
+    resetTimer.current = setTimeout(() => {
+      setActiveStep(null);
+      resetTimer.current = null;
+    }, 3000);
+  };
+
+  const steps = [
+    { number: dict.step1_num, title: dict.step1_title, description: dict.step1_desc, Icon: Search, tone: 'blue' },
+    { number: dict.step2_num, title: dict.step2_title, description: dict.step2_desc, Icon: PenTool, tone: 'purple' },
+    { number: dict.step3_num, title: dict.step3_title, description: dict.step3_desc, Icon: Code, tone: 'green' },
+    { number: dict.step4_num, title: dict.step4_title, description: dict.step4_desc, Icon: Rocket, tone: 'gold' }
+  ];
+
   return (
-    <section id="process" className="process-section">
+    <section id="process" className="process-section" aria-labelledby="process-title">
       <div className="process-container">
-        
-        <div className="process-header">
-          <span className="sub-title">{dict?.subtitle || "The Workflow"}</span>
-          <h2 className="main-title">
-            {dict.title} <span className="gradient-text">{dict.gradient}</span>
-          </h2>
-        </div>
-
-        <div className="steps-wrapper">
-          
-          {/* === 1: Discovery === */}
-          <div className="step-row">
-            <div className="visual-side" aria-hidden="true">
-              <div className="card-base card-blue">
-                 <div className="graph-bars">
-                    <div className="bar bar-1"></div>
-                    <div className="bar bar-2"></div>
-                    <div className="bar bar-3"></div>
-                    <div className="bar bar-blue-active"></div>
-                 </div>
-                 <div className="floating-icon icon-blue-wrap">
-                     <Search size={20} className="svg-icon" />
-                 </div>
+        <header className="process-header">
+          <span className="sub-title">{dict.subtitle}</span>
+          <h2 id="process-title" className="main-title">{dict.title} <span className="gradient-text">{dict.gradient}</span></h2>
+        </header>
+        <div className="process-steps">
+          {steps.map(({ number, title, description, Icon, tone }, index) => (
+            <article key={number} className={'process-step process-step-' + tone + (activeStep === index ? ' process-step-active' : '')}
+              onPointerEnter={event => {
+                if (event.pointerType === 'mouse') {
+                  if (resetTimer.current) clearTimeout(resetTimer.current);
+                  resetTimer.current = null;
+                  setActiveStep(index);
+                }
+              }}
+              onPointerLeave={event => {
+                if (event.pointerType === 'mouse') resetPreview();
+              }}
+              onPointerUp={event => {
+                if (event.pointerType !== 'mouse') playPreview(index);
+              }}>
+              <div className="process-visual" aria-hidden="true">
+                {index === 0 && <div className="process-bars"><span /><span /><span /><span /></div>}
+                {index === 1 && <div className="process-wireframe"><span /><div><span /><span /></div></div>}
+                {index === 2 && <div className="process-terminal" dir="ltr"><div><span /><span /><span /></div><code>$ npm run build<span className="process-terminal-building">&gt; Optimized build...</span><span className="process-terminal-result">Build complete ✓</span></code></div>}
+                {index === 3 && <div className="process-orbit"><span className="process-orbit-ring" /><div className="process-rocket-mask"><div className="process-rocket"><Rocket size={42} /></div></div></div>}
+                <span className="process-visual-icon"><Icon size={20} /></span>
               </div>
-            </div>
-            
-            <div className="content-side">
-              <div className="step-header">
-                 <span className="step-num text-blue">{dict?.step1_num || "1"}</span>
-                 <div className="icon-wrap">
-                    <Search size={24} className="text-blue" />
-                    <h3 className="step-title">{dict?.step1_title || "Discovery & Strategy"}</h3>
-                 </div>
-              </div>
-              <p className="step-desc">
-                {dict.step1_desc}
-              </p>
-            </div> 
-          </div>
-
-          {/* === 2: UI/UX === */}
-          <div className="step-row reverse">
-            <div className="visual-side" aria-hidden="true">
-              <div className="card-base card-purple">
-                 {/* עטיפה פנימית קריטית כדי שהאייקון הצף לא ייחתך! */}
-                 <div className="card-purple-inner">
-                    <div className="card-purple-bg"></div>
-                    <div className="card-purple-front">
-                        <div className="skeleton-title"></div>
-                        <div className="skeleton-box-container">
-                            <div className="skeleton-box"></div>
-                            <div className="skeleton-box"></div>
-                        </div>
-                    </div>
-                 </div>
-                 <div className="floating-icon icon-purple-wrap">
-                     <PenTool size={20} className="svg-icon" />
-                 </div>
-              </div>
-            </div>
-            <div className="content-side">
-               <div className="step-header">
-                 <span className="step-num text-purple">{dict?.step2_num || "2"}</span>
-                 <div className="icon-wrap">
-                    <PenTool size={24} className="text-purple" />
-                    <h3 className="step-title">{dict?.step2_title || "UI/UX Design"}</h3>
-                 </div>
-               </div>
-               <p className="step-desc">
-                 {dict.step2_desc}
-               </p>
-            </div>
-          </div>
-
-          {/* === 3: Development === */}
-          <div className="step-row">
-            <div className="visual-side" aria-hidden="true">
-               <div className="card-base card-green">
-                  {/* העטיפה הזו מונעת מהתוכן למתוח את המלבן למטה */}
-                  <div className="terminal-wrapper">
-                    <div className="terminal-dots">
-                        <div className="dot dot-red"></div>
-                        <div className="dot dot-yellow"></div>
-                        <div className="dot dot-green"></div>
-                    </div>
-                    <div className="terminal-text">
-                        <p className="code-line-1">$ npm run build</p>
-                        <p className="code-line-2">&gt; Optimized build...</p>
-                        <p className="code-line-3">Build complete</p>
-                    </div>
-                  </div>
-                  <div className="floating-icon icon-green-wrap">
-                     <Code size={20} className="svg-icon" />
-                  </div>
-               </div>
-            </div>
-            <div className="content-side">
-               <div className="step-header">
-                 <span className="step-num text-green">{dict?.step3_num || "3"}</span>
-                 <div className="icon-wrap">
-                    <Code size={24} className="text-green" />
-                    <h3 className="step-title">{dict?.step3_title || "Development"}</h3>
-                 </div>
-               </div>
-               <p className="step-desc">
-                 {dict.step3_desc}
-               </p>
-            </div>
-          </div>
-
-         {/* === 4: Launch === */}
-          <div className="step-row reverse">
-            <div className="visual-side" aria-hidden="true">
-               <div className="card-base card-yellow">
-                    <div className="dashed-circle"></div>
-                    
-                    {/* המסכה שחותכת את הטיל כשהוא עף! */}
-                    <div className="rocket-mask">
-                        <div className="rocket-animation-container">
-                            <Rocket size={48} className="rocket-icon" />
-                        </div>
-                    </div>
-
-                 <div className="floating-icon icon-yellow-wrap">
-                      <Rocket size={20} className="svg-icon" />
-                 </div>
-               </div>
-            </div>
-
-            <div className="content-side">
-               <div className="step-header">
-                 <span className="step-num text-yellow">{dict?.step4_num || "4"}</span>
-                 <div className="icon-wrap">
-                    <Rocket size={24} className="text-yellow" />
-                    <h3 className="step-title">{dict?.step4_title || "Launch & Growth"}</h3>
-                 </div>
-               </div>
-               <p className="step-desc">
-                 {dict.step4_desc}
-               </p>
-            </div>
-          </div>
-
+              <div className="process-step-heading"><span className="process-step-number">{number}</span><h3>{title}</h3></div>
+              <p>{description}</p>
+            </article>
+          ))}
         </div>
       </div>
     </section>

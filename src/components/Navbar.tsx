@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image'; 
 import { usePathname } from 'next/navigation'; // מזהה באיזו שפה אנחנו
 import './Navbar.css';
@@ -14,6 +14,8 @@ interface NavbarProps {
     changeLanguage: string;
     switchLanguage: string;
     logoAlt: string;
+    openMenu: string;
+    closeMenu: string;
   };
 }
 
@@ -21,6 +23,7 @@ const Navbar = ({ dict }: NavbarProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname(); 
+  const toggleRef = useRef<HTMLButtonElement>(null);
   
   // זיהוי השפה הנוכחית להחלפה
   const isHe = pathname?.startsWith('/he');
@@ -38,11 +41,20 @@ const Navbar = ({ dict }: NavbarProps) => {
 
   // 2. חסימת גלילה של הדף כשהתפריט פתוח (הקוד המקורי והחשוב שלך!)
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
+    if (!isOpen) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setIsOpen(false);
+        toggleRef.current?.focus();
+      }
+    };
+    document.addEventListener('keydown', closeOnEscape);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener('keydown', closeOnEscape);
+    };
   }, [isOpen]);
 
   // 3. סגירת התפריט אוטומטית במעבר לדסקטופ (הקוד המקורי שלך!)
@@ -77,9 +89,9 @@ const Navbar = ({ dict }: NavbarProps) => {
           </a>
 
           <div className="desktop-menu">
+            <a href="#portfolio" className="nav-link">{dict.portfolio}</a>
             <a href="#services" className="nav-link">{dict.services}</a>
             <a href="#process" className="nav-link">{dict.process}</a>
-            <a href="#portfolio" className="nav-link">{dict.portfolio}</a>
           </div>
 
        {/* הוסר ה-style הידני שעשה לנו בעיות כיוונים! */}
@@ -92,17 +104,17 @@ const Navbar = ({ dict }: NavbarProps) => {
             </a>
 
             <div className="navbar-cta">
-              <a href="#contact" className="btn-talk">{dict.cta}</a>
+              <a href="#contact-review" className="btn-talk">{dict.cta}</a>
             </div>
           </div>
 
-          <div className="mobile-toggle" onClick={() => setIsOpen(!isOpen)}>
+          <button type="button" ref={toggleRef} className="mobile-toggle" aria-label={isOpen ? dict.closeMenu : dict.openMenu} aria-expanded={isOpen} aria-controls="mobile-navigation" onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? <X size={28} strokeWidth={2.5} /> : <Menu size={28} strokeWidth={2.5} />}
-          </div>
+          </button>
 
         </div>
 
-        <div className={`mobile-menu ${isOpen ? 'active' : ''}`}>
+        <div id="mobile-navigation" className={`mobile-menu ${isOpen ? 'active' : ''}`} inert={!isOpen} aria-hidden={!isOpen}>
           {/* כפתור השפה למובייל */}
           <a href={targetLang} className="lang-switch-btn-mobile" onClick={() => setIsOpen(false)}>
               <Globe size={20} />
@@ -118,7 +130,7 @@ const Navbar = ({ dict }: NavbarProps) => {
           <a href="#portfolio" className="mobile-link" onClick={() => setIsOpen(false)}>
             {dict.portfolio}
           </a>
-          <a href="#contact" className="mobile-link highlight" onClick={() => setIsOpen(false)}>
+          <a href="#contact-review" className="mobile-link highlight" onClick={() => setIsOpen(false)}>
             {dict.cta}
           </a>
         </div>

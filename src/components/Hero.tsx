@@ -49,9 +49,10 @@ export interface HeroProps {
   trustLine?: React.ReactNode;
   dict?: Partial<typeof enDict.hero>;
   hideSecondaryBtn?: boolean;
+  ctaTarget?: 'project' | 'review';
 }
 
-export default function Hero({ title, subtitle, ctaText, trustLine, dict, hideSecondaryBtn }: HeroProps = {}) {
+export default function Hero({ title, subtitle, ctaText, trustLine, dict, hideSecondaryBtn, ctaTarget = 'project' }: HeroProps = {}) {
   return (
     <section id="hero" className={styles.heroSection}>
       
@@ -95,23 +96,16 @@ export default function Hero({ title, subtitle, ctaText, trustLine, dict, hideSe
           </div>
 
           <div className={`${styles.heroActions} delay2`}>
-            <a href="#contact-project" className={styles.btnPrimary}>
+            <a href={ctaTarget === 'review' ? '#contact-review' : '#contact-project'} className={styles.btnPrimary}>
               {ctaText ?? dict?.cta ?? "Talk About Your Project"}
             </a>
             {!hideSecondaryBtn && (
               <a href="#portfolio" className={styles.btnLink}>
-                <span>{dict?.viewProjects || "View Projects"}</span>
+                <span className="light-sweep-text">{dict?.viewProjects || "View Projects"}</span>
                 <ArrowRight size={16} className={styles.arrowIcon} aria-hidden="true" />
               </a>
             )}
           </div>
-
-          {dict?.reviewCta && (
-            <div className={styles.heroReview}>
-              <a href="#contact-review">{dict.reviewCta}</a>
-              <p>{dict.reviewNote}</p>
-            </div>
-          )}
 
           <p className={styles.trustLine}>
             {trustLine ?? dict?.tags ?? "Personal guidance from planning to launch"}
@@ -119,8 +113,8 @@ export default function Hero({ title, subtitle, ctaText, trustLine, dict, hideSe
         </div>
 
         {/* === חלק 3: Browser Mockup לדסקטופ === */}
-        <div className={styles.heroVisualSide} aria-hidden="true" inert>
-           <div className={styles.browserMockup}>
+        <div className={styles.heroVisualSide}>
+           <div className={styles.browserMockup} aria-hidden="true">
             <div className={styles.browserWindow}>
                 <div className={styles.browserHeader}>
                   <div className={styles.browserDots}>

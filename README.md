@@ -164,5 +164,12 @@ const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => 
 6. **SEO:** הוספת תגיות Meta, כותרות נכונות (H1, H2), וטקסט אלטרנטיבי לתמונות.
 
 
-formfree user name:
-https://formspree.io/forms/maqqelkl/integration
+## טופס יצירת הקשר הראשי
+
+הטופס הראשי מחובר ל־Formspree באמצעות המזהה `xlggjajo`, בשם `New Contact to Eldar Visual`. הטופס `maqqelkl` הוא טופס נפרד ואינו החיבור של רכיב `Contact`.
+
+קישור לניהול הטופס: https://formspree.io/forms/xlggjajo/overview
+
+שני מסלולי הפנייה משתמשים באותו טופס. השדה `request_type` מבדיל בין `project` לבין `review`, והשדה `language` מציין `he` או `en`. שם, אימייל ותיאור הם חובה. אתר קיים וסוג העסק הם רשות.
+
+דוח היישום, הבדיקות והמשימות שלפני הפרסום נמצא ב־`docs/website-workplan-qa.md`.

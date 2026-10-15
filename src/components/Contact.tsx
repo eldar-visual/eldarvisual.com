@@ -6,6 +6,7 @@ import { useSubmit } from '@formspree/react';
 import { usePathname } from 'next/navigation';
 import { trackContactEvent, type ContactIntent } from '@/lib/contactAnalytics';
 import type enDict from '@/dictionaries/en.json';
+import BusinessTypeSelect from './BusinessTypeSelect';
 import './Contact.css';
 
 type ContactDictionary = typeof enDict.contact;
@@ -24,6 +25,7 @@ export default function Contact({ dict }: { dict: ContactDictionary }) {
   const [copied, setCopied] = useState(false);
   const [copyFailed, setCopyFailed] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
+  const successRef = useRef<HTMLDivElement>(null);
   const pending = useRef(false);
   const started = useRef(false);
   const copyTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -43,6 +45,10 @@ export default function Contact({ dict }: { dict: ContactDictionary }) {
       if (copyTimer.current) clearTimeout(copyTimer.current);
     };
   }, []);
+
+  useEffect(() => {
+    if (status === 'success') successRef.current?.focus();
+  }, [status]);
 
   const handleCopy = async () => {
     try {
@@ -142,11 +148,6 @@ export default function Contact({ dict }: { dict: ContactDictionary }) {
             </h2>
             <p className="contact-desc">{dict.desc1}</p>
             <p className="contact-desc">{dict.desc2}</p>
-            <div className="contact-about">
-              <span className="contact-about-label">{dict.aboutLabel}</span>
-              <h3>{dict.aboutTitle}</h3>
-              <p>{dict.aboutDesc}</p>
-            </div>
             <div className="contact-details">
               <div className="contact-item contact-email-row">
                 <a href={'mailto:' + emailAddress} className="contact-clickable-area" aria-label={dict.emailLink + ': ' + emailAddress}>
@@ -170,7 +171,7 @@ export default function Contact({ dict }: { dict: ContactDictionary }) {
             <span id="contact-project" className="contact-route-anchor" />
             <span id="contact-review" className="contact-route-anchor" />
             {status === 'success' ? (
-              <div className="success-message" role="status" aria-live="polite">
+              <div ref={successRef} className="success-message" role="status" aria-live="polite" tabIndex={-1}>
                 <CheckCircle size={48} aria-hidden="true" />
                 <h3 className="success-title">{form.successTitle}</h3>
                 <p className="success-desc">{form.successDesc}</p>
@@ -183,6 +184,7 @@ export default function Contact({ dict }: { dict: ContactDictionary }) {
                     <label key={option} className={'request-option ' + (intent === option ? 'selected' : '')}>
                       <input type="radio" name="request_type" value={option} checked={intent === option} onChange={() => {
                         setIntent(option);
+                        window.history.replaceState(null, '', '#contact-' + option);
                         trackContactEvent(option === 'review' ? 'review_selected' : 'project_selected', option);
                       }} />
                       <span>{option === 'project' ? form.projectOption : form.reviewOption}</span>
@@ -212,15 +214,8 @@ export default function Contact({ dict }: { dict: ContactDictionary }) {
                     {errors.website && <p id="website-error" className="form-error">{errors.website}</p>}
                   </div>
                   <div className="form-group">
-                    <label htmlFor="type" className="form-label">{form.typeLabel} <span>({form.optional})</span></label>
-                    <select id="type" name="type" className="form-input" defaultValue="">
-                      <option value="">{form.typePlaceholder}</option>
-                      <option value="startup">{form.typeStartup}</option>
-                      <option value="service">{form.typeService}</option>
-                      <option value="ecommerce">{form.typeEcommerce}</option>
-                      <option value="nonprofit">{form.typePersonal}</option>
-                      <option value="other">{form.typeOther}</option>
-                    </select>
+                    <label id="type-label" htmlFor="type" className="form-label">{form.typeLabel} <span>({form.optional})</span></label>
+                    <BusinessTypeSelect form={form} disabled={status === 'submitting'} />
                   </div>
                   <div className="form-group">
                     <label htmlFor="message" className="form-label">{form.goalLabel}</label>

@@ -22,7 +22,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
   return (
     <>
       <Navbar dict={dict.navbar} />
-      <Hero dict={dict.hero} />
+      <Hero dict={dict.hero} ctaTarget="review" />
       
       <Portfolio dict={dict.portfolio} testimonial={dict.testimonial} />
       <Services dict={dict.services} />

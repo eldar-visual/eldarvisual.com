@@ -5,7 +5,7 @@
   --site-light-purple: 124, 58, 237;
 }
 
-#hero, #services, .process-section, .portfolio-section {
+#hero, #services, .process-section, .portfolio-section, .portfolio-demos {
   --site-corner-background:
     radial-gradient(ellipse min(900px, 110vw) 620px at 0% var(--section-light-y, 0%), rgba(var(--site-light-blue), 0.34), transparent 75%),
     radial-gradient(ellipse min(680px, 90vw) 440px at 0% var(--section-light-y, 0%), rgba(var(--site-light-purple), 0.3), transparent 72%),
@@ -134,3 +134,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   }
   .delay1, .delay2, .title-part-1, .title-part-2, .title-part-3 { opacity: 1; transform: none; }
 }
+
+.light-sweep-text { display: inline-block; background: linear-gradient(110deg, #bfdbfe 40%, #ffffff 48%, #e9d5ff 52%, #bfdbfe 60%); background-size: 250% 100%; background-position: 100% 50%; background-clip: text; -webkit-background-clip: text; color: transparent; }
+a:hover .light-sweep-text, a:focus-visible .light-sweep-text { animation: link-light-sweep 0.8s ease both; }
+@keyframes link-light-sweep { from { background-position: 100% 50%; } to { background-position: 0% 50%; } }
