@@ -150,7 +150,23 @@
       "namePlaceholder": "השם שלכם",
       "emailPlaceholder": "כתובת הדוא״ל של הארגון",
       "websitePlaceholder": "כתובת האתר (לדוגמה https://ministry.org)",
-      "submit": "בקשו אבחון לאתר שלכם"
+      "submit": "בקשו אבחון לאתר שלכם",
+      "form": {
+        "nameLabel": "השם שלכם",
+        "emailLabel": "כתובת הדוא״ל של הארגון",
+        "websiteLabel": "כתובת האתר",
+        "requiredNote": "יש למלא את שלושת השדות.",
+        "requiredError": "יש למלא את השדה הזה.",
+        "emailError": "יש להזין כתובת דוא״ל תקינה.",
+        "websiteError": "יש להזין כתובת אתר מלאה שמתחילה ב־https:// או ב־http://.",
+        "serverFieldError": "יש לבדוק את השדה ולנסות שוב.",
+        "validationSummary": "יש לבדוק את השדות המסומנים.",
+        "submitting": "הבקשה נשלחת…",
+        "successTitle": "הבקשה התקבלה",
+        "successDescription": "תודה. נעבור על האתר ונחזור לכתובת הדוא״ל שהשארתם כדי לתאם את השלב הבא.",
+        "submitError": "הבקשה לא נשלחה. הפרטים שהזנתם נשמרו בטופס. אפשר לנסות שוב או לפנות אלינו בדוא״ל.",
+        "emailAlternative": "פנייה בדוא״ל"
+      }
     }
   },
   "christians": {

@@ -150,7 +150,23 @@
       "namePlaceholder": "Your Name",
       "emailPlaceholder": "Ministry Email",
       "websitePlaceholder": "Website URL (e.g., https://ministry.org)",
-      "submit": "Request Your Website Audit"
+      "submit": "Request Your Website Audit",
+      "form": {
+        "nameLabel": "Your Name",
+        "emailLabel": "Ministry Email",
+        "websiteLabel": "Website URL",
+        "requiredNote": "All three fields are required.",
+        "requiredError": "Please complete this field.",
+        "emailError": "Please enter a valid email address.",
+        "websiteError": "Please enter a full website URL starting with https:// or http://.",
+        "serverFieldError": "Please check this field and try again.",
+        "validationSummary": "Please check the highlighted fields.",
+        "submitting": "Sending your request…",
+        "successTitle": "Your Request Was Received",
+        "successDescription": "Thank you. We will review your website and contact you at the email address you provided to confirm the next steps.",
+        "submitError": "Your request could not be sent. Your details are still in the form. Please try again or contact us by email.",
+        "emailAlternative": "Contact Us by Email"
+      }
     }
   },
   "christians": {

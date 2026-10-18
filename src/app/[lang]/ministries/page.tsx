@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import styles from './ministries.module.css';
 import { getDictionary } from '@/getDictionary';
+import AuditForm from './AuditForm';
 
 type PageProps = {
   params: Promise<{ lang: string }>;
@@ -88,15 +89,10 @@ export default async function MinistriesPage({ params }: PageProps) {
             </div>
           </div>
         </section>
-        <section id="audit-form" className={styles.auditSection}>
-          <h2>{dict.audit.title}</h2>
+        <section id="audit-form" className={styles.auditSection} aria-labelledby="audit-form-title">
+          <h2 id="audit-form-title">{dict.audit.title}</h2>
           <p>{dict.audit.description}</p>
-          <form className={styles.form}>
-            <input type="text" placeholder={dict.audit.namePlaceholder} required className={styles.input} />
-            <input type="email" placeholder={dict.audit.emailPlaceholder} required className={styles.input} />
-            <input type="url" placeholder={dict.audit.websitePlaceholder} required className={styles.input} />
-            <button type="submit" className={styles.submitBtn}>{dict.audit.submit}</button>
-          </form>
+          <AuditForm dict={dict.audit} lang={lang === 'he' ? 'he' : 'en'} />
         </section>
       </main>
     </div>
