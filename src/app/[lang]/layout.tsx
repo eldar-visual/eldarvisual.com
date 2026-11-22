@@ -84,6 +84,19 @@ export default async function RootLayout({
         <Script id="microsoft-clarity" strategy="lazyOnload">
           {`(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "vk8t7p6xj1");`}
         </Script>
+
+        {/* ChatGPT Ads pixel — remove `debug: true` after testing */}
+        <Script id="chatgpt-ads-pixel" strategy="afterInteractive">
+          {`(function (w, d, s, u) {
+            if (w.oaiq) return;
+            var q = function () { q.q.push(arguments); };
+            q.q = []; w.oaiq = q;
+            var js = d.createElement(s); js.async = true; js.src = u;
+            var f = d.getElementsByTagName(s)[0];
+            f.parentNode.insertBefore(js, f);
+          })(window, document, "script", "https://bzrcdn.openai.com/sdk/oaiq.min.js");
+          oaiq("init", { pixelId: "9GTwLZShUjD7zVUDtNmb3C", debug: true });`}
+        </Script>
         
         
         

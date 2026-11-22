@@ -75,6 +75,12 @@ export default function AuditForm({ dict, lang }: { dict: AuditDictionary; lang:
         const firstServerError = fieldNames.find(field => serverErrors[field]);
         if (firstServerError) focusField(firstServerError);
       } else {
+        // ChatGPT Ads conversion — fires only after Formspree confirms the submission
+        (window as unknown as { oaiq?: (...args: unknown[]) => void }).oaiq?.(
+          'measure',
+          'lead_created',
+          { type: 'customer_action' }
+        );
         setStatus('success');
       }
     } catch {
